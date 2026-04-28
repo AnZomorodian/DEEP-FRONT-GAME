@@ -222,6 +222,9 @@ export default defineConfig(({ mode }) => {
       allowedHosts: true,
       // Automatically open the browser when the server starts
       open: false,
+      watch: {
+        ignored: ["**/.local/**", "**/node_modules/**"],
+      },
       proxy: {
         "/lobbies": {
           target: "ws://localhost:3000",

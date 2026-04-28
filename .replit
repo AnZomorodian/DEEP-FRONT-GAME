@@ -46,6 +46,10 @@ externalPort = 3002
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 5001
+externalPort = 3003
+
 [deployment]
 deploymentTarget = "vm"
 run = ["bash", "-c", "cross-env GAME_ENV=prod node_modules/.bin/tsx src/server/Server.ts"]

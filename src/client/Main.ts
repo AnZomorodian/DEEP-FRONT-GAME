@@ -258,7 +258,9 @@ class Client {
     crazyGamesSDK.maybeInit();
     // Prefetch turnstile token so it is available when
     // the user joins a lobby.
-    this.turnstileTokenPromise = getTurnstileToken();
+    const prefetchedToken = getTurnstileToken();
+    prefetchedToken.catch(() => {});
+    this.turnstileTokenPromise = prefetchedToken;
 
     // Wait for components to render before setting version
     await customElements.whenDefined("mobile-nav-bar");
@@ -990,7 +992,7 @@ const hideCrazyGamesElements = () => {
 // Initialize the client when the DOM is loaded
 const bootstrap = () => {
   initLayout();
-  new Client().initialize();
+  new Client().initialize().catch(console.error);
   initNavigation();
 
   // Hide elements immediately
