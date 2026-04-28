@@ -29,6 +29,10 @@ const atomBombIcon = assetUrl("images/NukeIconWhite.svg");
 const portIcon = assetUrl("images/PortIcon.svg");
 const samLauncherIcon = assetUrl("images/SamLauncherIconWhite.svg");
 const defensePostIcon = assetUrl("images/ShieldIconWhite.svg");
+const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
+const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
+const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
+const cruiseMissileIcon = assetUrl("images/CruiseMissileIcon.svg");
 
 @customElement("unit-display")
 export class UnitDisplay extends LitElement implements Layer {
@@ -44,6 +48,9 @@ export class UnitDisplay extends LitElement implements Layer {
   private _port = 0;
   private _defensePost = 0;
   private _samLauncher = 0;
+  private _oilFactories = 0;
+  private _copperMines = 0;
+  private _cruiseLaunchers = 0;
   private allDisabled = false;
   private _hoveredUnit: PlayerBuildableUnitType | null = null;
 
@@ -81,6 +88,11 @@ export class UnitDisplay extends LitElement implements Layer {
           this.cost(item) <= (player?.gold() ?? 0n) &&
           (player?.units(UnitType.MissileSilo).length ?? 0) > 0
         );
+      case UnitType.CruiseMissile:
+        return (
+          this.cost(item) <= (player?.gold() ?? 0n) &&
+          (player?.units(UnitType.CruiseLauncher).length ?? 0) > 0
+        );
       case UnitType.Warship:
         return (
           this.cost(item) <= (player?.gold() ?? 0n) &&
@@ -104,6 +116,9 @@ export class UnitDisplay extends LitElement implements Layer {
     this._samLauncher = player.totalUnitLevels(UnitType.SAMLauncher);
     this._factories = player.totalUnitLevels(UnitType.Factory);
     this._warships = player.totalUnitLevels(UnitType.Warship);
+    this._oilFactories = player.totalUnitLevels(UnitType.OilFactory);
+    this._copperMines = player.totalUnitLevels(UnitType.CopperMine);
+    this._cruiseLaunchers = player.totalUnitLevels(UnitType.CruiseLauncher);
     this.requestUpdate();
   }
 
@@ -195,6 +210,34 @@ export class UnitDisplay extends LitElement implements Layer {
             UnitType.MIRV,
             "mirv",
             this.keybinds["buildMIRV"]?.key ?? "0",
+          )}
+          ${this.renderUnitItem(
+            oilFactoryIcon,
+            this._oilFactories,
+            UnitType.OilFactory,
+            "oil_factory",
+            this.keybinds["buildOilFactory"]?.key ?? "Q",
+          )}
+          ${this.renderUnitItem(
+            copperMineIcon,
+            this._copperMines,
+            UnitType.CopperMine,
+            "copper_mine",
+            this.keybinds["buildCopperMine"]?.key ?? "W",
+          )}
+          ${this.renderUnitItem(
+            cruiseLauncherIcon,
+            this._cruiseLaunchers,
+            UnitType.CruiseLauncher,
+            "cruise_launcher",
+            this.keybinds["buildCruiseLauncher"]?.key ?? "E",
+          )}
+          ${this.renderUnitItem(
+            cruiseMissileIcon,
+            null,
+            UnitType.CruiseMissile,
+            "cruise_missile",
+            this.keybinds["buildCruiseMissile"]?.key ?? "R",
           )}
         </div>
       </div>
