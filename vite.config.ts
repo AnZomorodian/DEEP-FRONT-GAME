@@ -217,9 +217,11 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
-      port: 9000,
+      port: 5000,
+      host: "0.0.0.0",
+      allowedHosts: true,
       // Automatically open the browser when the server starts
-      open: process.env.SKIP_BROWSER_OPEN !== "true",
+      open: false,
       proxy: {
         "/lobbies": {
           target: "ws://localhost:3000",
