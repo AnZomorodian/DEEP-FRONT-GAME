@@ -37,6 +37,10 @@ const atomBombIcon = assetUrl("images/NukeIconWhite.svg");
 const portIcon = assetUrl("images/PortIcon.svg");
 const samlauncherIcon = assetUrl("images/SamLauncherIconWhite.svg");
 const shieldIcon = assetUrl("images/ShieldIconWhite.svg");
+const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
+const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
+const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
+const cruiseMissileIcon = assetUrl("images/CruiseMissileIcon.svg");
 
 export interface BuildItemDisplay {
   unitType: PlayerBuildableUnitType;
@@ -117,6 +121,34 @@ export const buildTable: BuildItemDisplay[][] = [
       description: "build_menu.desc.factory",
       key: "unit_type.factory",
       countable: true,
+    },
+    {
+      unitType: UnitType.OilFactory,
+      icon: oilFactoryIcon,
+      description: "build_menu.desc.oil_factory",
+      key: "unit_type.oil_factory",
+      countable: true,
+    },
+    {
+      unitType: UnitType.CopperMine,
+      icon: copperMineIcon,
+      description: "build_menu.desc.copper_mine",
+      key: "unit_type.copper_mine",
+      countable: true,
+    },
+    {
+      unitType: UnitType.CruiseLauncher,
+      icon: cruiseLauncherIcon,
+      description: "build_menu.desc.cruise_launcher",
+      key: "unit_type.cruise_launcher",
+      countable: true,
+    },
+    {
+      unitType: UnitType.CruiseMissile,
+      icon: cruiseMissileIcon,
+      description: "build_menu.desc.cruise_missile",
+      key: "unit_type.cruise_missile",
+      countable: false,
     },
   ],
 ];

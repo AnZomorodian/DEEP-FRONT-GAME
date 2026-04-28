@@ -76,12 +76,6 @@ export class PlayPage extends LitElement {
               <username-input
                 class="flex-1 min-w-0 h-10 lg:h-[50px]"
               ></username-input>
-              <pattern-input
-                id="pattern-input-mobile"
-                show-select-label
-                adaptive-size
-                class="shrink-0 lg:hidden"
-              ></pattern-input>
               <flag-input
                 id="flag-input-mobile"
                 show-select-label
@@ -90,13 +84,8 @@ export class PlayPage extends LitElement {
             </div>
           </div>
 
-          <!-- Skin + flag: right col -->
+          <!-- Flag: right col -->
           <div class="hidden lg:flex h-[60px] gap-2">
-            <pattern-input
-              id="pattern-input-desktop"
-              show-select-label
-              class="flex-1 h-full"
-            ></pattern-input>
             <flag-input
               id="flag-input-desktop"
               show-select-label

@@ -548,7 +548,11 @@
     "atom_bomb": "Atom Bomb",
     "hydrogen_bomb": "Hydrogen Bomb",
     "mirv": "MIRV",
-    "factory": "Factory"
+    "factory": "Factory",
+    "oil_factory": "Oil Factory",
+    "copper_mine": "Copper Mine",
+    "cruise_launcher": "Cruise Launcher",
+    "cruise_missile": "Cruise Missile"
   },
   "user_setting": {
     "title": "Settings",
@@ -771,7 +775,11 @@
       "port": "Sends trade ships to generate gold",
       "defense_post": "Increases defenses of nearby borders",
       "city": "Increases max population",
-      "factory": "Creates railroads and spawns trains"
+      "factory": "Creates railroads and spawns trains",
+      "oil_factory": "Generates oil income passively over time",
+      "copper_mine": "Mines copper to boost production and income",
+      "cruise_launcher": "Launches cruise missiles at enemy targets",
+      "cruise_missile": "Precision strike, half the power of an atom bomb"
     },
     "warship_shift_hint": "Hold Shift and drag to select multiple warships at once",
     "not_enough_money": "Not enough money"
