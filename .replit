@@ -22,13 +22,13 @@ args = "Start application"
 name = "Start application"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cross-env GAME_ENV=dev SKIP_BROWSER_OPEN=true concurrently \"vite\" \"tsx src/server/Server.ts\""
-waitForPort = 5000
-
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "fuser -k 3000/tcp 5000/tcp 2>/dev/null; cross-env GAME_ENV=dev SKIP_BROWSER_OPEN=true concurrently \"vite\" \"tsx src/server/Server.ts\""
+waitForPort = 5000
 
 [[ports]]
 localPort = 3000
