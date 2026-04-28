@@ -260,6 +260,10 @@ export const GameConfigSchema = z.object({
   noLauncherCooldown: z.boolean().nullable().optional(),
   cheapMissiles: z.boolean().nullable().optional(),
   fastNukes: z.boolean().nullable().optional(),
+  limitLaunchers: z.boolean().nullable().optional(),
+  limitOilFactories: z.boolean().nullable().optional(),
+  limitCities: z.boolean().nullable().optional(),
+  limitWarships: z.boolean().nullable().optional(),
   randomSpawn: z.boolean(),
   maxPlayers: z.number().optional(),
   maxTimerValue: z.number().int().min(1).max(120).nullable().optional(), // In minutes

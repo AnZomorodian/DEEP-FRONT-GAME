@@ -1008,12 +1008,42 @@ export class PlayerImpl implements Player {
     return closest?.unit ?? false;
   }
 
+  private currentOwnedCount(unitType: UnitType): number {
+    let n = 0;
+    for (const u of this._units) {
+      if (u.type() === unitType) n++;
+    }
+    return n;
+  }
+
   private canBuildUnitType(
     unitType: UnitType,
     knownCost: Gold | null = null,
+    skipMaxCheck: boolean = false,
   ): boolean {
     if (this.mg.config().isUnitDisabled(unitType)) {
       return false;
+    }
+    if (!skipMaxCheck) {
+      const max = this.mg.config().maxUnitCount(unitType);
+      if (Number.isFinite(max)) {
+        let current = this.currentOwnedCount(unitType);
+        // Combined cap for "all missile launchers"
+        if (
+          this.mg.config().limitLaunchers() &&
+          (unitType === UnitType.MissileSilo ||
+            unitType === UnitType.CruiseLauncher)
+        ) {
+          const other =
+            unitType === UnitType.MissileSilo
+              ? UnitType.CruiseLauncher
+              : UnitType.MissileSilo;
+          current += this.currentOwnedCount(other);
+        }
+        if (current >= max) {
+          return false;
+        }
+      }
     }
     const cost = knownCost ?? this.mg.unitInfo(unitType).cost(this.mg, this);
     if (this._gold < cost) {
@@ -1046,7 +1076,8 @@ export class PlayerImpl implements Player {
     if (!this.canUpgradeUnitType(unit.type())) {
       return false;
     }
-    if (!this.canBuildUnitType(unit.type())) {
+    // Upgrades operate on existing units, so they bypass per-player max caps.
+    if (!this.canBuildUnitType(unit.type(), null, true)) {
       return false;
     }
     if (!this.isUnitValidToUpgrade(unit)) {

@@ -69,6 +69,10 @@ const DEFAULT_OPTIONS = {
   noLauncherCooldown: false,
   cheapMissiles: false,
   fastNukes: false,
+  limitLaunchers: false,
+  limitOilFactories: false,
+  limitCities: false,
+  limitWarships: false,
 } as const;
 
 @customElement("single-player-modal")
@@ -116,6 +120,11 @@ export class SinglePlayerModal extends BaseModal {
     DEFAULT_OPTIONS.noLauncherCooldown;
   @state() private cheapMissiles: boolean = DEFAULT_OPTIONS.cheapMissiles;
   @state() private fastNukes: boolean = DEFAULT_OPTIONS.fastNukes;
+  @state() private limitLaunchers: boolean = DEFAULT_OPTIONS.limitLaunchers;
+  @state() private limitOilFactories: boolean =
+    DEFAULT_OPTIONS.limitOilFactories;
+  @state() private limitCities: boolean = DEFAULT_OPTIONS.limitCities;
+  @state() private limitWarships: boolean = DEFAULT_OPTIONS.limitWarships;
 
   private mapLoader = terrainMapFileLoader;
 
@@ -380,6 +389,22 @@ export class SinglePlayerModal extends BaseModal {
                     labelKey: "single_modal.fast_nukes",
                     checked: this.fastNukes,
                   },
+                  {
+                    labelKey: "single_modal.limit_launchers",
+                    checked: this.limitLaunchers,
+                  },
+                  {
+                    labelKey: "single_modal.limit_oil_factories",
+                    checked: this.limitOilFactories,
+                  },
+                  {
+                    labelKey: "single_modal.limit_cities",
+                    checked: this.limitCities,
+                  },
+                  {
+                    labelKey: "single_modal.limit_warships",
+                    checked: this.limitWarships,
+                  },
                 ],
                 inputCards,
               },
@@ -463,6 +488,10 @@ export class SinglePlayerModal extends BaseModal {
       this.noLauncherCooldown !== DEFAULT_OPTIONS.noLauncherCooldown ||
       this.cheapMissiles !== DEFAULT_OPTIONS.cheapMissiles ||
       this.fastNukes !== DEFAULT_OPTIONS.fastNukes ||
+      this.limitLaunchers !== DEFAULT_OPTIONS.limitLaunchers ||
+      this.limitOilFactories !== DEFAULT_OPTIONS.limitOilFactories ||
+      this.limitCities !== DEFAULT_OPTIONS.limitCities ||
+      this.limitWarships !== DEFAULT_OPTIONS.limitWarships ||
       this.disabledUnits.length > 0
     );
   }
@@ -501,6 +530,10 @@ export class SinglePlayerModal extends BaseModal {
     this.noLauncherCooldown = DEFAULT_OPTIONS.noLauncherCooldown;
     this.cheapMissiles = DEFAULT_OPTIONS.cheapMissiles;
     this.fastNukes = DEFAULT_OPTIONS.fastNukes;
+    this.limitLaunchers = DEFAULT_OPTIONS.limitLaunchers;
+    this.limitOilFactories = DEFAULT_OPTIONS.limitOilFactories;
+    this.limitCities = DEFAULT_OPTIONS.limitCities;
+    this.limitWarships = DEFAULT_OPTIONS.limitWarships;
   }
 
   protected onOpen(): void {
@@ -615,6 +648,18 @@ export class SinglePlayerModal extends BaseModal {
         break;
       case "single_modal.fast_nukes":
         this.fastNukes = checked;
+        break;
+      case "single_modal.limit_launchers":
+        this.limitLaunchers = checked;
+        break;
+      case "single_modal.limit_oil_factories":
+        this.limitOilFactories = checked;
+        break;
+      case "single_modal.limit_cities":
+        this.limitCities = checked;
+        break;
+      case "single_modal.limit_warships":
+        this.limitWarships = checked;
         break;
       default:
         break;
@@ -836,6 +881,10 @@ export class SinglePlayerModal extends BaseModal {
                 : {}),
               ...(this.cheapMissiles ? { cheapMissiles: true } : {}),
               ...(this.fastNukes ? { fastNukes: true } : {}),
+              ...(this.limitLaunchers ? { limitLaunchers: true } : {}),
+              ...(this.limitOilFactories ? { limitOilFactories: true } : {}),
+              ...(this.limitCities ? { limitCities: true } : {}),
+              ...(this.limitWarships ? { limitWarships: true } : {}),
             },
             lobbyCreatedAt: Date.now(), // ms; server should be authoritative in MP
           },

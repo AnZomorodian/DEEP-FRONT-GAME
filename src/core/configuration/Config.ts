@@ -86,6 +86,11 @@ export interface Config {
   noLauncherCooldown(): boolean;
   cheapMissiles(): boolean;
   fastNukes(): boolean;
+  limitLaunchers(): boolean;
+  limitOilFactories(): boolean;
+  limitCities(): boolean;
+  limitWarships(): boolean;
+  maxUnitCount(unitType: UnitType): number;
   isRandomSpawn(): boolean;
   numSpawnPhaseTurns(): number;
   userSettings(): UserSettings;

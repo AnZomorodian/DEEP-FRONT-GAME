@@ -315,6 +315,37 @@ export class DefaultConfig implements Config {
   fastNukes(): boolean {
     return this._gameConfig.fastNukes ?? false;
   }
+  limitLaunchers(): boolean {
+    return this._gameConfig.limitLaunchers ?? false;
+  }
+  limitOilFactories(): boolean {
+    return this._gameConfig.limitOilFactories ?? false;
+  }
+  limitCities(): boolean {
+    return this._gameConfig.limitCities ?? false;
+  }
+  limitWarships(): boolean {
+    return this._gameConfig.limitWarships ?? false;
+  }
+  maxUnitCount(unitType: UnitType): number {
+    if (
+      this.limitLaunchers() &&
+      (unitType === UnitType.MissileSilo ||
+        unitType === UnitType.CruiseLauncher)
+    ) {
+      return 5;
+    }
+    if (this.limitOilFactories() && unitType === UnitType.OilFactory) {
+      return 3;
+    }
+    if (this.limitCities() && unitType === UnitType.City) {
+      return 10;
+    }
+    if (this.limitWarships() && unitType === UnitType.Warship) {
+      return 5;
+    }
+    return Infinity;
+  }
   startingGold(playerInfo: PlayerInfo): Gold {
     if (playerInfo.playerType === PlayerType.Bot) {
       return 0n;
