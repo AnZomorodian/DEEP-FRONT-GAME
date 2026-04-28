@@ -78,6 +78,10 @@ export class FxLayer implements Layer {
         this.onNukeEvent(unit, 160);
         break;
       }
+      case UnitType.CruiseMissile: {
+        this.onNukeEvent(unit, 35);
+        break;
+      }
       case UnitType.Warship:
         this.onWarshipEvent(unit);
         break;

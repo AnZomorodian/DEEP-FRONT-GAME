@@ -316,6 +316,17 @@ export class UnitLayer implements Layer {
     if (this.selectedUnit === unit && !unit.isActive()) {
       this.eventBus.emit(new UnitSelectionEvent(unit, false));
     }
+    if (!unit.isActive() && this.unitToTrail.has(unit)) {
+      const t = unit.type();
+      if (
+        t === UnitType.AtomBomb ||
+        t === UnitType.HydrogenBomb ||
+        t === UnitType.MIRV ||
+        t === UnitType.CruiseMissile
+      ) {
+        this.clearTrail(unit);
+      }
+    }
   }
 
   renderLayer(context: CanvasRenderingContext2D) {

@@ -214,6 +214,8 @@
     "big_bombs": "Big bombs (1.5x nuke radius)",
     "super_troops": "Super troops (2x troop growth)",
     "no_launcher_cooldown": "No launcher cooldown",
+    "cheap_missiles": "Cheap missiles (50% off)",
+    "fast_nukes": "Fast nukes (2x flight speed)",
     "max_timer": "Game length (minutes)",
     "max_timer_placeholder": "Mins",
     "max_timer_invalid": "Please enter a valid max timer value (1-120 minutes)",

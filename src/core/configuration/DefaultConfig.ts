@@ -309,6 +309,12 @@ export class DefaultConfig implements Config {
   noLauncherCooldown(): boolean {
     return this._gameConfig.noLauncherCooldown ?? false;
   }
+  cheapMissiles(): boolean {
+    return this._gameConfig.cheapMissiles ?? false;
+  }
+  fastNukes(): boolean {
+    return this._gameConfig.fastNukes ?? false;
+  }
   startingGold(playerInfo: PlayerInfo): Gold {
     if (playerInfo.playerType === PlayerType.Bot) {
       return 0n;
@@ -553,7 +559,16 @@ export class DefaultConfig implements Config {
         assertNever(type);
     }
 
-    if (this.cheapBuildings()) {
+    const isMissile =
+      type === UnitType.AtomBomb ||
+      type === UnitType.HydrogenBomb ||
+      type === UnitType.MIRV ||
+      type === UnitType.CruiseMissile;
+    const halveCost =
+      (this.cheapBuildings() && !isMissile) ||
+      (this.cheapMissiles() && isMissile) ||
+      (this.cheapBuildings() && isMissile && !this.cheapMissiles());
+    if (halveCost) {
       const originalCost = info.cost;
       info.cost = (game: Game, player: Player) => {
         const c = originalCost(game, player);
@@ -1017,6 +1032,7 @@ export class DefaultConfig implements Config {
   }
 
   defaultNukeSpeed(): number {
+    if (this.fastNukes()) return 12;
     return 6;
   }
 

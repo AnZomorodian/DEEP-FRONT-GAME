@@ -67,6 +67,8 @@ const DEFAULT_OPTIONS = {
   bigBombs: false,
   superTroops: false,
   noLauncherCooldown: false,
+  cheapMissiles: false,
+  fastNukes: false,
 } as const;
 
 @customElement("single-player-modal")
@@ -112,6 +114,8 @@ export class SinglePlayerModal extends BaseModal {
   @state() private superTroops: boolean = DEFAULT_OPTIONS.superTroops;
   @state() private noLauncherCooldown: boolean =
     DEFAULT_OPTIONS.noLauncherCooldown;
+  @state() private cheapMissiles: boolean = DEFAULT_OPTIONS.cheapMissiles;
+  @state() private fastNukes: boolean = DEFAULT_OPTIONS.fastNukes;
 
   private mapLoader = terrainMapFileLoader;
 
@@ -368,6 +372,14 @@ export class SinglePlayerModal extends BaseModal {
                     labelKey: "single_modal.no_launcher_cooldown",
                     checked: this.noLauncherCooldown,
                   },
+                  {
+                    labelKey: "single_modal.cheap_missiles",
+                    checked: this.cheapMissiles,
+                  },
+                  {
+                    labelKey: "single_modal.fast_nukes",
+                    checked: this.fastNukes,
+                  },
                 ],
                 inputCards,
               },
@@ -449,6 +461,8 @@ export class SinglePlayerModal extends BaseModal {
       this.bigBombs !== DEFAULT_OPTIONS.bigBombs ||
       this.superTroops !== DEFAULT_OPTIONS.superTroops ||
       this.noLauncherCooldown !== DEFAULT_OPTIONS.noLauncherCooldown ||
+      this.cheapMissiles !== DEFAULT_OPTIONS.cheapMissiles ||
+      this.fastNukes !== DEFAULT_OPTIONS.fastNukes ||
       this.disabledUnits.length > 0
     );
   }
@@ -485,6 +499,8 @@ export class SinglePlayerModal extends BaseModal {
     this.bigBombs = DEFAULT_OPTIONS.bigBombs;
     this.superTroops = DEFAULT_OPTIONS.superTroops;
     this.noLauncherCooldown = DEFAULT_OPTIONS.noLauncherCooldown;
+    this.cheapMissiles = DEFAULT_OPTIONS.cheapMissiles;
+    this.fastNukes = DEFAULT_OPTIONS.fastNukes;
   }
 
   protected onOpen(): void {
@@ -593,6 +609,12 @@ export class SinglePlayerModal extends BaseModal {
         break;
       case "single_modal.no_launcher_cooldown":
         this.noLauncherCooldown = checked;
+        break;
+      case "single_modal.cheap_missiles":
+        this.cheapMissiles = checked;
+        break;
+      case "single_modal.fast_nukes":
+        this.fastNukes = checked;
         break;
       default:
         break;
@@ -812,6 +834,8 @@ export class SinglePlayerModal extends BaseModal {
               ...(this.noLauncherCooldown
                 ? { noLauncherCooldown: true }
                 : {}),
+              ...(this.cheapMissiles ? { cheapMissiles: true } : {}),
+              ...(this.fastNukes ? { fastNukes: true } : {}),
             },
             lobbyCreatedAt: Date.now(), // ms; server should be authoritative in MP
           },

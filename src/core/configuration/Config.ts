@@ -84,6 +84,8 @@ export interface Config {
   bigBombs(): boolean;
   superTroops(): boolean;
   noLauncherCooldown(): boolean;
+  cheapMissiles(): boolean;
+  fastNukes(): boolean;
   isRandomSpawn(): boolean;
   numSpawnPhaseTurns(): number;
   userSettings(): UserSettings;

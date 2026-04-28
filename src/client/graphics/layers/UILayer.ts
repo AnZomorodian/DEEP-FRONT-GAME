@@ -266,6 +266,7 @@ export class UILayer implements Layer {
       case UnitType.Port:
       case UnitType.MissileSilo:
       case UnitType.SAMLauncher:
+      case UnitType.CruiseLauncher:
         if (
           unit.markedForDeletion() !== false ||
           unit.missileReadinesss() < 1
