@@ -250,6 +250,11 @@ export const GameConfigSchema = z.object({
   disableNavMesh: z.boolean().optional(),
   disableAlliances: z.boolean().nullable().optional(),
   waterNukes: z.boolean().nullable().optional(),
+  megaIncome: z.boolean().nullable().optional(),
+  cheapBuildings: z.boolean().nullable().optional(),
+  fastConstruction: z.boolean().nullable().optional(),
+  disableNukes: z.boolean().nullable().optional(),
+  disableNaval: z.boolean().nullable().optional(),
   randomSpawn: z.boolean(),
   maxPlayers: z.number().optional(),
   maxTimerValue: z.number().int().min(1).max(120).nullable().optional(), // In minutes

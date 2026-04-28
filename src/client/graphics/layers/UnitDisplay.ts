@@ -139,7 +139,7 @@ export class UnitDisplay extends LitElement implements Layer {
     return html`
       <div class="border-t border-white/10 p-0.5 w-full">
         <div
-          class="grid grid-rows-1 auto-cols-max grid-flow-col gap-0.5 w-fit mx-auto"
+          class="flex flex-wrap justify-center gap-0.5 w-full"
         >
           ${this.renderUnitItem(
             cityIcon,
@@ -216,28 +216,28 @@ export class UnitDisplay extends LitElement implements Layer {
             this._oilFactories,
             UnitType.OilFactory,
             "oil_factory",
-            this.keybinds["buildOilFactory"]?.key ?? "Q",
+            this.keybinds["buildOilFactory"]?.key ?? "-",
           )}
           ${this.renderUnitItem(
             copperMineIcon,
             this._copperMines,
             UnitType.CopperMine,
             "copper_mine",
-            this.keybinds["buildCopperMine"]?.key ?? "W",
+            this.keybinds["buildCopperMine"]?.key ?? "=",
           )}
           ${this.renderUnitItem(
             cruiseLauncherIcon,
             this._cruiseLaunchers,
             UnitType.CruiseLauncher,
             "cruise_launcher",
-            this.keybinds["buildCruiseLauncher"]?.key ?? "E",
+            this.keybinds["buildCruiseLauncher"]?.key ?? "[",
           )}
           ${this.renderUnitItem(
             cruiseMissileIcon,
             null,
             UnitType.CruiseMissile,
             "cruise_missile",
-            this.keybinds["buildCruiseMissile"]?.key ?? "R",
+            this.keybinds["buildCruiseMissile"]?.key ?? "`",
           )}
         </div>
       </div>

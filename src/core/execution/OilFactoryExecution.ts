@@ -1,7 +1,8 @@
 import { Execution, Game, Unit } from "../game/Game";
 
-const OIL_INCOME_PER_TICK = 200n;
-const OIL_INCOME_INTERVAL = 10;
+const OIL_INCOME_BASE = 15_000n;
+const OIL_INCOME_INTERVAL = 100;
+const OIL_LEVEL_BONUS_PERCENT = 7;
 
 export class OilFactoryExecution implements Execution {
   private active: boolean = true;
@@ -22,8 +23,13 @@ export class OilFactoryExecution implements Execution {
       return;
     }
     if (ticks % OIL_INCOME_INTERVAL === 0) {
-      const level = BigInt(this.oilFactory.level());
-      this.oilFactory.owner().addGold(OIL_INCOME_PER_TICK * level);
+      const level = this.oilFactory.level();
+      const multiplier = Math.pow(1 + OIL_LEVEL_BONUS_PERCENT / 100, level - 1);
+      const megaMul = this.game.config().megaIncome() ? 3 : 1;
+      const amount = BigInt(
+        Math.floor(Number(OIL_INCOME_BASE) * multiplier * megaMul),
+      );
+      this.oilFactory.owner().addGold(amount, this.oilFactory.tile());
     }
   }
 

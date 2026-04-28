@@ -76,6 +76,11 @@ export interface Config {
   disableNavMesh(): boolean;
   disableAlliances(): boolean;
   waterNukes(): boolean;
+  megaIncome(): boolean;
+  cheapBuildings(): boolean;
+  fastConstruction(): boolean;
+  disableNukes(): boolean;
+  disableNaval(): boolean;
   isRandomSpawn(): boolean;
   numSpawnPhaseTurns(): number;
   userSettings(): UserSettings;

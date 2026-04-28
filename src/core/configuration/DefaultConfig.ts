@@ -231,7 +231,25 @@ export class DefaultConfig implements Config {
   }
 
   isUnitDisabled(unitType: UnitType): boolean {
-    return this._gameConfig.disabledUnits?.includes(unitType) ?? false;
+    if (this._gameConfig.disabledUnits?.includes(unitType)) return true;
+    if (
+      this.disableNukes() &&
+      (unitType === UnitType.AtomBomb ||
+        unitType === UnitType.HydrogenBomb ||
+        unitType === UnitType.MIRV ||
+        unitType === UnitType.MissileSilo)
+    ) {
+      return true;
+    }
+    if (
+      this.disableNaval() &&
+      (unitType === UnitType.Warship ||
+        unitType === UnitType.Port ||
+        unitType === UnitType.TransportShip)
+    ) {
+      return true;
+    }
+    return false;
   }
 
   bots(): number {
@@ -266,6 +284,21 @@ export class DefaultConfig implements Config {
   }
   goldMultiplier(): number {
     return this._gameConfig.goldMultiplier ?? 1;
+  }
+  megaIncome(): boolean {
+    return this._gameConfig.megaIncome ?? false;
+  }
+  cheapBuildings(): boolean {
+    return this._gameConfig.cheapBuildings ?? false;
+  }
+  fastConstruction(): boolean {
+    return this._gameConfig.fastConstruction ?? false;
+  }
+  disableNukes(): boolean {
+    return this._gameConfig.disableNukes ?? false;
+  }
+  disableNaval(): boolean {
+    return this._gameConfig.disableNaval ?? false;
   }
   startingGold(playerInfo: PlayerInfo): Gold {
     if (playerInfo.playerType === PlayerType.Bot) {
@@ -472,7 +505,7 @@ export class DefaultConfig implements Config {
         info = {
           cost: this.costWrapper(
             (numUnits: number) =>
-              Math.min(2_000_000, Math.pow(2, numUnits) * 300_000),
+              Math.min(50_000_000, Math.pow(2, numUnits) * 1_200_000),
             UnitType.OilFactory,
           ),
           constructionDuration: this.instantBuild() ? 0 : 4 * 10,
@@ -483,7 +516,7 @@ export class DefaultConfig implements Config {
         info = {
           cost: this.costWrapper(
             (numUnits: number) =>
-              Math.min(1_500_000, Math.pow(2, numUnits) * 200_000),
+              Math.min(2_000_000_000, Math.pow(2, numUnits) * 400_000_000),
             UnitType.CopperMine,
           ),
           constructionDuration: this.instantBuild() ? 0 : 3 * 10,
@@ -513,6 +546,24 @@ export class DefaultConfig implements Config {
         break;
       default:
         assertNever(type);
+    }
+
+    if (this.cheapBuildings()) {
+      const originalCost = info.cost;
+      info.cost = (game: Game, player: Player) => {
+        const c = originalCost(game, player);
+        return c / 2n;
+      };
+    }
+    if (
+      this.fastConstruction() &&
+      info.constructionDuration !== undefined &&
+      info.constructionDuration > 0
+    ) {
+      info.constructionDuration = Math.max(
+        1,
+        Math.floor(info.constructionDuration / 2),
+      );
     }
 
     this.unitInfoCache.set(type, info);
