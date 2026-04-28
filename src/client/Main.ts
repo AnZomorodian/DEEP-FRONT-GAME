@@ -43,7 +43,6 @@ import "./Matchmaking";
 import { MatchmakingModal } from "./Matchmaking";
 import { initNavigation } from "./Navigation";
 import "./NewsModal";
-import "./InfoModal";
 import "./PatternInput";
 import "./SinglePlayerModal";
 import { StoreModal } from "./Store";
@@ -259,9 +258,7 @@ class Client {
     crazyGamesSDK.maybeInit();
     // Prefetch turnstile token so it is available when
     // the user joins a lobby.
-    const prefetchedToken = getTurnstileToken();
-    prefetchedToken.catch(() => {});
-    this.turnstileTokenPromise = prefetchedToken;
+    this.turnstileTokenPromise = getTurnstileToken();
 
     // Wait for components to render before setting version
     await customElements.whenDefined("mobile-nav-bar");
@@ -274,8 +271,7 @@ class Client {
       console.warn("Game version element not found");
     } else {
       const trimmed = version.trim();
-      const stripped = trimmed.replace(/^[vV]/, "");
-      const displayVersion = `V${stripped}`;
+      const displayVersion = trimmed.startsWith("v") ? trimmed : `v${trimmed}`;
       versionElements.forEach((el) => {
         el.textContent = displayVersion;
       });
@@ -805,7 +801,6 @@ class Client {
         "store-modal",
         "language-modal",
         "news-modal",
-        "info-modal",
         "flag-input-modal",
         "account-button",
         "leaderboard-button",
@@ -995,7 +990,7 @@ const hideCrazyGamesElements = () => {
 // Initialize the client when the DOM is loaded
 const bootstrap = () => {
   initLayout();
-  new Client().initialize().catch(console.error);
+  new Client().initialize();
   initNavigation();
 
   // Hide elements immediately

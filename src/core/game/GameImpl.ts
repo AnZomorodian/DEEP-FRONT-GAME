@@ -187,8 +187,7 @@ export class GameImpl implements Game {
   }
 
   private addPlayers() {
-    // Treat any non-Team mode (FFA, BattleRoyale, Doomsday) as FFA-style player setup.
-    if (this.config().gameConfig().gameMode !== GameMode.Team) {
+    if (this.config().gameConfig().gameMode === GameMode.FFA) {
       this._humans.forEach((p) => this.addPlayer(p));
       this._nations.forEach((n) => this.addPlayer(n.playerInfo));
       return;

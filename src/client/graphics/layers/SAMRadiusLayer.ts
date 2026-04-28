@@ -43,8 +43,7 @@ export class SAMRadiusLayer implements Layer {
     this.hoveredShow =
       !!types &&
       (types.indexOf(UnitType.SAMLauncher) !== -1 ||
-        types.indexOf(UnitType.City) !== -1 ||
-        types.indexOf(UnitType.CruiseMissile) !== -1);
+        types.indexOf(UnitType.City) !== -1);
     this.updateVisibility();
   }
 
@@ -83,15 +82,13 @@ export class SAMRadiusLayer implements Layer {
       }
     }
 
-    // show when in ghost mode for silo/sam/atom/hydrogen/cruise
+    // show when in ghost mode for silo/sam/atom/hydrogen
     this.ghostShow =
       this.uiState.ghostStructure === UnitType.MissileSilo ||
-      this.uiState.ghostStructure === UnitType.CruiseLauncher ||
       this.uiState.ghostStructure === UnitType.SAMLauncher ||
       this.uiState.ghostStructure === UnitType.City ||
       this.uiState.ghostStructure === UnitType.AtomBomb ||
-      this.uiState.ghostStructure === UnitType.HydrogenBomb ||
-      this.uiState.ghostStructure === UnitType.CruiseMissile;
+      this.uiState.ghostStructure === UnitType.HydrogenBomb;
     this.updateVisibility();
   }
 

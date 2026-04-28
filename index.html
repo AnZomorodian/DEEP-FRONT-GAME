@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Deep Front</title>
+    <title data-i18n="main.title">OpenFront (ALPHA)</title>
     <link rel="manifest" href="<%- manifestHref %>" />
     <link rel="icon" type="image/svg+xml" href="<%- faviconHref %>" />
 
@@ -42,16 +42,18 @@
     </style>
 
     <!-- SEO -->
+    <link rel="canonical" href="https://openfront.io/" />
     <meta
       name="description"
-      content="Conquer the world in this multiplayer battle royale! Expand your nation, eliminate opponents, and dominate the map in this fast-paced strategy game."
+      content="Conquer the world in this multiplayer battle royale! Expand your nation, eliminate opponents, and dominate the map in this fast-paced IO game."
     />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Deep Front - Battle Royale" />
+    <meta property="og:url" content="https://openfront.io/" />
+    <meta property="og:title" content="OpenFront - Battle Royale" />
     <meta
       property="og:description"
-      content="Conquer the world in this multiplayer battle royale! Expand your nation, eliminate opponents, and dominate the map in this fast-paced strategy game."
+      content="Conquer the world in this multiplayer battle royale! Expand your nation, eliminate opponents, and dominate the map in this fast-paced IO game."
     />
     <meta property="og:image" content="<%- gameplayScreenshotUrl %>" />
     <meta property="og:type" content="game" />
@@ -78,6 +80,12 @@
       );
     </script>
 
+    <!-- CrazyGames SDK -->
+    <script
+      src="https://sdk.crazygames.com/crazygames-sdk-v3.js"
+      async
+    ></script>
+
     <!-- Cloudflare Turnstile -->
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
@@ -85,29 +93,52 @@
       defer
     ></script>
 
-    <!-- Game font: Rajdhani (military / strategy feel) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body,
-      .deep-front-font {
-        font-family:
-          "Rajdhani", "Segoe UI", system-ui, -apple-system, sans-serif;
-        letter-spacing: 0.01em;
+    <script data-cfasync="false">
+      window.ramp = window.ramp || {};
+      window.ramp.que = window.ramp.que || [];
+      window.ramp.passiveMode = true;
+    </script>
+
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag.pubads().set("page_url", "http://openfront.io ");
+      });
+    </script>
+
+    <!-- Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16702609763"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    </style>
+
+      gtag("js", new Date());
+      gtag("config", "AW-16702609763");
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WQGQQ8RDN4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-WQGQQ8RDN4");
+    </script>
   </head>
 
   <body
-    class="deep-front-font h-full select-none min-h-screen bg-neutral-800 transition-opacity duration-300 ease-in-out flex flex-row overflow-hidden"
+    class="h-full select-none font-sans min-h-screen bg-neutral-800 transition-opacity duration-300 ease-in-out flex flex-row overflow-hidden"
   >
     <div id="hex-grid" class="fixed inset-0 -z-50 pointer-events-none">
       <div
@@ -168,11 +199,6 @@
           inline
           class="hidden w-full h-full page-content relative z-50"
         ></news-modal>
-        <info-modal
-          id="page-info"
-          inline
-          class="hidden w-full h-full page-content relative z-50"
-        ></info-modal>
         <single-player-modal
           id="page-single-player"
           inline
@@ -399,5 +425,12 @@
       data-cf-beacon='{"token": "03d93e6fefb349c28ee69b408fa25a13"}'
     ></script>
     <script type="module" src="/src/client/Main.ts"></script>
+    <footer>
+      <script
+        data-cfasync="false"
+        async
+        src="//cdn.intergient.com/1025558/75940/ramp.js"
+      ></script>
+    </footer>
   </body>
 </html>

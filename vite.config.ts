@@ -165,7 +165,7 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
-      tsconfigPaths({ ignoreConfigErrors: true }),
+      tsconfigPaths(),
       ...(!isProduction
         ? [serveProprietaryDir(proprietaryDir, resourcesDir)]
         : []),
@@ -217,14 +217,9 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
-      port: 5000,
-      host: "0.0.0.0",
-      allowedHosts: true,
+      port: 9000,
       // Automatically open the browser when the server starts
-      open: false,
-      watch: {
-        ignored: ["**/.local/**", "**/node_modules/**"],
-      },
+      open: process.env.SKIP_BROWSER_OPEN !== "true",
       proxy: {
         "/lobbies": {
           target: "ws://localhost:3000",

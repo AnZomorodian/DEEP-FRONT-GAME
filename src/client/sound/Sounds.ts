@@ -15,11 +15,8 @@ export type SoundEffect =
   | "build-defense-post"
   | "build-warship"
   | "sam-built"
-  | "sam-hit"
-  | "sam-shoot"
   | "message"
-  | "click"
-  | "victory-song";
+  | "click";
 
 export const soundEffectUrls: ReadonlyMap<SoundEffect, string> = new Map([
   ["ka-ching", assetUrl("sounds/effects/ka-ching.mp3")],
@@ -35,11 +32,8 @@ export const soundEffectUrls: ReadonlyMap<SoundEffect, string> = new Map([
   ["build-defense-post", assetUrl("sounds/effects/build-defense-post.mp3")],
   ["build-warship", assetUrl("sounds/effects/build-warship.mp3")],
   ["sam-built", assetUrl("sounds/effects/sam-built.mp3")],
-  ["sam-hit", assetUrl("sounds/effects/sam-hit.mp3")],
-  ["sam-shoot", assetUrl("sounds/effects/sam-shoot.mp3")],
   ["message", assetUrl("sounds/effects/message.mp3")],
   ["click", assetUrl("sounds/effects/click.mp3")],
-  ["victory-song", assetUrl("sounds/effects/victory-song.mp3")],
 ]);
 
 export class PlaySoundEffectEvent implements GameEvent {

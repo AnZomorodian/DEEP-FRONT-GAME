@@ -1,5 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
+import { assetUrl } from "../../core/AssetUrls";
+import "./NewsBox";
 
 @customElement("play-page")
 export class PlayPage extends LitElement {
@@ -50,7 +52,11 @@ export class PlayPage extends LitElement {
             <div
               class="col-start-2 flex items-center justify-center text-malibu-blue min-w-0"
             >
-              <span class="text-xl font-bold tracking-widest text-malibu-blue uppercase">Deep Front</span>
+              <img
+                src=${assetUrl("images/OpenFrontLogo.svg")}
+                alt="OpenFront"
+                class="h-full w-auto"
+              />
             </div>
 
             <div
@@ -68,6 +74,9 @@ export class PlayPage extends LitElement {
             class="lg:hidden h-[calc(env(safe-area-inset-top)+56px)] lg:col-span-2 -mb-4"
           ></div>
 
+          <!-- News box above username -->
+          <news-box class="lg:col-span-2"></news-box>
+
           <!-- Username: left col -->
           <div
             class="px-2 py-2 bg-surface border-y border-white/10 overflow-visible lg:flex lg:items-center lg:gap-x-2 lg:h-[60px] lg:p-3 lg:relative lg:z-20 lg:border-y-0 lg:rounded-xl"
@@ -76,6 +85,12 @@ export class PlayPage extends LitElement {
               <username-input
                 class="flex-1 min-w-0 h-10 lg:h-[50px]"
               ></username-input>
+              <pattern-input
+                id="pattern-input-mobile"
+                show-select-label
+                adaptive-size
+                class="shrink-0 lg:hidden"
+              ></pattern-input>
               <flag-input
                 id="flag-input-mobile"
                 show-select-label
@@ -84,8 +99,13 @@ export class PlayPage extends LitElement {
             </div>
           </div>
 
-          <!-- Flag: right col -->
+          <!-- Skin + flag: right col -->
           <div class="hidden lg:flex h-[60px] gap-2">
+            <pattern-input
+              id="pattern-input-desktop"
+              show-select-label
+              class="flex-1 h-full"
+            ></pattern-input>
             <flag-input
               id="flag-input-desktop"
               show-select-label

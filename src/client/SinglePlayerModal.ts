@@ -59,20 +59,6 @@ const DEFAULT_OPTIONS = {
   disabledUnits: [] as UnitType[],
   disableAlliances: false,
   waterNukes: false,
-  megaIncome: false,
-  cheapBuildings: false,
-  fastConstruction: false,
-  disableNukes: false,
-  disableNaval: false,
-  bigBombs: false,
-  superTroops: false,
-  noLauncherCooldown: false,
-  cheapMissiles: false,
-  fastNukes: false,
-  limitLaunchers: false,
-  limitOilFactories: false,
-  limitCities: false,
-  limitWarships: false,
 } as const;
 
 @customElement("single-player-modal")
@@ -109,22 +95,6 @@ export class SinglePlayerModal extends BaseModal {
   ];
   @state() private disableAlliances: boolean = DEFAULT_OPTIONS.disableAlliances;
   @state() private waterNukes: boolean = DEFAULT_OPTIONS.waterNukes;
-  @state() private megaIncome: boolean = DEFAULT_OPTIONS.megaIncome;
-  @state() private cheapBuildings: boolean = DEFAULT_OPTIONS.cheapBuildings;
-  @state() private fastConstruction: boolean = DEFAULT_OPTIONS.fastConstruction;
-  @state() private disableNukes: boolean = DEFAULT_OPTIONS.disableNukes;
-  @state() private disableNaval: boolean = DEFAULT_OPTIONS.disableNaval;
-  @state() private bigBombs: boolean = DEFAULT_OPTIONS.bigBombs;
-  @state() private superTroops: boolean = DEFAULT_OPTIONS.superTroops;
-  @state() private noLauncherCooldown: boolean =
-    DEFAULT_OPTIONS.noLauncherCooldown;
-  @state() private cheapMissiles: boolean = DEFAULT_OPTIONS.cheapMissiles;
-  @state() private fastNukes: boolean = DEFAULT_OPTIONS.fastNukes;
-  @state() private limitLaunchers: boolean = DEFAULT_OPTIONS.limitLaunchers;
-  @state() private limitOilFactories: boolean =
-    DEFAULT_OPTIONS.limitOilFactories;
-  @state() private limitCities: boolean = DEFAULT_OPTIONS.limitCities;
-  @state() private limitWarships: boolean = DEFAULT_OPTIONS.limitWarships;
 
   private mapLoader = terrainMapFileLoader;
 
@@ -349,62 +319,6 @@ export class SinglePlayerModal extends BaseModal {
                     labelKey: "single_modal.water_nukes",
                     checked: this.waterNukes,
                   },
-                  {
-                    labelKey: "single_modal.mega_income",
-                    checked: this.megaIncome,
-                  },
-                  {
-                    labelKey: "single_modal.cheap_buildings",
-                    checked: this.cheapBuildings,
-                  },
-                  {
-                    labelKey: "single_modal.fast_construction",
-                    checked: this.fastConstruction,
-                  },
-                  {
-                    labelKey: "single_modal.disable_nukes",
-                    checked: this.disableNukes,
-                  },
-                  {
-                    labelKey: "single_modal.disable_naval",
-                    checked: this.disableNaval,
-                  },
-                  {
-                    labelKey: "single_modal.big_bombs",
-                    checked: this.bigBombs,
-                  },
-                  {
-                    labelKey: "single_modal.super_troops",
-                    checked: this.superTroops,
-                  },
-                  {
-                    labelKey: "single_modal.no_launcher_cooldown",
-                    checked: this.noLauncherCooldown,
-                  },
-                  {
-                    labelKey: "single_modal.cheap_missiles",
-                    checked: this.cheapMissiles,
-                  },
-                  {
-                    labelKey: "single_modal.fast_nukes",
-                    checked: this.fastNukes,
-                  },
-                  {
-                    labelKey: "single_modal.limit_launchers",
-                    checked: this.limitLaunchers,
-                  },
-                  {
-                    labelKey: "single_modal.limit_oil_factories",
-                    checked: this.limitOilFactories,
-                  },
-                  {
-                    labelKey: "single_modal.limit_cities",
-                    checked: this.limitCities,
-                  },
-                  {
-                    labelKey: "single_modal.limit_warships",
-                    checked: this.limitWarships,
-                  },
                 ],
                 inputCards,
               },
@@ -478,20 +392,6 @@ export class SinglePlayerModal extends BaseModal {
       this.startingGold !== DEFAULT_OPTIONS.startingGold ||
       this.disableAlliances !== DEFAULT_OPTIONS.disableAlliances ||
       this.waterNukes !== DEFAULT_OPTIONS.waterNukes ||
-      this.megaIncome !== DEFAULT_OPTIONS.megaIncome ||
-      this.cheapBuildings !== DEFAULT_OPTIONS.cheapBuildings ||
-      this.fastConstruction !== DEFAULT_OPTIONS.fastConstruction ||
-      this.disableNukes !== DEFAULT_OPTIONS.disableNukes ||
-      this.disableNaval !== DEFAULT_OPTIONS.disableNaval ||
-      this.bigBombs !== DEFAULT_OPTIONS.bigBombs ||
-      this.superTroops !== DEFAULT_OPTIONS.superTroops ||
-      this.noLauncherCooldown !== DEFAULT_OPTIONS.noLauncherCooldown ||
-      this.cheapMissiles !== DEFAULT_OPTIONS.cheapMissiles ||
-      this.fastNukes !== DEFAULT_OPTIONS.fastNukes ||
-      this.limitLaunchers !== DEFAULT_OPTIONS.limitLaunchers ||
-      this.limitOilFactories !== DEFAULT_OPTIONS.limitOilFactories ||
-      this.limitCities !== DEFAULT_OPTIONS.limitCities ||
-      this.limitWarships !== DEFAULT_OPTIONS.limitWarships ||
       this.disabledUnits.length > 0
     );
   }
@@ -520,20 +420,6 @@ export class SinglePlayerModal extends BaseModal {
     this.startingGoldValue = DEFAULT_OPTIONS.startingGoldValue;
     this.disableAlliances = DEFAULT_OPTIONS.disableAlliances;
     this.waterNukes = DEFAULT_OPTIONS.waterNukes;
-    this.megaIncome = DEFAULT_OPTIONS.megaIncome;
-    this.cheapBuildings = DEFAULT_OPTIONS.cheapBuildings;
-    this.fastConstruction = DEFAULT_OPTIONS.fastConstruction;
-    this.disableNukes = DEFAULT_OPTIONS.disableNukes;
-    this.disableNaval = DEFAULT_OPTIONS.disableNaval;
-    this.bigBombs = DEFAULT_OPTIONS.bigBombs;
-    this.superTroops = DEFAULT_OPTIONS.superTroops;
-    this.noLauncherCooldown = DEFAULT_OPTIONS.noLauncherCooldown;
-    this.cheapMissiles = DEFAULT_OPTIONS.cheapMissiles;
-    this.fastNukes = DEFAULT_OPTIONS.fastNukes;
-    this.limitLaunchers = DEFAULT_OPTIONS.limitLaunchers;
-    this.limitOilFactories = DEFAULT_OPTIONS.limitOilFactories;
-    this.limitCities = DEFAULT_OPTIONS.limitCities;
-    this.limitWarships = DEFAULT_OPTIONS.limitWarships;
   }
 
   protected onOpen(): void {
@@ -618,48 +504,6 @@ export class SinglePlayerModal extends BaseModal {
         break;
       case "single_modal.water_nukes":
         this.waterNukes = checked;
-        break;
-      case "single_modal.mega_income":
-        this.megaIncome = checked;
-        break;
-      case "single_modal.cheap_buildings":
-        this.cheapBuildings = checked;
-        break;
-      case "single_modal.fast_construction":
-        this.fastConstruction = checked;
-        break;
-      case "single_modal.disable_nukes":
-        this.disableNukes = checked;
-        break;
-      case "single_modal.disable_naval":
-        this.disableNaval = checked;
-        break;
-      case "single_modal.big_bombs":
-        this.bigBombs = checked;
-        break;
-      case "single_modal.super_troops":
-        this.superTroops = checked;
-        break;
-      case "single_modal.no_launcher_cooldown":
-        this.noLauncherCooldown = checked;
-        break;
-      case "single_modal.cheap_missiles":
-        this.cheapMissiles = checked;
-        break;
-      case "single_modal.fast_nukes":
-        this.fastNukes = checked;
-        break;
-      case "single_modal.limit_launchers":
-        this.limitLaunchers = checked;
-        break;
-      case "single_modal.limit_oil_factories":
-        this.limitOilFactories = checked;
-        break;
-      case "single_modal.limit_cities":
-        this.limitCities = checked;
-        break;
-      case "single_modal.limit_warships":
-        this.limitWarships = checked;
         break;
       default:
         break;
@@ -869,22 +713,6 @@ export class SinglePlayerModal extends BaseModal {
                 : {}),
               ...(this.disableAlliances ? { disableAlliances: true } : {}),
               ...(this.waterNukes ? { waterNukes: true } : {}),
-              ...(this.megaIncome ? { megaIncome: true } : {}),
-              ...(this.cheapBuildings ? { cheapBuildings: true } : {}),
-              ...(this.fastConstruction ? { fastConstruction: true } : {}),
-              ...(this.disableNukes ? { disableNukes: true } : {}),
-              ...(this.disableNaval ? { disableNaval: true } : {}),
-              ...(this.bigBombs ? { bigBombs: true } : {}),
-              ...(this.superTroops ? { superTroops: true } : {}),
-              ...(this.noLauncherCooldown
-                ? { noLauncherCooldown: true }
-                : {}),
-              ...(this.cheapMissiles ? { cheapMissiles: true } : {}),
-              ...(this.fastNukes ? { fastNukes: true } : {}),
-              ...(this.limitLaunchers ? { limitLaunchers: true } : {}),
-              ...(this.limitOilFactories ? { limitOilFactories: true } : {}),
-              ...(this.limitCities ? { limitCities: true } : {}),
-              ...(this.limitWarships ? { limitWarships: true } : {}),
             },
             lobbyCreatedAt: Date.now(), // ms; server should be authoritative in MP
           },

@@ -266,7 +266,6 @@ export class UILayer implements Layer {
       case UnitType.Port:
       case UnitType.MissileSilo:
       case UnitType.SAMLauncher:
-      case UnitType.CruiseLauncher:
         if (
           unit.markedForDeletion() !== false ||
           unit.missileReadinesss() < 1
@@ -527,7 +526,6 @@ export class UILayer implements Layer {
     switch (unit.type()) {
       case UnitType.MissileSilo:
       case UnitType.SAMLauncher:
-      case UnitType.CruiseLauncher:
         return !unit.markedForDeletion()
           ? unit.missileReadinesss()
           : this.deletionProgress(this.game, unit);

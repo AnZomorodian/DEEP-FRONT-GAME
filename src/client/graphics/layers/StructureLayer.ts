@@ -15,11 +15,6 @@ const shieldIcon = assetUrl("images/buildings/fortAlt3.png");
 const anchorIcon = assetUrl("images/buildings/port1.png");
 const missileSiloIcon = assetUrl("images/buildings/silo1.png");
 const SAMMissileIcon = assetUrl("images/buildings/silo4.png");
-const oilFactoryIcon = assetUrl("images/buildings/oilFactory.png");
-const copperMineIcon = assetUrl("images/buildings/copperMine.png");
-const cruiseLauncherIcon = assetUrl("images/buildings/cruiseLauncher.png");
-const fishingDockIcon = assetUrl("images/buildings/fishingDock.png");
-const antiShipIcon = assetUrl("images/buildings/antiShip.png");
 
 const underConstructionColor = colord("rgb(150,150,150)");
 
@@ -27,14 +22,12 @@ const underConstructionColor = colord("rgb(150,150,150)");
 const BASE_BORDER_RADIUS = 16.5;
 const BASE_TERRITORY_RADIUS = 13.5;
 const RADIUS_SCALE_FACTOR = 0.5;
-const ZOOM_THRESHOLD = 2.5; // below this zoom level, structures are not rendered
+const ZOOM_THRESHOLD = 4.3; // below this zoom level, structures are not rendered
 
 interface UnitRenderConfig {
   icon: string;
   borderRadius: number;
   territoryRadius: number;
-  /** If set, caps the rendered icon to this many tiles in width/height */
-  maxIconSize?: number;
 }
 
 export class StructureLayer implements Layer {
@@ -76,32 +69,6 @@ export class StructureLayer implements Layer {
       icon: SAMMissileIcon,
       borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
       territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
-    },
-    [UnitType.OilFactory]: {
-      icon: oilFactoryIcon,
-      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
-      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
-    },
-    [UnitType.CopperMine]: {
-      icon: copperMineIcon,
-      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
-      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
-    },
-    [UnitType.CruiseLauncher]: {
-      icon: cruiseLauncherIcon,
-      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
-      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
-    },
-    [UnitType.FishingDock]: {
-      icon: fishingDockIcon,
-      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
-      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
-    },
-    [UnitType.AntiShip]: {
-      icon: antiShipIcon,
-      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
-      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
-      maxIconSize: 32,
     },
   };
 
@@ -278,14 +245,9 @@ export class StructureLayer implements Layer {
 
     this.drawBorder(unit, borderColor, config);
 
-    // Render icon at 1/2 scale for better quality (capped by maxIconSize if set)
-    let scaledWidth = icon.width >> 1;
-    let scaledHeight = icon.height >> 1;
-    if (config.maxIconSize !== undefined) {
-      const scale = Math.min(1, config.maxIconSize / Math.max(scaledWidth, scaledHeight));
-      scaledWidth = Math.round(scaledWidth * scale);
-      scaledHeight = Math.round(scaledHeight * scale);
-    }
+    // Render icon at 1/2 scale for better quality
+    const scaledWidth = icon.width >> 1;
+    const scaledHeight = icon.height >> 1;
     const startX = this.game.x(unit.tile()) - (scaledWidth >> 1);
     const startY = this.game.y(unit.tile()) - (scaledHeight >> 1);
 

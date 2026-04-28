@@ -35,14 +35,7 @@ export class FactoryExecution implements Execution {
     const structures = this.game.nearbyUnits(
       this.factory.tile()!,
       this.game.config().trainStationMaxRange(),
-      [
-        UnitType.City,
-        UnitType.Port,
-        UnitType.Factory,
-        UnitType.OilFactory,
-        UnitType.CopperMine,
-        UnitType.FishingDock,
-      ],
+      [UnitType.City, UnitType.Port, UnitType.Factory],
     );
 
     this.game.addExecution(new TrainStationExecution(this.factory, true));

@@ -73,20 +73,6 @@ export class HostLobbyModal extends BaseModal {
   @state() private startingGoldValue: number | undefined = undefined;
   @state() private disableAlliances: boolean = false;
   @state() private waterNukes: boolean = false;
-  @state() private megaIncome: boolean = false;
-  @state() private cheapBuildings: boolean = false;
-  @state() private fastConstruction: boolean = false;
-  @state() private disableNukes: boolean = false;
-  @state() private disableNaval: boolean = false;
-  @state() private bigBombs: boolean = false;
-  @state() private superTroops: boolean = false;
-  @state() private noLauncherCooldown: boolean = false;
-  @state() private cheapMissiles: boolean = false;
-  @state() private fastNukes: boolean = false;
-  @state() private limitLaunchers: boolean = false;
-  @state() private limitOilFactories: boolean = false;
-  @state() private limitCities: boolean = false;
-  @state() private limitWarships: boolean = false;
   @state() private lobbyId = "";
   @state() private lobbyUrlSuffix = "";
   @state() private clients: ClientInfo[] = [];
@@ -365,62 +351,6 @@ export class HostLobbyModal extends BaseModal {
                     checked: this.waterNukes,
                   },
                   {
-                    labelKey: "host_modal.mega_income",
-                    checked: this.megaIncome,
-                  },
-                  {
-                    labelKey: "host_modal.cheap_buildings",
-                    checked: this.cheapBuildings,
-                  },
-                  {
-                    labelKey: "host_modal.fast_construction",
-                    checked: this.fastConstruction,
-                  },
-                  {
-                    labelKey: "host_modal.disable_nukes",
-                    checked: this.disableNukes,
-                  },
-                  {
-                    labelKey: "host_modal.disable_naval",
-                    checked: this.disableNaval,
-                  },
-                  {
-                    labelKey: "host_modal.big_bombs",
-                    checked: this.bigBombs,
-                  },
-                  {
-                    labelKey: "host_modal.super_troops",
-                    checked: this.superTroops,
-                  },
-                  {
-                    labelKey: "host_modal.no_launcher_cooldown",
-                    checked: this.noLauncherCooldown,
-                  },
-                  {
-                    labelKey: "host_modal.cheap_missiles",
-                    checked: this.cheapMissiles,
-                  },
-                  {
-                    labelKey: "host_modal.fast_nukes",
-                    checked: this.fastNukes,
-                  },
-                  {
-                    labelKey: "host_modal.limit_launchers",
-                    checked: this.limitLaunchers,
-                  },
-                  {
-                    labelKey: "host_modal.limit_oil_factories",
-                    checked: this.limitOilFactories,
-                  },
-                  {
-                    labelKey: "host_modal.limit_cities",
-                    checked: this.limitCities,
-                  },
-                  {
-                    labelKey: "host_modal.limit_warships",
-                    checked: this.limitWarships,
-                  },
-                  {
                     labelKey: "host_modal.host_cheats",
                     checked: this.hostCheatsEnabled,
                   },
@@ -617,20 +547,6 @@ export class HostLobbyModal extends BaseModal {
     this.startingGoldValue = undefined;
     this.disableAlliances = false;
     this.waterNukes = false;
-    this.megaIncome = false;
-    this.cheapBuildings = false;
-    this.fastConstruction = false;
-    this.disableNukes = false;
-    this.disableNaval = false;
-    this.bigBombs = false;
-    this.superTroops = false;
-    this.noLauncherCooldown = false;
-    this.cheapMissiles = false;
-    this.fastNukes = false;
-    this.limitLaunchers = false;
-    this.limitOilFactories = false;
-    this.limitCities = false;
-    this.limitWarships = false;
     this.hostCheatsEnabled = false;
     this.hostCheatInfiniteGold = false;
     this.hostCheatInfiniteTroops = false;
@@ -720,62 +636,6 @@ export class HostLobbyModal extends BaseModal {
         break;
       case "host_modal.water_nukes":
         this.waterNukes = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.mega_income":
-        this.megaIncome = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.cheap_buildings":
-        this.cheapBuildings = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.fast_construction":
-        this.fastConstruction = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.disable_nukes":
-        this.disableNukes = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.disable_naval":
-        this.disableNaval = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.big_bombs":
-        this.bigBombs = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.super_troops":
-        this.superTroops = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.no_launcher_cooldown":
-        this.noLauncherCooldown = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.cheap_missiles":
-        this.cheapMissiles = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.fast_nukes":
-        this.fastNukes = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.limit_launchers":
-        this.limitLaunchers = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.limit_oil_factories":
-        this.limitOilFactories = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.limit_cities":
-        this.limitCities = checked;
-        this.putGameConfig();
-        break;
-      case "host_modal.limit_warships":
-        this.limitWarships = checked;
         this.putGameConfig();
         break;
       case "host_modal.host_cheats":
@@ -1119,20 +979,6 @@ export class HostLobbyModal extends BaseModal {
                 : null,
             disableAlliances: this.disableAlliances || null,
             waterNukes: this.waterNukes ? true : null,
-            megaIncome: this.megaIncome ? true : null,
-            cheapBuildings: this.cheapBuildings ? true : null,
-            fastConstruction: this.fastConstruction ? true : null,
-            disableNukes: this.disableNukes ? true : null,
-            disableNaval: this.disableNaval ? true : null,
-            bigBombs: this.bigBombs ? true : null,
-            superTroops: this.superTroops ? true : null,
-            noLauncherCooldown: this.noLauncherCooldown ? true : null,
-            cheapMissiles: this.cheapMissiles ? true : null,
-            fastNukes: this.fastNukes ? true : null,
-            limitLaunchers: this.limitLaunchers ? true : null,
-            limitOilFactories: this.limitOilFactories ? true : null,
-            limitCities: this.limitCities ? true : null,
-            limitWarships: this.limitWarships ? true : null,
             hostCheats: this.hostCheatsEnabled
               ? {
                   infiniteGold: this.hostCheatInfiniteGold || undefined,

@@ -21,7 +21,6 @@ export enum GameEnv {
   Dev,
   Preprod,
   Prod,
-  SelfHosted,
 }
 
 export interface ServerConfig {
@@ -77,21 +76,6 @@ export interface Config {
   disableNavMesh(): boolean;
   disableAlliances(): boolean;
   waterNukes(): boolean;
-  megaIncome(): boolean;
-  cheapBuildings(): boolean;
-  fastConstruction(): boolean;
-  disableNukes(): boolean;
-  disableNaval(): boolean;
-  bigBombs(): boolean;
-  superTroops(): boolean;
-  noLauncherCooldown(): boolean;
-  cheapMissiles(): boolean;
-  fastNukes(): boolean;
-  limitLaunchers(): boolean;
-  limitOilFactories(): boolean;
-  limitCities(): boolean;
-  limitWarships(): boolean;
-  maxUnitCount(unitType: UnitType): number;
   isRandomSpawn(): boolean;
   numSpawnPhaseTurns(): number;
   userSettings(): UserSettings;
@@ -161,7 +145,7 @@ export interface Config {
   safeFromPiratesCooldownMax(): number;
   defensePostRange(): number;
   SAMCooldown(): number;
-  SiloCooldown(type?: UnitType): number;
+  SiloCooldown(): number;
   minDistanceBetweenPlayers(): number;
   defensePostDefenseBonus(): number;
   defensePostSpeedBonus(): number;
@@ -177,8 +161,6 @@ export interface Config {
   warshipPortSwitchThreshold(): number;
   defensePostShellAttackRate(): number;
   defensePostTargettingRange(): number;
-  antiShipRange(): number;
-  antiShipCooldown(level: number): number;
   // 0-1
   traitorDefenseDebuff(): number;
   traitorDuration(): number;

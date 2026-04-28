@@ -171,21 +171,14 @@ export class UnitView {
 
     let readiness = missilesReady / maxMissiles;
 
-    const isSAM = this.data.unitType === UnitType.SAMLauncher;
-    const samCooldown = this.gameView.config().SAMCooldown();
-    const typeQueue = this.data.missileTypeQueue ?? [];
+    const cooldownDuration =
+      this.data.unitType === UnitType.SAMLauncher
+        ? this.gameView.config().SAMCooldown()
+        : this.gameView.config().SiloCooldown();
 
-    for (let i = 0; i < this.data.missileTimerQueue.length; i++) {
-      const cooldown = this.data.missileTimerQueue[i];
-      const cooldownDuration = isSAM
-        ? samCooldown
-        : this.gameView.config().SiloCooldown(typeQueue[i]);
-      if (cooldownDuration <= 0) {
-        readiness += 1 / maxMissiles;
-        continue;
-      }
+    for (const cooldown of this.data.missileTimerQueue) {
       const cooldownProgress = this.gameView.ticks() - cooldown;
-      const cooldownRatio = Math.min(1, cooldownProgress / cooldownDuration);
+      const cooldownRatio = cooldownProgress / cooldownDuration;
       const adjusted = cooldownRatio / maxMissiles;
       readiness += adjusted;
     }

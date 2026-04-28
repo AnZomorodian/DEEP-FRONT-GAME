@@ -100,12 +100,6 @@ const unitOptions: { type: UnitType; translationKey: string }[] = [
   { type: UnitType.HydrogenBomb, translationKey: "unit_type.hydrogen_bomb" },
   { type: UnitType.MIRV, translationKey: "unit_type.mirv" },
   { type: UnitType.Factory, translationKey: "unit_type.factory" },
-  { type: UnitType.OilFactory, translationKey: "unit_type.oil_factory" },
-  { type: UnitType.CopperMine, translationKey: "unit_type.copper_mine" },
-  { type: UnitType.CruiseLauncher, translationKey: "unit_type.cruise_launcher" },
-  { type: UnitType.CruiseMissile, translationKey: "unit_type.cruise_missile" },
-  { type: UnitType.FishingDock, translationKey: "unit_type.fishing_dock" },
-  { type: UnitType.AntiShip, translationKey: "unit_type.anti_ship" },
 ];
 
 const MAP_ICON = svg`<path
@@ -383,26 +377,19 @@ export class GameConfigSettings extends LitElement {
           "host_modal.mode",
           html`
             <div class="grid grid-cols-2 gap-4">
-              ${(
-                [
-                  [GameMode.FFA, "game_mode.ffa"],
-                  [GameMode.Team, "game_mode.teams"],
-                  [GameMode.BattleRoyale, "game_mode.battle_royale"],
-                  [GameMode.Doomsday, "game_mode.doomsday"],
-                  [GameMode.Blitz, "game_mode.blitz"],
-                  [GameMode.Chaos, "game_mode.chaos"],
-                ] as [GameMode, string][]
-              ).map(([mode, labelKey]) => {
+              ${[GameMode.FFA, GameMode.Team].map((mode) => {
                 const isSelected = settings.gameMode.selected === mode;
                 return html`
                   <button
-                    class="${cardClass(isSelected, "py-4 text-center")}"
+                    class="${cardClass(isSelected, "py-6 text-center")}"
                     @click=${() => this.handleGameModeSelect(mode)}
                   >
                     <span
                       class="text-sm font-bold text-white uppercase tracking-widest"
                     >
-                      ${translateText(labelKey)}
+                      ${mode === GameMode.FFA
+                        ? translateText("game_mode.ffa")
+                        : translateText("game_mode.teams")}
                     </span>
                   </button>
                 `;
@@ -410,7 +397,7 @@ export class GameConfigSettings extends LitElement {
             </div>
           `,
         )}
-        ${settings.gameMode.selected !== GameMode.Team
+        ${settings.gameMode.selected === GameMode.FFA
           ? nothing
           : html`
               <section class="space-y-6">

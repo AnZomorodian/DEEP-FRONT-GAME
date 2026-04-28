@@ -25,8 +25,7 @@ export class MissileSiloExecution implements Execution {
     }
 
     const cooldown =
-      this.mg.config().SiloCooldown(this.silo.frontMissileType()) -
-      (this.mg.ticks() - frontTime);
+      this.mg.config().SiloCooldown() - (this.mg.ticks() - frontTime);
 
     if (cooldown <= 0) {
       this.silo.reloadMissile();

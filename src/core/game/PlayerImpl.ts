@@ -1008,42 +1008,12 @@ export class PlayerImpl implements Player {
     return closest?.unit ?? false;
   }
 
-  private currentOwnedCount(unitType: UnitType): number {
-    let n = 0;
-    for (const u of this._units) {
-      if (u.type() === unitType) n++;
-    }
-    return n;
-  }
-
   private canBuildUnitType(
     unitType: UnitType,
     knownCost: Gold | null = null,
-    skipMaxCheck: boolean = false,
   ): boolean {
     if (this.mg.config().isUnitDisabled(unitType)) {
       return false;
-    }
-    if (!skipMaxCheck) {
-      const max = this.mg.config().maxUnitCount(unitType);
-      if (Number.isFinite(max)) {
-        let current = this.currentOwnedCount(unitType);
-        // Combined cap for "all missile launchers"
-        if (
-          this.mg.config().limitLaunchers() &&
-          (unitType === UnitType.MissileSilo ||
-            unitType === UnitType.CruiseLauncher)
-        ) {
-          const other =
-            unitType === UnitType.MissileSilo
-              ? UnitType.CruiseLauncher
-              : UnitType.MissileSilo;
-          current += this.currentOwnedCount(other);
-        }
-        if (current >= max) {
-          return false;
-        }
-      }
     }
     const cost = knownCost ?? this.mg.unitInfo(unitType).cost(this.mg, this);
     if (this._gold < cost) {
@@ -1076,12 +1046,7 @@ export class PlayerImpl implements Player {
     if (!this.canUpgradeUnitType(unit.type())) {
       return false;
     }
-    const maxLevel = this.mg.unitInfo(unit.type()).maxLevel;
-    if (maxLevel !== undefined && unit.level() >= maxLevel) {
-      return false;
-    }
-    // Upgrades operate on existing units, so they bypass per-player max caps.
-    if (!this.canBuildUnitType(unit.type(), null, true)) {
+    if (!this.canBuildUnitType(unit.type())) {
       return false;
     }
     if (!this.isUnitValidToUpgrade(unit)) {
@@ -1121,13 +1086,8 @@ export class PlayerImpl implements Player {
       let canUpgrade: number | false = false;
       let canBuild: TileRef | false = false;
 
-      if (tile !== null && !inSpawnPhase) {
-        // Upgrades bypass the per-player max-count cap (skipMaxCheck=true),
-        // so check them independently from the new-build check.
-        if (
-          this.canBuildUnitType(u, cost, true) &&
-          this.canUpgradeUnitType(u)
-        ) {
+      if (tile !== null && this.canBuildUnitType(u, cost) && !inSpawnPhase) {
+        if (this.canUpgradeUnitType(u)) {
           const existingUnit = this.findExistingUnitToUpgrade(u, tile);
           if (
             existingUnit !== false &&
@@ -1136,9 +1096,7 @@ export class PlayerImpl implements Player {
             canUpgrade = existingUnit.id();
           }
         }
-        if (this.canBuildUnitType(u, cost)) {
-          canBuild = this.canSpawnUnitType(u, tile, validTiles);
-        }
+        canBuild = this.canSpawnUnitType(u, tile, validTiles);
       }
 
       const buildNew = canBuild !== false && canUpgrade === false;
@@ -1185,7 +1143,6 @@ export class PlayerImpl implements Player {
         return this.nukeSpawn(targetTile, unitType);
       case UnitType.AtomBomb:
       case UnitType.HydrogenBomb:
-      case UnitType.CruiseMissile:
         return this.nukeSpawn(targetTile, unitType);
       case UnitType.MIRVWarhead:
         return targetTile;
@@ -1207,15 +1164,7 @@ export class PlayerImpl implements Player {
       case UnitType.SAMLauncher:
       case UnitType.City:
       case UnitType.Factory:
-      case UnitType.OilFactory:
-      case UnitType.CopperMine:
-      case UnitType.CruiseLauncher:
         return this.landBasedStructureSpawn(targetTile, validTiles);
-      case UnitType.FishingDock:
-      case UnitType.AntiShip:
-        return this.fishingSpawn(targetTile, validTiles);
-      case UnitType.AntiShipMissile:
-        return targetTile;
       default:
         assertNever(unitType);
     }
@@ -1255,15 +1204,9 @@ export class PlayerImpl implements Player {
       }
     }
 
-    // choose launcher type based on nuke type
-    const launcherType =
-      nukeType === UnitType.CruiseMissile
-        ? UnitType.CruiseLauncher
-        : UnitType.MissileSilo;
-
-    // only get launchers that are not on cooldown and not under construction
+    // only get missilesilos that are not on cooldown and not under construction
     const bestSilo = findClosestBy(
-      this.units(launcherType),
+      this.units(UnitType.MissileSilo),
       (silo) => mg.manhattanDist(silo.tile(), tile),
       (silo) =>
         silo.isActive() && !silo.isInCooldown() && !silo.isUnderConstruction(),
@@ -1367,32 +1310,6 @@ export class PlayerImpl implements Player {
         this.mg.euclideanDistSquared(b, tile),
     );
     return valid;
-  }
-
-  fishingSpawn(
-    tile: TileRef,
-    validTiles: TileRef[] | null = null,
-  ): TileRef | false {
-    const spawns = Array.from(
-      this.mg.bfs(
-        tile,
-        manhattanDistFN(tile, this.mg.config().radiusPortSpawn()),
-      ),
-    )
-      .filter((t) => this.mg.owner(t) === this && this.mg.isShore(t))
-      .sort(
-        (a, b) =>
-          this.mg.manhattanDist(a, tile) - this.mg.manhattanDist(b, tile),
-      );
-    const validTileSet = new Set(
-      validTiles ?? this.validStructureSpawnTiles(tile),
-    );
-    for (const t of spawns) {
-      if (validTileSet.has(t)) {
-        return t;
-      }
-    }
-    return false;
   }
 
   tradeShipSpawn(targetTile: TileRef): TileRef | false {

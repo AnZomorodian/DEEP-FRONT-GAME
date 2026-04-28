@@ -344,12 +344,14 @@ export class InputHandler {
 
       if (
         this.activeKeys.has(this.keybinds.zoomOut) ||
+        this.activeKeys.has("Minus") ||
         this.activeKeys.has("NumpadSubtract")
       ) {
         this.eventBus.emit(new ZoomEvent(cx, cy, this.ZOOM_SPEED));
       }
       if (
         this.activeKeys.has(this.keybinds.zoomIn) ||
+        this.activeKeys.has("Equal") ||
         this.activeKeys.has("NumpadAdd")
       ) {
         this.eventBus.emit(new ZoomEvent(cx, cy, -this.ZOOM_SPEED));
@@ -494,19 +496,13 @@ export class InputHandler {
         this.eventBus.emit(new DoGroundAttackEvent());
       }
 
-      if (
-        this.keybindMatchesEvent(e, this.keybinds.attackRatioDown) ||
-        (e.code === "Minus" && !e.metaKey && !e.ctrlKey)
-      ) {
+      if (this.keybindMatchesEvent(e, this.keybinds.attackRatioDown)) {
         e.preventDefault();
         const increment = this.userSettings.attackRatioIncrement();
         this.eventBus.emit(new AttackRatioEvent(-increment));
       }
 
-      if (
-        this.keybindMatchesEvent(e, this.keybinds.attackRatioUp) ||
-        (e.code === "Equal" && !e.metaKey && !e.ctrlKey)
-      ) {
+      if (this.keybindMatchesEvent(e, this.keybinds.attackRatioUp)) {
         e.preventDefault();
         const increment = this.userSettings.attackRatioIncrement();
         this.eventBus.emit(new AttackRatioEvent(increment));
@@ -935,11 +931,6 @@ export class InputHandler {
       { key: "buildHydrogenBomb", type: UnitType.HydrogenBomb },
       { key: "buildWarship", type: UnitType.Warship },
       { key: "buildMIRV", type: UnitType.MIRV },
-      { key: "buildOilFactory", type: UnitType.OilFactory },
-      { key: "buildCopperMine", type: UnitType.CopperMine },
-      { key: "buildCruiseLauncher", type: UnitType.CruiseLauncher },
-      { key: "buildCruiseMissile", type: UnitType.CruiseMissile },
-      { key: "buildFishingDock", type: UnitType.FishingDock },
     ];
     for (const { key, type } of buildKeybinds) {
       if (this.buildKeybindMatches(code, shiftKey, this.keybinds[key]))

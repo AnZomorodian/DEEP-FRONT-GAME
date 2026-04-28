@@ -14,11 +14,6 @@ const factoryIcon = assetUrl("images/FactoryUnit.png");
 const missileSiloIcon = assetUrl("images/MissileSiloUnit.png");
 const SAMMissileIcon = assetUrl("images/SamLauncherUnit.png");
 const shieldIcon = assetUrl("images/ShieldIcon.png");
-const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
-const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
-const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
-const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
-const antiShipSmallIcon = assetUrl("images/AntiShipIcon.svg");
 
 export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.City]: "circle",
@@ -27,16 +22,10 @@ export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.DefensePost]: "octagon",
   [UnitType.SAMLauncher]: "square",
   [UnitType.MissileSilo]: "triangle",
-  [UnitType.OilFactory]: "circle",
-  [UnitType.CopperMine]: "pentagon",
-  [UnitType.CruiseLauncher]: "triangle",
-  [UnitType.FishingDock]: "octagon",
-  [UnitType.AntiShip]: "square",
   [UnitType.Warship]: "cross",
   [UnitType.AtomBomb]: "cross",
   [UnitType.HydrogenBomb]: "cross",
   [UnitType.MIRV]: "cross",
-  [UnitType.CruiseMissile]: "cross",
 };
 export const LEVEL_SCALE_FACTOR = 3;
 export const ICON_SCALE_FACTOR_ZOOMED_IN = 3.5;
@@ -78,11 +67,6 @@ export class SpriteFactory {
     [UnitType.Port, { iconPath: anchorIcon, image: null }],
     [UnitType.MissileSilo, { iconPath: missileSiloIcon, image: null }],
     [UnitType.SAMLauncher, { iconPath: SAMMissileIcon, image: null }],
-    [UnitType.OilFactory, { iconPath: oilFactoryIcon, image: null }],
-    [UnitType.CopperMine, { iconPath: copperMineIcon, image: null }],
-    [UnitType.CruiseLauncher, { iconPath: cruiseLauncherIcon, image: null }],
-    [UnitType.FishingDock, { iconPath: fishingDockIcon, image: null }],
-    [UnitType.AntiShip, { iconPath: antiShipSmallIcon, image: null }],
   ]);
   constructor(
     theme: Theme,
@@ -491,25 +475,17 @@ export class SpriteFactory {
       case UnitType.DefensePost:
         radius = this.game.config().defensePostRange();
         break;
-      case UnitType.AntiShip:
-        radius = this.game.config().antiShipRange();
-        break;
       case UnitType.AtomBomb:
         radius = this.game.config().nukeMagnitudes(UnitType.AtomBomb).outer;
         break;
       case UnitType.HydrogenBomb:
         radius = this.game.config().nukeMagnitudes(UnitType.HydrogenBomb).outer;
         break;
-      case UnitType.CruiseMissile:
-        radius = this.game.config().nukeMagnitudes(UnitType.CruiseMissile).outer;
-        break;
       default:
         return null;
     }
-    const isNuke =
-      type === UnitType.AtomBomb ||
-      type === UnitType.HydrogenBomb ||
-      type === UnitType.CruiseMissile;
+    // Add warning colors (red/orange) when targeting an ally to indicate alliance will break
+    const isNuke = type === UnitType.AtomBomb || type === UnitType.HydrogenBomb;
     const fillColor = targetingAlly && isNuke ? 0xff6b35 : 0xffffff;
     const fillAlpha = targetingAlly && isNuke ? 0.35 : 0.2;
     const strokeColor = targetingAlly && isNuke ? 0xff4444 : 0xffffff;

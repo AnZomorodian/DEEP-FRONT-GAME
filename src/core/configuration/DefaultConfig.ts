@@ -204,38 +204,10 @@ export class DefaultConfig implements Config {
     return 5 - falloutRatio * 2;
   }
   SAMCooldown(): number {
-    return 50;
+    return 120;
   }
-  SiloCooldown(type?: UnitType): number {
-    if (this.noLauncherCooldown()) return 0;
-    let base: number;
-    switch (type) {
-      case UnitType.HydrogenBomb:
-        base = 125;
-        break;
-      case UnitType.MIRV:
-      case UnitType.MIRVWarhead:
-        base = 300;
-        break;
-      case UnitType.AtomBomb:
-        base = 80;
-        break;
-      case UnitType.CruiseMissile:
-        // Must mirror CruiseLauncherExecution.CRUISE_RELOAD_TICKS
-        base = 55;
-        break;
-      default:
-        base = 80;
-    }
-    // Doomsday reloads faster — nuke warfare ramps up
-    if (this._gameConfig.gameMode === GameMode.Doomsday) {
-      base = Math.round(base * 0.6);
-    }
-    // Chaos: everything fires faster
-    if (this._gameConfig.gameMode === GameMode.Chaos) {
-      base = Math.round(base * 0.5);
-    }
-    return base;
+  SiloCooldown(): number {
+    return 75;
   }
 
   defensePostRange(): number {
@@ -259,25 +231,7 @@ export class DefaultConfig implements Config {
   }
 
   isUnitDisabled(unitType: UnitType): boolean {
-    if (this._gameConfig.disabledUnits?.includes(unitType)) return true;
-    if (
-      this.disableNukes() &&
-      (unitType === UnitType.AtomBomb ||
-        unitType === UnitType.HydrogenBomb ||
-        unitType === UnitType.MIRV ||
-        unitType === UnitType.MissileSilo)
-    ) {
-      return true;
-    }
-    if (
-      this.disableNaval() &&
-      (unitType === UnitType.Warship ||
-        unitType === UnitType.Port ||
-        unitType === UnitType.TransportShip)
-    ) {
-      return true;
-    }
-    return false;
+    return this._gameConfig.disabledUnits?.includes(unitType) ?? false;
   }
 
   bots(): number {
@@ -312,67 +266,6 @@ export class DefaultConfig implements Config {
   }
   goldMultiplier(): number {
     return this._gameConfig.goldMultiplier ?? 1;
-  }
-  megaIncome(): boolean {
-    return this._gameConfig.megaIncome ?? false;
-  }
-  cheapBuildings(): boolean {
-    return this._gameConfig.cheapBuildings ?? false;
-  }
-  fastConstruction(): boolean {
-    return this._gameConfig.fastConstruction ?? false;
-  }
-  disableNukes(): boolean {
-    return this._gameConfig.disableNukes ?? false;
-  }
-  disableNaval(): boolean {
-    return this._gameConfig.disableNaval ?? false;
-  }
-  bigBombs(): boolean {
-    return this._gameConfig.bigBombs ?? false;
-  }
-  superTroops(): boolean {
-    return this._gameConfig.superTroops ?? false;
-  }
-  noLauncherCooldown(): boolean {
-    return this._gameConfig.noLauncherCooldown ?? false;
-  }
-  cheapMissiles(): boolean {
-    return this._gameConfig.cheapMissiles ?? false;
-  }
-  fastNukes(): boolean {
-    return this._gameConfig.fastNukes ?? false;
-  }
-  limitLaunchers(): boolean {
-    return this._gameConfig.limitLaunchers ?? false;
-  }
-  limitOilFactories(): boolean {
-    return this._gameConfig.limitOilFactories ?? false;
-  }
-  limitCities(): boolean {
-    return this._gameConfig.limitCities ?? false;
-  }
-  limitWarships(): boolean {
-    return this._gameConfig.limitWarships ?? false;
-  }
-  maxUnitCount(unitType: UnitType): number {
-    if (
-      this.limitLaunchers() &&
-      (unitType === UnitType.MissileSilo ||
-        unitType === UnitType.CruiseLauncher)
-    ) {
-      return 5;
-    }
-    if (this.limitOilFactories() && unitType === UnitType.OilFactory) {
-      return 3;
-    }
-    if (this.limitCities() && unitType === UnitType.City) {
-      return 10;
-    }
-    if (this.limitWarships() && unitType === UnitType.Warship) {
-      return 5;
-    }
-    return Infinity;
   }
   startingGold(playerInfo: PlayerInfo): Gold {
     if (playerInfo.playerType === PlayerType.Bot) {
@@ -541,10 +434,11 @@ export class DefaultConfig implements Config {
         break;
       case UnitType.SAMLauncher:
         info = {
-          cost: this.costWrapper((numUnits: number) => {
-            const tiers = [1_000_000, 1_500_000, 3_000_000];
-            return tiers[Math.min(numUnits, tiers.length - 1)];
-          }, UnitType.SAMLauncher),
+          cost: this.costWrapper(
+            (numUnits: number) =>
+              Math.min(3_000_000, (numUnits + 1) * 1_500_000),
+            UnitType.SAMLauncher,
+          ),
           constructionDuration: this.instantBuild()
             ? 0
             : SAM_CONSTRUCTION_TICKS,
@@ -574,133 +468,13 @@ export class DefaultConfig implements Config {
           upgradable: true,
         };
         break;
-      case UnitType.OilFactory:
-        info = {
-          cost: this.costWrapper((numUnits: number) => {
-            const tiers = [1_200_000, 1_300_000, 1_500_000];
-            return tiers[Math.min(numUnits, tiers.length - 1)];
-          }, UnitType.OilFactory),
-          constructionDuration: this.instantBuild() ? 0 : 25 * 10,
-          upgradable: true,
-        };
-        break;
-      case UnitType.CopperMine:
-        info = {
-          cost: this.costWrapper((numUnits: number) => {
-            const tiers = [600_000, 700_000, 900_000, 1_100_000];
-            return tiers[Math.min(numUnits, tiers.length - 1)];
-          }, UnitType.CopperMine),
-          constructionDuration: this.instantBuild() ? 0 : 15 * 10,
-          upgradable: true,
-        };
-        break;
-      case UnitType.CruiseLauncher:
-        info = {
-          cost: this.costWrapper((numUnits: number) => {
-            const tiers = [1_000_000, 1_500_000];
-            return tiers[Math.min(numUnits, tiers.length - 1)];
-          }, UnitType.CruiseLauncher),
-          constructionDuration: this.instantBuild() ? 0 : 8 * 10,
-          upgradable: true,
-        };
-        break;
-      case UnitType.CruiseMissile:
-        info = {
-          cost: this.costWrapper(() => 500_000, UnitType.CruiseMissile),
-        };
-        break;
-      case UnitType.FishingDock:
-        info = {
-          cost: (_game: Game, player: Player) => {
-            if (
-              player.type() === PlayerType.Human &&
-              this.hasInfiniteGoldFor(player)
-            ) {
-              return 0n;
-            }
-            const n = player.unitsConstructed(UnitType.FishingDock);
-            const tiers = [200_000, 250_000, 300_000, 500_000];
-            const base = tiers[Math.min(n, tiers.length - 1)];
-            return BigInt(this.cheapBuildings() ? Math.floor(base / 2) : base);
-          },
-          constructionDuration: this.instantBuild() ? 0 : 10 * 10,
-          upgradable: true,
-          maxLevel: 10,
-        };
-        break;
       case UnitType.Train:
-        info = {
-          cost: () => 0n,
-        };
-        break;
-      case UnitType.AntiShip:
-        info = {
-          cost: this.costWrapper(
-            (numUnits: number) => {
-              const tiers = [600_000, 900_000, 1_200_000];
-              const base = tiers[Math.min(numUnits, tiers.length - 1)];
-              return this.cheapBuildings() ? Math.floor(base / 2) : base;
-            },
-            UnitType.AntiShip,
-          ),
-          constructionDuration: this.instantBuild() ? 0 : 15 * 10,
-          upgradable: true,
-          maxLevel: 3,
-        };
-        break;
-      case UnitType.AntiShipMissile:
         info = {
           cost: () => 0n,
         };
         break;
       default:
         assertNever(type);
-    }
-
-    const isMissile =
-      type === UnitType.AtomBomb ||
-      type === UnitType.HydrogenBomb ||
-      type === UnitType.MIRV ||
-      type === UnitType.CruiseMissile;
-    const halveCost =
-      (this.cheapBuildings() && !isMissile) ||
-      (this.cheapMissiles() && isMissile) ||
-      (this.cheapBuildings() && isMissile && !this.cheapMissiles());
-    if (halveCost) {
-      const originalCost = info.cost;
-      info.cost = (game: Game, player: Player) => {
-        const c = originalCost(game, player);
-        return c / 2n;
-      };
-    }
-    if (
-      this.fastConstruction() &&
-      info.constructionDuration !== undefined &&
-      info.constructionDuration > 0
-    ) {
-      info.constructionDuration = Math.max(
-        1,
-        Math.floor(info.constructionDuration / 2),
-      );
-    }
-    // Blitz: buildings go up fast
-    if (
-      this._gameConfig.gameMode === GameMode.Blitz &&
-      info.constructionDuration !== undefined &&
-      info.constructionDuration > 0
-    ) {
-      info.constructionDuration = Math.max(
-        1,
-        Math.floor(info.constructionDuration / 2),
-      );
-    }
-    // Chaos: all buildings cost 50% less
-    if (this._gameConfig.gameMode === GameMode.Chaos && info.cost) {
-      const originalCostChaos = info.cost;
-      info.cost = (game: Game, player: Player) => {
-        const c = originalCostChaos(game, player);
-        return c / 2n;
-      };
     }
 
     this.unitInfoCache.set(type, info);
@@ -1016,46 +790,24 @@ export class DefaultConfig implements Config {
   }
 
   startManpower(playerInfo: PlayerInfo): number {
-    let base: number;
     if (playerInfo.playerType === PlayerType.Bot) {
-      base = 10_000;
-    } else if (playerInfo.playerType === PlayerType.Nation) {
+      return 10_000;
+    }
+    if (playerInfo.playerType === PlayerType.Nation) {
       switch (this._gameConfig.difficulty) {
         case Difficulty.Easy:
-          base = 12_500;
-          break;
+          return 12_500;
         case Difficulty.Medium:
-          base = 18_750;
-          break;
+          return 18_750;
         case Difficulty.Hard:
-          base = 25_000;
-          break;
+          return 25_000; // Like humans
         case Difficulty.Impossible:
-          base = 31_250;
-          break;
+          return 31_250;
         default:
           assertNever(this._gameConfig.difficulty);
       }
-    } else {
-      base = this.hasInfiniteTroopsForInfo(playerInfo) ? 1_000_000 : 25_000;
     }
-    // Battle Royale: bigger starting armies, all-in fights
-    if (this._gameConfig.gameMode === GameMode.BattleRoyale) {
-      base = Math.round(base * 1.5);
-    }
-    // Doomsday: more starting troops to support nuke economy
-    if (this._gameConfig.gameMode === GameMode.Doomsday) {
-      base = Math.round(base * 1.25);
-    }
-    // Blitz: fast-paced, start with extra troops to sprint
-    if (this._gameConfig.gameMode === GameMode.Blitz) {
-      base = Math.round(base * 1.5);
-    }
-    // Chaos: massive starting armies for explosive early game
-    if (this._gameConfig.gameMode === GameMode.Chaos) {
-      base = Math.round(base * 2.0);
-    }
-    return base;
+    return this.hasInfiniteTroopsForInfo(playerInfo) ? 1_000_000 : 25_000;
   }
 
   maxTroops(player: Player | PlayerView): number {
@@ -1123,13 +875,6 @@ export class DefaultConfig implements Config {
       }
     }
 
-    if (this.superTroops()) {
-      toAdd *= 2;
-    }
-    if (this._gameConfig.gameMode === GameMode.Blitz) {
-      toAdd *= 2;
-    }
-
     return Math.min(player.troops() + toAdd, max) - player.troops();
   }
 
@@ -1141,44 +886,19 @@ export class DefaultConfig implements Config {
     } else {
       baseRate = 100n;
     }
-    let rate = BigInt(Math.floor(Number(baseRate) * multiplier));
-    if (this._gameConfig.gameMode === GameMode.Blitz) {
-      rate *= 2n;
-    }
-    return rate;
+    return BigInt(Math.floor(Number(baseRate) * multiplier));
   }
 
   nukeMagnitudes(unitType: UnitType): NukeMagnitude {
-    let scale = this.bigBombs() ? 1.5 : 1;
-    // Doomsday cranks nukes up; Battle Royale uses default radii
-    if (this._gameConfig.gameMode === GameMode.Doomsday) {
-      scale *= 1.25;
-    }
-    // Chaos: huge explosions
-    if (this._gameConfig.gameMode === GameMode.Chaos) {
-      scale *= 2;
-    }
-    let mag: NukeMagnitude;
     switch (unitType) {
       case UnitType.MIRVWarhead:
-        mag = { inner: 14, outer: 35 };
-        break;
+        return { inner: 12, outer: 18 };
       case UnitType.AtomBomb:
-        mag = { inner: 14, outer: 35 };
-        break;
+        return { inner: 12, outer: 30 };
       case UnitType.HydrogenBomb:
-        mag = { inner: 32, outer: 75 };
-        break;
-      case UnitType.CruiseMissile:
-        mag = { inner: 6, outer: 15 };
-        break;
-      default:
-        throw new Error(`Unknown nuke type: ${unitType}`);
+        return { inner: 80, outer: 100 };
     }
-    return {
-      inner: Math.round(mag.inner * scale),
-      outer: Math.round(mag.outer * scale),
-    };
+    throw new Error(`Unknown nuke type: ${unitType}`);
   }
 
   nukeAllianceBreakThreshold(): number {
@@ -1186,7 +906,6 @@ export class DefaultConfig implements Config {
   }
 
   defaultNukeSpeed(): number {
-    if (this.fastNukes()) return 12;
     return 6;
   }
 
@@ -1218,14 +937,8 @@ export class DefaultConfig implements Config {
     tilesOwned: number,
     maxTroops: number,
   ): number {
-    if (
-      nukeType !== UnitType.MIRVWarhead &&
-      nukeType !== UnitType.CruiseMissile
-    ) {
+    if (nukeType !== UnitType.MIRVWarhead) {
       return (5 * humans) / Math.max(1, tilesOwned);
-    }
-    if (nukeType === UnitType.CruiseMissile) {
-      return (2.5 * humans) / Math.max(1, tilesOwned);
     }
     const targetTroops = 0.03 * maxTroops;
     const excessTroops = Math.max(0, humans - targetTroops);
@@ -1294,15 +1007,5 @@ export class DefaultConfig implements Config {
 
   allianceExtensionPromptOffset(): number {
     return 300; // 30 seconds before expiration
-  }
-
-  antiShipRange(): number {
-    return 80;
-  }
-
-  antiShipCooldown(level: number): number {
-    // Level 1 = 6s, Level 2 = 4s, Level 3 = 3s (at 10 ticks/sec)
-    const cooldowns = [60, 40, 30];
-    return cooldowns[Math.min(level - 1, cooldowns.length - 1)];
   }
 }

@@ -44,7 +44,6 @@
     "copyright": "© OpenFront™ and Contributors",
     "play": "Play",
     "news": "News",
-    "info": "Info",
     "store": "Store",
     "settings": "Settings",
     "leaderboard": "Leaderboard",
@@ -207,20 +206,6 @@
     "compact_map": "Compact Map",
     "disable_alliances": "Disable alliances",
     "water_nukes": "Water nukes",
-    "mega_income": "Mega income (3x oil/copper)",
-    "cheap_buildings": "Cheap buildings (50% off)",
-    "fast_construction": "Fast construction (50% time)",
-    "disable_nukes": "Disable nukes",
-    "disable_naval": "Disable naval (no warships)",
-    "big_bombs": "Big bombs (1.5x nuke radius)",
-    "super_troops": "Super troops (2x troop growth)",
-    "no_launcher_cooldown": "No launcher cooldown",
-    "cheap_missiles": "Cheap missiles (50% off)",
-    "fast_nukes": "Fast nukes (2x flight speed)",
-    "limit_launchers": "Limit launchers (max 5 missile silos + cruise launchers per player)",
-    "limit_oil_factories": "Limit oil factories (max 3 per player)",
-    "limit_cities": "Limit cities (max 10 per player)",
-    "limit_warships": "Limit warships (max 5 per player)",
     "max_timer": "Game length (minutes)",
     "max_timer_placeholder": "Mins",
     "max_timer_invalid": "Please enter a valid max timer value (1-120 minutes)",
@@ -465,20 +450,6 @@
     "compact_map": "Compact Map",
     "disable_alliances": "Disable alliances",
     "water_nukes": "Water nukes",
-    "mega_income": "Mega income (3x oil/copper)",
-    "cheap_buildings": "Cheap buildings (50% off)",
-    "fast_construction": "Fast construction (50% time)",
-    "disable_nukes": "Disable nukes",
-    "disable_naval": "Disable naval (no warships)",
-    "big_bombs": "Big bombs (1.5x nuke radius)",
-    "super_troops": "Super troops (2x troop growth)",
-    "no_launcher_cooldown": "No launcher cooldown",
-    "cheap_missiles": "Cheap missiles (50% off)",
-    "fast_nukes": "Fast nukes (2x flight speed)",
-    "limit_launchers": "Limit launchers (max 5 missile silos + cruise launchers per player)",
-    "limit_oil_factories": "Limit oil factories (max 3 per player)",
-    "limit_cities": "Limit cities (max 10 per player)",
-    "limit_warships": "Limit warships (max 5 per player)",
     "enables_title": "Disable Units",
     "player": "Player",
     "players": "Players",
@@ -531,14 +502,7 @@
   },
   "game_mode": {
     "ffa": "Free for All",
-    "teams": "Teams",
-    "battle_royale": "Battle Royale",
-    "doomsday": "Doomsday",
-    "blitz": "Blitz",
-    "chaos": "Chaos"
-  },
-  "info_modal": {
-    "title": "Game Info"
+    "teams": "Teams"
   },
   "mode_selector": {
     "teams_title": "Teams",
@@ -584,13 +548,7 @@
     "atom_bomb": "Atom Bomb",
     "hydrogen_bomb": "Hydrogen Bomb",
     "mirv": "MIRV",
-    "factory": "Factory",
-    "oil_factory": "Oil Factory",
-    "copper_mine": "Copper Mine",
-    "cruise_launcher": "Cruise Launcher",
-    "cruise_missile": "Cruise Missile",
-    "fishing_dock": "Fishing Dock",
-    "anti_ship": "Anti-Ship Battery"
+    "factory": "Factory"
   },
   "user_setting": {
     "title": "Settings",
@@ -813,13 +771,7 @@
       "port": "Sends trade ships to generate gold",
       "defense_post": "Increases defenses of nearby borders",
       "city": "Increases max population",
-      "factory": "Creates railroads and spawns trains",
-      "oil_factory": "Generates oil income passively over time",
-      "copper_mine": "Mines copper to boost production and income",
-      "cruise_launcher": "Launches cruise missiles at enemy targets",
-      "cruise_missile": "Precision strike, half the power of an atom bomb",
-      "fishing_dock": "Coastal fishing income (shore tiles only)",
-      "anti_ship": "Coastal defense — destroys enemy warships in range (build near water)"
+      "factory": "Creates railroads and spawns trains"
     },
     "warship_shift_hint": "Hold Shift and drag to select multiple warships at once",
     "not_enough_money": "Not enough money"
@@ -1137,8 +1089,7 @@
     "warning": "WARNING",
     "dismiss": "Dismiss",
     "go_to_item": "Go to item {num}",
-    "firefox_warning": "OpenFront.io doesn't perform well with [Firefox-based browsers](https://simple.wikipedia.org/wiki/Web_browsers_based_on_Firefox). We recommend you to use a [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium) for best performance.",
-    "deepfront_launch": "Welcome to Deep Front — a polished evolution of OpenFront with cruise launchers, oil & copper economies, and SAM upgrades. Designed by Artin Zomorodian and Hani Bikdeli."
+    "firefox_warning": "OpenFront.io doesn't perform well with [Firefox-based browsers](https://simple.wikipedia.org/wiki/Web_browsers_based_on_Firefox). We recommend you to use a [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium) for best performance."
   },
   "ios_banner": {
     "text": "For fullscreen, add OpenFront to your Home Screen",

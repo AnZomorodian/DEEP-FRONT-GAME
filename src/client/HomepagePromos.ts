@@ -10,7 +10,13 @@ export class HomepagePromos extends LitElement {
   private cornerAdLoaded: boolean = false;
 
   private onUserMeResponse = () => {
-    console.log("ads disabled in Deep Front");
+    if (window.adsEnabled) {
+      console.log("showing homepage ads");
+      this.show();
+      this.loadCornerAdVideo();
+    } else {
+      console.log("not showing homepage ads");
+    }
   };
 
   private onJoinLobby = () => {
@@ -57,7 +63,6 @@ export class HomepagePromos extends LitElement {
   public close(): void {
     this.isVisible = false;
     this.adLoaded = false;
-    if (!window.ramp) return;
     try {
       // Only destroy gutter ads; bottom_rail persists into spawn phase.
       window.ramp.destroyUnits(this.leftAdType);

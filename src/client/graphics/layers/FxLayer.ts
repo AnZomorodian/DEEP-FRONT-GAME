@@ -67,16 +67,15 @@ export class FxLayer implements Layer {
     }
 
     switch (unit.type()) {
-      case UnitType.AtomBomb:
+      case UnitType.AtomBomb: {
+        this.onNukeEvent(unit, 70);
+        break;
+      }
       case UnitType.MIRVWarhead:
-      case UnitType.HydrogenBomb:
-      case UnitType.CruiseMissile: {
-        // Use the configured outer radius so visuals match destruction zone
-        // and scale with mode (Doomsday +25%, Big Bombs ×1.5).
-        const mag = this.game.config().nukeMagnitudes(unit.type());
-        // Slightly larger than destruction radius for splash/halo effect.
-        const outer = Math.max(18, Math.round(mag.outer * 2.5));
-        this.onNukeEvent(unit, outer);
+        this.onNukeEvent(unit, 70);
+        break;
+      case UnitType.HydrogenBomb: {
+        this.onNukeEvent(unit, 160);
         break;
       }
       case UnitType.Warship:
@@ -103,12 +102,6 @@ export class FxLayer implements Layer {
     switch (unit.type()) {
       case UnitType.AtomBomb:
         this.eventBus.emit(new PlaySoundEffectEvent("atom-launch"));
-        break;
-      case UnitType.CruiseMissile:
-        this.eventBus.emit(new PlaySoundEffectEvent("atom-launch"));
-        break;
-      case UnitType.SAMMissile:
-        this.eventBus.emit(new PlaySoundEffectEvent("sam-shoot"));
         break;
       case UnitType.HydrogenBomb:
         this.eventBus.emit(new PlaySoundEffectEvent("hydrogen-launch"));
@@ -285,7 +278,6 @@ export class FxLayer implements Layer {
   }
 
   handleSAMInterception(unit: UnitView) {
-    this.eventBus.emit(new PlaySoundEffectEvent("sam-hit"));
     if (this.fxEnabled()) {
       const x = this.game.x(unit.lastTile());
       const y = this.game.y(unit.lastTile());

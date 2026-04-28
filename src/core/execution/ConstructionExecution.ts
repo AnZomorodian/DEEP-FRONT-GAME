@@ -1,16 +1,11 @@
 import { Execution, Game, Player, Tick, Unit, UnitType } from "../game/Game";
 import { TileRef } from "../game/GameMap";
-import { AntiShipExecution } from "./AntiShipExecution";
 import { CityExecution } from "./CityExecution";
-import { CopperMineExecution } from "./CopperMineExecution";
-import { CruiseLauncherExecution } from "./CruiseLauncherExecution";
-import { FishingDockExecution } from "./FishingDockExecution";
 import { DefensePostExecution } from "./DefensePostExecution";
 import { FactoryExecution } from "./FactoryExecution";
 import { MirvExecution } from "./MIRVExecution";
 import { MissileSiloExecution } from "./MissileSiloExecution";
 import { NukeExecution } from "./NukeExecution";
-import { OilFactoryExecution } from "./OilFactoryExecution";
 import { PortExecution } from "./PortExecution";
 import { SAMLauncherExecution } from "./SAMLauncherExecution";
 import { WarshipExecution } from "./WarshipExecution";
@@ -109,7 +104,6 @@ export class ConstructionExecution implements Execution {
     switch (this.constructionType) {
       case UnitType.AtomBomb:
       case UnitType.HydrogenBomb:
-      case UnitType.CruiseMissile:
         this.mg.addExecution(
           new NukeExecution(
             this.constructionType,
@@ -150,21 +144,6 @@ export class ConstructionExecution implements Execution {
       case UnitType.Factory:
         this.mg.addExecution(new FactoryExecution(this.structure!));
         break;
-      case UnitType.OilFactory:
-        this.mg.addExecution(new OilFactoryExecution(this.structure!));
-        break;
-      case UnitType.CopperMine:
-        this.mg.addExecution(new CopperMineExecution(this.structure!));
-        break;
-      case UnitType.CruiseLauncher:
-        this.mg.addExecution(new CruiseLauncherExecution(this.structure!));
-        break;
-      case UnitType.FishingDock:
-        this.mg.addExecution(new FishingDockExecution(this.structure!));
-        break;
-      case UnitType.AntiShip:
-        this.mg.addExecution(new AntiShipExecution(this.structure!));
-        break;
       default:
         console.warn(
           `unit type ${this.constructionType} cannot be constructed`,
@@ -181,11 +160,6 @@ export class ConstructionExecution implements Execution {
       case UnitType.SAMLauncher:
       case UnitType.City:
       case UnitType.Factory:
-      case UnitType.OilFactory:
-      case UnitType.CopperMine:
-      case UnitType.CruiseLauncher:
-      case UnitType.FishingDock:
-      case UnitType.AntiShip:
         return true;
       default:
         return false;

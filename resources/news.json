@@ -1,12 +1,5 @@
 [
   {
-    "id": "deepfront-launch-2026",
-    "title": "Welcome to Deep Front",
-    "descriptionTranslationKey": "news_box.deepfront_launch",
-    "url": null,
-    "type": "news"
-  },
-  {
     "id": "firefox-performance-issues-2026",
     "title": "Firefox Performance Issues",
     "descriptionTranslationKey": "news_box.firefox_warning",

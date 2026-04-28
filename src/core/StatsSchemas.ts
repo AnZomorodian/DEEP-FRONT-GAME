@@ -1,22 +1,20 @@
 import { z } from "zod";
 import { UnitType } from "./game/Game";
 
-export const bombUnits = ["abomb", "hbomb", "mirv", "mirvw", "cruise"] as const;
+export const bombUnits = ["abomb", "hbomb", "mirv", "mirvw"] as const;
 export const BombUnitSchema = z.enum(bombUnits);
 export type BombUnit = z.infer<typeof BombUnitSchema>;
 export type NukeType =
   | UnitType.AtomBomb
   | UnitType.HydrogenBomb
   | UnitType.MIRV
-  | UnitType.MIRVWarhead
-  | UnitType.CruiseMissile;
+  | UnitType.MIRVWarhead;
 
 export const unitTypeToBombUnit = {
   [UnitType.AtomBomb]: "abomb",
   [UnitType.HydrogenBomb]: "hbomb",
   [UnitType.MIRV]: "mirv",
   [UnitType.MIRVWarhead]: "mirvw",
-  [UnitType.CruiseMissile]: "cruise",
 } as const satisfies Record<NukeType, BombUnit>;
 
 export const boatUnits = ["trade", "trans"] as const;
@@ -37,11 +35,6 @@ export const otherUnits = [
   "silo",
   "saml",
   "fact",
-  "oilf",
-  "cupm",
-  "crsl",
-  "fish",
-  "asbr",
 ] as const;
 export const OtherUnitSchema = z.enum(otherUnits);
 export type OtherUnit = z.infer<typeof OtherUnitSchema>;
@@ -52,12 +45,7 @@ export type OtherUnitType =
   | UnitType.Port
   | UnitType.SAMLauncher
   | UnitType.Warship
-  | UnitType.Factory
-  | UnitType.OilFactory
-  | UnitType.CopperMine
-  | UnitType.CruiseLauncher
-  | UnitType.FishingDock
-  | UnitType.AntiShip;
+  | UnitType.Factory;
 
 export const unitTypeToOtherUnit = {
   [UnitType.City]: "city",
@@ -67,11 +55,6 @@ export const unitTypeToOtherUnit = {
   [UnitType.SAMLauncher]: "saml",
   [UnitType.Warship]: "wshp",
   [UnitType.Factory]: "fact",
-  [UnitType.OilFactory]: "oilf",
-  [UnitType.CopperMine]: "cupm",
-  [UnitType.CruiseLauncher]: "crsl",
-  [UnitType.FishingDock]: "fish",
-  [UnitType.AntiShip]: "asbr",
 } as const satisfies Record<OtherUnitType, OtherUnit>;
 
 // Attacks

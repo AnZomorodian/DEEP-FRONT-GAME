@@ -259,10 +259,6 @@ export const isGameType = (value: unknown): value is GameType =>
 export enum GameMode {
   FFA = "Free For All",
   Team = "Team",
-  BattleRoyale = "Battle Royale",
-  Doomsday = "Doomsday",
-  Blitz = "Blitz",
-  Chaos = "Chaos",
 }
 
 export enum RankedType {
@@ -298,7 +294,6 @@ export interface UnitInfo {
   damage?: number;
   constructionDuration?: number;
   upgradable?: boolean;
-  maxLevel?: number;
 }
 
 function unitTypeGroup<T extends readonly UnitType[]>(types: T) {
@@ -327,13 +322,6 @@ export enum UnitType {
   MIRVWarhead = "MIRV Warhead",
   Train = "Train",
   Factory = "Factory",
-  OilFactory = "Oil Factory",
-  CopperMine = "Copper Mine",
-  CruiseLauncher = "Cruise Launcher",
-  CruiseMissile = "Cruise Missile",
-  FishingDock = "Fishing Dock",
-  AntiShip = "Anti-Ship Battery",
-  AntiShipMissile = "Anti-Ship Missile",
 }
 
 export enum TrainType {
@@ -347,7 +335,6 @@ export const Nukes = unitTypeGroup([
   UnitType.HydrogenBomb,
   UnitType.MIRVWarhead,
   UnitType.MIRV,
-  UnitType.CruiseMissile,
 ] as const);
 
 export const BuildableAttacks = unitTypeGroup([
@@ -355,7 +342,6 @@ export const BuildableAttacks = unitTypeGroup([
   UnitType.HydrogenBomb,
   UnitType.MIRV,
   UnitType.Warship,
-  UnitType.CruiseMissile,
 ] as const);
 
 export const Structures = unitTypeGroup([
@@ -365,11 +351,6 @@ export const Structures = unitTypeGroup([
   UnitType.MissileSilo,
   UnitType.Port,
   UnitType.Factory,
-  UnitType.OilFactory,
-  UnitType.CopperMine,
-  UnitType.CruiseLauncher,
-  UnitType.FishingDock,
-  UnitType.AntiShip,
 ] as const);
 
 export const BuildMenus = unitTypeGroup([
@@ -446,23 +427,6 @@ export interface UnitParamsMap {
   [UnitType.MIRVWarhead]: {
     targetTile?: number;
   };
-
-  [UnitType.OilFactory]: Record<string, never>;
-
-  [UnitType.CopperMine]: Record<string, never>;
-
-  [UnitType.CruiseLauncher]: Record<string, never>;
-
-  [UnitType.CruiseMissile]: {
-    targetTile?: number;
-    trajectory: TrajectoryTile[];
-  };
-
-  [UnitType.FishingDock]: Record<string, never>;
-
-  [UnitType.AntiShip]: Record<string, never>;
-
-  [UnitType.AntiShipMissile]: Record<string, never>;
 }
 
 // Type helper to get params type for a specific unit type
@@ -666,11 +630,10 @@ export interface Unit {
   // --- UNIT SPECIFIC ---
 
   // SAMs & Missile Silos
-  launch(type?: UnitType): void;
+  launch(): void;
   reloadMissile(): void;
   isInCooldown(): boolean;
   missileTimerQueue(): number[];
-  frontMissileType(): UnitType | undefined;
 
   // Trade Ships
   setSafeFromPirates(): void; // Only for trade ships
