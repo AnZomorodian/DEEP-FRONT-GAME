@@ -43,6 +43,7 @@ import "./Matchmaking";
 import { MatchmakingModal } from "./Matchmaking";
 import { initNavigation } from "./Navigation";
 import "./NewsModal";
+import "./InfoModal";
 import "./PatternInput";
 import "./SinglePlayerModal";
 import { StoreModal } from "./Store";
@@ -273,7 +274,8 @@ class Client {
       console.warn("Game version element not found");
     } else {
       const trimmed = version.trim();
-      const displayVersion = trimmed.startsWith("v") ? trimmed : `v${trimmed}`;
+      const stripped = trimmed.replace(/^[vV]/, "");
+      const displayVersion = `V${stripped}`;
       versionElements.forEach((el) => {
         el.textContent = displayVersion;
       });
@@ -803,6 +805,7 @@ class Client {
         "store-modal",
         "language-modal",
         "news-modal",
+        "info-modal",
         "flag-input-modal",
         "account-button",
         "leaderboard-button",

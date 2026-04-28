@@ -1,6 +1,18 @@
 # 🚀 Deep Front - What's New
 
-Welcome to **Deep Front**, the polished evolution of OpenFront with a deeper strategy layer, expanded toolbox, and tighter visual feedback. Here's everything that's new:
+Welcome to **Deep Front V1.22.12**, the polished evolution of OpenFront with a deeper strategy layer, expanded toolbox, and tighter visual feedback. Here's everything that's new:
+
+---
+
+## 🆕 V1.22.12 Polish Pass
+
+- **Cruise missiles now require 2 hits to destroy a building.** Soft units still die in one hit; structures take a hit, then go down on the second strike — making cruise volleys feel more strategic.
+- **All Single Player options are now in the multiplayer Create Lobby modal too** — host with the exact same toggles as solo (mega income, big bombs, limit cities, etc.).
+- **Oil Factories and Copper Mines now connect via railroad** like Factories — they automatically build a train station and link to nearby industrial buildings.
+- **New "Info" tab in the header** — a one-stop reference for build limits, cooldowns, income rates, and lobby option effects.
+- **New "Battle Royale" and "Doomsday" game modes** — two new flavors of FFA in the mode selector.
+- **Brand-new typography** — the whole UI is now set in Rajdhani for that crisp military / strategy feel.
+- **Version stamp** — `V1.22.12` shown right under the "Deep Front" title.
 
 ---
 

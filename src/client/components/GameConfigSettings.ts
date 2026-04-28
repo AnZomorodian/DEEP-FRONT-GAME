@@ -381,8 +381,21 @@ export class GameConfigSettings extends LitElement {
           "host_modal.mode",
           html`
             <div class="grid grid-cols-2 gap-4">
-              ${[GameMode.FFA, GameMode.Team].map((mode) => {
+              ${[
+                GameMode.FFA,
+                GameMode.Team,
+                GameMode.BattleRoyale,
+                GameMode.Doomsday,
+              ].map((mode) => {
                 const isSelected = settings.gameMode.selected === mode;
+                const labelKey =
+                  mode === GameMode.FFA
+                    ? "game_mode.ffa"
+                    : mode === GameMode.Team
+                      ? "game_mode.teams"
+                      : mode === GameMode.BattleRoyale
+                        ? "game_mode.battle_royale"
+                        : "game_mode.doomsday";
                 return html`
                   <button
                     class="${cardClass(isSelected, "py-6 text-center")}"
@@ -391,9 +404,7 @@ export class GameConfigSettings extends LitElement {
                     <span
                       class="text-sm font-bold text-white uppercase tracking-widest"
                     >
-                      ${mode === GameMode.FFA
-                        ? translateText("game_mode.ffa")
-                        : translateText("game_mode.teams")}
+                      ${translateText(labelKey)}
                     </span>
                   </button>
                 `;
@@ -401,7 +412,7 @@ export class GameConfigSettings extends LitElement {
             </div>
           `,
         )}
-        ${settings.gameMode.selected === GameMode.FFA
+        ${settings.gameMode.selected !== GameMode.Team
           ? nothing
           : html`
               <section class="space-y-6">

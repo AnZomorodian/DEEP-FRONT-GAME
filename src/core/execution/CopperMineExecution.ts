@@ -1,4 +1,5 @@
-import { Execution, Game, Unit } from "../game/Game";
+import { Execution, Game, Unit, UnitType } from "../game/Game";
+import { TrainStationExecution } from "./TrainStationExecution";
 
 const COPPER_INCOME_BASE = 7_000n;
 const COPPER_INCOME_INTERVAL = 100;
@@ -16,6 +17,7 @@ function copperLevelMultiplier(level: number): number {
 export class CopperMineExecution implements Execution {
   private active: boolean = true;
   private game: Game;
+  private stationCreated = false;
 
   constructor(private copperMine: Unit) {}
 
@@ -30,6 +32,10 @@ export class CopperMineExecution implements Execution {
     }
     if (this.copperMine.isUnderConstruction()) {
       return;
+    }
+    if (!this.stationCreated) {
+      this.createStation();
+      this.stationCreated = true;
     }
     if (ticks % COPPER_INCOME_INTERVAL === 0) {
       const level = this.copperMine.level();
@@ -48,5 +54,27 @@ export class CopperMineExecution implements Execution {
 
   activeDuringSpawnPhase(): boolean {
     return false;
+  }
+
+  private createStation(): void {
+    const structures = this.game.nearbyUnits(
+      this.copperMine.tile()!,
+      this.game.config().trainStationMaxRange(),
+      [
+        UnitType.City,
+        UnitType.Port,
+        UnitType.Factory,
+        UnitType.OilFactory,
+        UnitType.CopperMine,
+      ],
+    );
+    if (!this.copperMine.hasTrainStation()) {
+      this.game.addExecution(new TrainStationExecution(this.copperMine));
+    }
+    for (const { unit } of structures) {
+      if (!unit.hasTrainStation()) {
+        this.game.addExecution(new TrainStationExecution(unit));
+      }
+    }
   }
 }

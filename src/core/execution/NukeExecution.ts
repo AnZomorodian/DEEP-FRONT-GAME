@@ -19,6 +19,17 @@ import { listNukeBreakAlliance } from "./Util";
 
 const SPRITE_RADIUS = 16;
 
+const cruiseStructureHitsByGame = new WeakMap<Game, Map<number, number>>();
+
+function getCruiseStructureHits(mg: Game): Map<number, number> {
+  let hits = cruiseStructureHitsByGame.get(mg);
+  if (hits === undefined) {
+    hits = new Map<number, number>();
+    cruiseStructureHitsByGame.set(mg, hits);
+  }
+  return hits;
+}
+
 export class NukeExecution implements Execution {
   private active = true;
   private mg: Game;
@@ -369,6 +380,7 @@ export class NukeExecution implements Execution {
     const outer2 = magnitude.outer * magnitude.outer;
     const dst = this.dst;
     const destroyer = this.player;
+    const isCruise = this.nukeType === UnitType.CruiseMissile;
     for (const unit of mg.units()) {
       const type = unit.type();
       if (
@@ -382,7 +394,22 @@ export class NukeExecution implements Execution {
         continue;
       }
       if (mg.euclideanDistSquared(dst, unit.tile()) < outer2) {
-        unit.delete(true, destroyer);
+        // Cruise missiles need 2 hits to destroy structures (buildings).
+        if (isCruise && Structures.has(type)) {
+          const hits = getCruiseStructureHits(mg);
+          const id = unit.id();
+          const prev = hits.get(id) ?? 0;
+          const next = prev + 1;
+          if (next >= 2) {
+            hits.delete(id);
+            unit.delete(true, destroyer);
+          } else {
+            hits.set(id, next);
+            unit.touch();
+          }
+        } else {
+          unit.delete(true, destroyer);
+        }
       }
     }
 

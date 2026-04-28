@@ -35,7 +35,8 @@ export class WinCheckExecution implements Execution {
     }
     if (this.mg === null) throw new Error("Not initialized");
 
-    if (this.mg.config().gameConfig().gameMode === GameMode.FFA) {
+    // Treat any non-Team mode (FFA, BattleRoyale, Doomsday) as FFA win conditions.
+    if (this.mg.config().gameConfig().gameMode !== GameMode.Team) {
       this.checkWinnerFFA();
     } else {
       this.checkWinnerTeam();

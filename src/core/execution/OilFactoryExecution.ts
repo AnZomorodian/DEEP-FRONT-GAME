@@ -1,4 +1,5 @@
-import { Execution, Game, Unit } from "../game/Game";
+import { Execution, Game, Unit, UnitType } from "../game/Game";
+import { TrainStationExecution } from "./TrainStationExecution";
 
 const OIL_INCOME_BASE = 15_000n;
 const OIL_INCOME_INTERVAL = 100;
@@ -16,6 +17,7 @@ function oilLevelMultiplier(level: number): number {
 export class OilFactoryExecution implements Execution {
   private active: boolean = true;
   private game: Game;
+  private stationCreated = false;
 
   constructor(private oilFactory: Unit) {}
 
@@ -30,6 +32,10 @@ export class OilFactoryExecution implements Execution {
     }
     if (this.oilFactory.isUnderConstruction()) {
       return;
+    }
+    if (!this.stationCreated) {
+      this.createStation();
+      this.stationCreated = true;
     }
     if (ticks % OIL_INCOME_INTERVAL === 0) {
       const level = this.oilFactory.level();
@@ -48,5 +54,27 @@ export class OilFactoryExecution implements Execution {
 
   activeDuringSpawnPhase(): boolean {
     return false;
+  }
+
+  private createStation(): void {
+    const structures = this.game.nearbyUnits(
+      this.oilFactory.tile()!,
+      this.game.config().trainStationMaxRange(),
+      [
+        UnitType.City,
+        UnitType.Port,
+        UnitType.Factory,
+        UnitType.OilFactory,
+        UnitType.CopperMine,
+      ],
+    );
+    if (!this.oilFactory.hasTrainStation()) {
+      this.game.addExecution(new TrainStationExecution(this.oilFactory));
+    }
+    for (const { unit } of structures) {
+      if (!unit.hasTrainStation()) {
+        this.game.addExecution(new TrainStationExecution(unit));
+      }
+    }
   }
 }

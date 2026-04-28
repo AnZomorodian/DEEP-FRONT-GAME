@@ -84,10 +84,30 @@
       async
       defer
     ></script>
+
+    <!-- Game font: Rajdhani (military / strategy feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      .deep-front-font {
+        font-family:
+          "Rajdhani", "Segoe UI", system-ui, -apple-system, sans-serif;
+        letter-spacing: 0.01em;
+      }
+    </style>
   </head>
 
   <body
-    class="h-full select-none font-sans min-h-screen bg-neutral-800 transition-opacity duration-300 ease-in-out flex flex-row overflow-hidden"
+    class="deep-front-font h-full select-none min-h-screen bg-neutral-800 transition-opacity duration-300 ease-in-out flex flex-row overflow-hidden"
   >
     <div id="hex-grid" class="fixed inset-0 -z-50 pointer-events-none">
       <div
@@ -148,6 +168,11 @@
           inline
           class="hidden w-full h-full page-content relative z-50"
         ></news-modal>
+        <info-modal
+          id="page-info"
+          inline
+          class="hidden w-full h-full page-content relative z-50"
+        ></info-modal>
         <single-player-modal
           id="page-single-player"
           inline

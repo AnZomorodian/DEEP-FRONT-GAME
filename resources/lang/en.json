@@ -44,6 +44,7 @@
     "copyright": "© OpenFront™ and Contributors",
     "play": "Play",
     "news": "News",
+    "info": "Info",
     "store": "Store",
     "settings": "Settings",
     "leaderboard": "Leaderboard",
@@ -464,6 +465,20 @@
     "compact_map": "Compact Map",
     "disable_alliances": "Disable alliances",
     "water_nukes": "Water nukes",
+    "mega_income": "Mega income (3x oil/copper)",
+    "cheap_buildings": "Cheap buildings (50% off)",
+    "fast_construction": "Fast construction (50% time)",
+    "disable_nukes": "Disable nukes",
+    "disable_naval": "Disable naval (no warships)",
+    "big_bombs": "Big bombs (1.5x nuke radius)",
+    "super_troops": "Super troops (2x troop growth)",
+    "no_launcher_cooldown": "No launcher cooldown",
+    "cheap_missiles": "Cheap missiles (50% off)",
+    "fast_nukes": "Fast nukes (2x flight speed)",
+    "limit_launchers": "Limit launchers (max 5 missile silos + cruise launchers per player)",
+    "limit_oil_factories": "Limit oil factories (max 3 per player)",
+    "limit_cities": "Limit cities (max 10 per player)",
+    "limit_warships": "Limit warships (max 5 per player)",
     "enables_title": "Disable Units",
     "player": "Player",
     "players": "Players",
@@ -516,7 +531,12 @@
   },
   "game_mode": {
     "ffa": "Free for All",
-    "teams": "Teams"
+    "teams": "Teams",
+    "battle_royale": "Battle Royale",
+    "doomsday": "Doomsday"
+  },
+  "info_modal": {
+    "title": "Game Info"
   },
   "mode_selector": {
     "teams_title": "Teams",
