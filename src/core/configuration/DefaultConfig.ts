@@ -468,6 +468,44 @@ export class DefaultConfig implements Config {
           upgradable: true,
         };
         break;
+      case UnitType.OilFactory:
+        info = {
+          cost: this.costWrapper(
+            (numUnits: number) =>
+              Math.min(2_000_000, Math.pow(2, numUnits) * 300_000),
+            UnitType.OilFactory,
+          ),
+          constructionDuration: this.instantBuild() ? 0 : 4 * 10,
+          upgradable: true,
+        };
+        break;
+      case UnitType.CopperMine:
+        info = {
+          cost: this.costWrapper(
+            (numUnits: number) =>
+              Math.min(1_500_000, Math.pow(2, numUnits) * 200_000),
+            UnitType.CopperMine,
+          ),
+          constructionDuration: this.instantBuild() ? 0 : 3 * 10,
+          upgradable: true,
+        };
+        break;
+      case UnitType.CruiseLauncher:
+        info = {
+          cost: this.costWrapper(
+            (numUnits: number) =>
+              Math.min(1_500_000, (numUnits + 1) * 750_000),
+            UnitType.CruiseLauncher,
+          ),
+          constructionDuration: this.instantBuild() ? 0 : 8 * 10,
+          upgradable: true,
+        };
+        break;
+      case UnitType.CruiseMissile:
+        info = {
+          cost: this.costWrapper(() => 375_000, UnitType.CruiseMissile),
+        };
+        break;
       case UnitType.Train:
         info = {
           cost: () => 0n,
@@ -897,6 +935,8 @@ export class DefaultConfig implements Config {
         return { inner: 12, outer: 30 };
       case UnitType.HydrogenBomb:
         return { inner: 80, outer: 100 };
+      case UnitType.CruiseMissile:
+        return { inner: 6, outer: 15 };
     }
     throw new Error(`Unknown nuke type: ${unitType}`);
   }
@@ -937,8 +977,14 @@ export class DefaultConfig implements Config {
     tilesOwned: number,
     maxTroops: number,
   ): number {
-    if (nukeType !== UnitType.MIRVWarhead) {
+    if (
+      nukeType !== UnitType.MIRVWarhead &&
+      nukeType !== UnitType.CruiseMissile
+    ) {
       return (5 * humans) / Math.max(1, tilesOwned);
+    }
+    if (nukeType === UnitType.CruiseMissile) {
+      return (2.5 * humans) / Math.max(1, tilesOwned);
     }
     const targetTroops = 0.03 * maxTroops;
     const excessTroops = Math.max(0, humans - targetTroops);

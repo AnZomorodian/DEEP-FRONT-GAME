@@ -322,6 +322,10 @@ export enum UnitType {
   MIRVWarhead = "MIRV Warhead",
   Train = "Train",
   Factory = "Factory",
+  OilFactory = "Oil Factory",
+  CopperMine = "Copper Mine",
+  CruiseLauncher = "Cruise Launcher",
+  CruiseMissile = "Cruise Missile",
 }
 
 export enum TrainType {
@@ -335,6 +339,7 @@ export const Nukes = unitTypeGroup([
   UnitType.HydrogenBomb,
   UnitType.MIRVWarhead,
   UnitType.MIRV,
+  UnitType.CruiseMissile,
 ] as const);
 
 export const BuildableAttacks = unitTypeGroup([
@@ -342,6 +347,7 @@ export const BuildableAttacks = unitTypeGroup([
   UnitType.HydrogenBomb,
   UnitType.MIRV,
   UnitType.Warship,
+  UnitType.CruiseMissile,
 ] as const);
 
 export const Structures = unitTypeGroup([
@@ -351,6 +357,9 @@ export const Structures = unitTypeGroup([
   UnitType.MissileSilo,
   UnitType.Port,
   UnitType.Factory,
+  UnitType.OilFactory,
+  UnitType.CopperMine,
+  UnitType.CruiseLauncher,
 ] as const);
 
 export const BuildMenus = unitTypeGroup([
@@ -426,6 +435,17 @@ export interface UnitParamsMap {
 
   [UnitType.MIRVWarhead]: {
     targetTile?: number;
+  };
+
+  [UnitType.OilFactory]: Record<string, never>;
+
+  [UnitType.CopperMine]: Record<string, never>;
+
+  [UnitType.CruiseLauncher]: Record<string, never>;
+
+  [UnitType.CruiseMissile]: {
+    targetTile?: number;
+    trajectory: TrajectoryTile[];
   };
 }
 

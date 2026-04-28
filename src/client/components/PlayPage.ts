@@ -1,7 +1,5 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { assetUrl } from "../../core/AssetUrls";
-import "./NewsBox";
 
 @customElement("play-page")
 export class PlayPage extends LitElement {
@@ -52,11 +50,7 @@ export class PlayPage extends LitElement {
             <div
               class="col-start-2 flex items-center justify-center text-malibu-blue min-w-0"
             >
-              <img
-                src=${assetUrl("images/OpenFrontLogo.svg")}
-                alt="OpenFront"
-                class="h-full w-auto"
-              />
+              <span class="text-xl font-bold tracking-widest text-malibu-blue uppercase">Deep Front</span>
             </div>
 
             <div
@@ -73,9 +67,6 @@ export class PlayPage extends LitElement {
           <div
             class="lg:hidden h-[calc(env(safe-area-inset-top)+56px)] lg:col-span-2 -mb-4"
           ></div>
-
-          <!-- News box above username -->
-          <news-box class="lg:col-span-2"></news-box>
 
           <!-- Username: left col -->
           <div

@@ -15,6 +15,9 @@ const shieldIcon = assetUrl("images/buildings/fortAlt3.png");
 const anchorIcon = assetUrl("images/buildings/port1.png");
 const missileSiloIcon = assetUrl("images/buildings/silo1.png");
 const SAMMissileIcon = assetUrl("images/buildings/silo4.png");
+const oilFactoryIcon = assetUrl("images/buildings/oilFactory.svg");
+const copperMineIcon = assetUrl("images/buildings/copperMine.svg");
+const cruiseLauncherIcon = assetUrl("images/buildings/cruiseLauncher.svg");
 
 const underConstructionColor = colord("rgb(150,150,150)");
 
@@ -67,6 +70,21 @@ export class StructureLayer implements Layer {
     },
     [UnitType.SAMLauncher]: {
       icon: SAMMissileIcon,
+      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
+      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
+    },
+    [UnitType.OilFactory]: {
+      icon: oilFactoryIcon,
+      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
+      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
+    },
+    [UnitType.CopperMine]: {
+      icon: copperMineIcon,
+      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
+      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
+    },
+    [UnitType.CruiseLauncher]: {
+      icon: cruiseLauncherIcon,
       borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
       territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
     },

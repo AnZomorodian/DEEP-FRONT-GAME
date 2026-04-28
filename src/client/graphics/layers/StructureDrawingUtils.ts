@@ -14,6 +14,9 @@ const factoryIcon = assetUrl("images/FactoryUnit.png");
 const missileSiloIcon = assetUrl("images/MissileSiloUnit.png");
 const SAMMissileIcon = assetUrl("images/SamLauncherUnit.png");
 const shieldIcon = assetUrl("images/ShieldIcon.png");
+const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
+const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
+const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
 
 export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.City]: "circle",
@@ -22,10 +25,14 @@ export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.DefensePost]: "octagon",
   [UnitType.SAMLauncher]: "square",
   [UnitType.MissileSilo]: "triangle",
+  [UnitType.OilFactory]: "circle",
+  [UnitType.CopperMine]: "pentagon",
+  [UnitType.CruiseLauncher]: "triangle",
   [UnitType.Warship]: "cross",
   [UnitType.AtomBomb]: "cross",
   [UnitType.HydrogenBomb]: "cross",
   [UnitType.MIRV]: "cross",
+  [UnitType.CruiseMissile]: "cross",
 };
 export const LEVEL_SCALE_FACTOR = 3;
 export const ICON_SCALE_FACTOR_ZOOMED_IN = 3.5;
@@ -67,6 +74,9 @@ export class SpriteFactory {
     [UnitType.Port, { iconPath: anchorIcon, image: null }],
     [UnitType.MissileSilo, { iconPath: missileSiloIcon, image: null }],
     [UnitType.SAMLauncher, { iconPath: SAMMissileIcon, image: null }],
+    [UnitType.OilFactory, { iconPath: oilFactoryIcon, image: null }],
+    [UnitType.CopperMine, { iconPath: copperMineIcon, image: null }],
+    [UnitType.CruiseLauncher, { iconPath: cruiseLauncherIcon, image: null }],
   ]);
   constructor(
     theme: Theme,

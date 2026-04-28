@@ -1,4 +1,6 @@
-import { Execution, Game, Unit, UnitType } from "../game/Game";
+import { Execution, Game, Unit } from "../game/Game";
+
+const CRUISE_RELOAD_TICKS = 50;
 
 export class CruiseLauncherExecution implements Execution {
   private active = true;
@@ -22,8 +24,8 @@ export class CruiseLauncherExecution implements Execution {
     if (frontTime === undefined) {
       return;
     }
-    const reloadTicks = this.mg.config().SiloCooldown(UnitType.CruiseMissile);
-    const cooldown = reloadTicks - (this.mg.ticks() - frontTime);
+    const cooldown =
+      CRUISE_RELOAD_TICKS - (this.mg.ticks() - frontTime);
     if (cooldown <= 0) {
       this.launcher.reloadMissile();
     }

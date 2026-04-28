@@ -1143,6 +1143,7 @@ export class PlayerImpl implements Player {
         return this.nukeSpawn(targetTile, unitType);
       case UnitType.AtomBomb:
       case UnitType.HydrogenBomb:
+      case UnitType.CruiseMissile:
         return this.nukeSpawn(targetTile, unitType);
       case UnitType.MIRVWarhead:
         return targetTile;
@@ -1164,6 +1165,9 @@ export class PlayerImpl implements Player {
       case UnitType.SAMLauncher:
       case UnitType.City:
       case UnitType.Factory:
+      case UnitType.OilFactory:
+      case UnitType.CopperMine:
+      case UnitType.CruiseLauncher:
         return this.landBasedStructureSpawn(targetTile, validTiles);
       default:
         assertNever(unitType);
@@ -1204,9 +1208,15 @@ export class PlayerImpl implements Player {
       }
     }
 
-    // only get missilesilos that are not on cooldown and not under construction
+    // choose launcher type based on nuke type
+    const launcherType =
+      nukeType === UnitType.CruiseMissile
+        ? UnitType.CruiseLauncher
+        : UnitType.MissileSilo;
+
+    // only get launchers that are not on cooldown and not under construction
     const bestSilo = findClosestBy(
-      this.units(UnitType.MissileSilo),
+      this.units(launcherType),
       (silo) => mg.manhattanDist(silo.tile(), tile),
       (silo) =>
         silo.isActive() && !silo.isInCooldown() && !silo.isUnderConstruction(),

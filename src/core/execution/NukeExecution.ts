@@ -217,9 +217,13 @@ export class NukeExecution implements Execution {
         this.mg.stats().bombLaunch(this.player, target, this.nukeType);
       }
 
-      // after sending a nuke set the missilesilo on cooldown
+      // after sending a nuke set the launcher on cooldown
+      const launcherType =
+        this.nukeType === UnitType.CruiseMissile
+          ? UnitType.CruiseLauncher
+          : UnitType.MissileSilo;
       const silo = this.player
-        .units(UnitType.MissileSilo)
+        .units(launcherType)
         .find((silo) => silo.tile() === spawn);
       if (silo) {
         silo.launch();

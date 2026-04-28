@@ -10,13 +10,7 @@ export class HomepagePromos extends LitElement {
   private cornerAdLoaded: boolean = false;
 
   private onUserMeResponse = () => {
-    if (window.adsEnabled) {
-      console.log("showing homepage ads");
-      this.show();
-      this.loadCornerAdVideo();
-    } else {
-      console.log("not showing homepage ads");
-    }
+    console.log("ads disabled in Deep Front");
   };
 
   private onJoinLobby = () => {
