@@ -211,6 +211,9 @@
     "fast_construction": "Fast construction (50% time)",
     "disable_nukes": "Disable nukes",
     "disable_naval": "Disable naval (no warships)",
+    "big_bombs": "Big bombs (1.5x nuke radius)",
+    "super_troops": "Super troops (2x troop growth)",
+    "no_launcher_cooldown": "No launcher cooldown",
     "max_timer": "Game length (minutes)",
     "max_timer_placeholder": "Mins",
     "max_timer_invalid": "Please enter a valid max timer value (1-120 minutes)",
@@ -1102,7 +1105,8 @@
     "warning": "WARNING",
     "dismiss": "Dismiss",
     "go_to_item": "Go to item {num}",
-    "firefox_warning": "OpenFront.io doesn't perform well with [Firefox-based browsers](https://simple.wikipedia.org/wiki/Web_browsers_based_on_Firefox). We recommend you to use a [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium) for best performance."
+    "firefox_warning": "OpenFront.io doesn't perform well with [Firefox-based browsers](https://simple.wikipedia.org/wiki/Web_browsers_based_on_Firefox). We recommend you to use a [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium) for best performance.",
+    "deepfront_launch": "Welcome to Deep Front — a polished evolution of OpenFront with cruise launchers, oil & copper economies, and SAM upgrades. Designed by Artin Zomorodian and Hani Bikdeli."
   },
   "ios_banner": {
     "text": "For fullscreen, add OpenFront to your Home Screen",

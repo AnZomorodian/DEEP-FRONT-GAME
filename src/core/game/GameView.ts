@@ -176,6 +176,10 @@ export class UnitView {
         ? this.gameView.config().SAMCooldown()
         : this.gameView.config().SiloCooldown();
 
+    if (cooldownDuration <= 0) {
+      return 1;
+    }
+
     for (const cooldown of this.data.missileTimerQueue) {
       const cooldownProgress = this.gameView.ticks() - cooldown;
       const cooldownRatio = cooldownProgress / cooldownDuration;

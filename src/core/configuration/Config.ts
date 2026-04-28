@@ -81,6 +81,9 @@ export interface Config {
   fastConstruction(): boolean;
   disableNukes(): boolean;
   disableNaval(): boolean;
+  bigBombs(): boolean;
+  superTroops(): boolean;
+  noLauncherCooldown(): boolean;
   isRandomSpawn(): boolean;
   numSpawnPhaseTurns(): number;
   userSettings(): UserSettings;

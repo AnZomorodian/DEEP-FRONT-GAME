@@ -1,8 +1,17 @@
 import { Execution, Game, Unit } from "../game/Game";
 
-const COPPER_INCOME_BASE = 5_000n;
-const COPPER_INCOME_INTERVAL = 150;
-const COPPER_LEVEL_BONUS_PERCENT = 4;
+const COPPER_INCOME_BASE = 7_000n;
+const COPPER_INCOME_INTERVAL = 100;
+
+function copperLevelMultiplier(level: number): number {
+  let m = 1;
+  for (let l = 2; l <= level; l++) {
+    if (l === 2) m *= 1.08;
+    else if (l === 3) m *= 1.12;
+    else m *= 1.15;
+  }
+  return m;
+}
 
 export class CopperMineExecution implements Execution {
   private active: boolean = true;
@@ -24,10 +33,7 @@ export class CopperMineExecution implements Execution {
     }
     if (ticks % COPPER_INCOME_INTERVAL === 0) {
       const level = this.copperMine.level();
-      const multiplier = Math.pow(
-        1 + COPPER_LEVEL_BONUS_PERCENT / 100,
-        level - 1,
-      );
+      const multiplier = copperLevelMultiplier(level);
       const megaMul = this.game.config().megaIncome() ? 3 : 1;
       const amount = BigInt(
         Math.floor(Number(COPPER_INCOME_BASE) * multiplier * megaMul),

@@ -207,7 +207,7 @@ export class DefaultConfig implements Config {
     return 120;
   }
   SiloCooldown(): number {
-    return 75;
+    return this.noLauncherCooldown() ? 0 : 75;
   }
 
   defensePostRange(): number {
@@ -299,6 +299,15 @@ export class DefaultConfig implements Config {
   }
   disableNaval(): boolean {
     return this._gameConfig.disableNaval ?? false;
+  }
+  bigBombs(): boolean {
+    return this._gameConfig.bigBombs ?? false;
+  }
+  superTroops(): boolean {
+    return this._gameConfig.superTroops ?? false;
+  }
+  noLauncherCooldown(): boolean {
+    return this._gameConfig.noLauncherCooldown ?? false;
   }
   startingGold(playerInfo: PlayerInfo): Gold {
     if (playerInfo.playerType === PlayerType.Bot) {
@@ -467,11 +476,10 @@ export class DefaultConfig implements Config {
         break;
       case UnitType.SAMLauncher:
         info = {
-          cost: this.costWrapper(
-            (numUnits: number) =>
-              Math.min(3_000_000, (numUnits + 1) * 1_500_000),
-            UnitType.SAMLauncher,
-          ),
+          cost: this.costWrapper((numUnits: number) => {
+            const tiers = [1_000_000, 1_500_000, 3_000_000];
+            return tiers[Math.min(numUnits, tiers.length - 1)];
+          }, UnitType.SAMLauncher),
           constructionDuration: this.instantBuild()
             ? 0
             : SAM_CONSTRUCTION_TICKS,
@@ -503,40 +511,37 @@ export class DefaultConfig implements Config {
         break;
       case UnitType.OilFactory:
         info = {
-          cost: this.costWrapper(
-            (numUnits: number) =>
-              Math.min(50_000_000, Math.pow(2, numUnits) * 1_200_000),
-            UnitType.OilFactory,
-          ),
-          constructionDuration: this.instantBuild() ? 0 : 4 * 10,
+          cost: this.costWrapper((numUnits: number) => {
+            const tiers = [1_200_000, 1_300_000, 1_500_000];
+            return tiers[Math.min(numUnits, tiers.length - 1)];
+          }, UnitType.OilFactory),
+          constructionDuration: this.instantBuild() ? 0 : 25 * 10,
           upgradable: true,
         };
         break;
       case UnitType.CopperMine:
         info = {
-          cost: this.costWrapper(
-            (numUnits: number) =>
-              Math.min(2_000_000_000, Math.pow(2, numUnits) * 400_000_000),
-            UnitType.CopperMine,
-          ),
-          constructionDuration: this.instantBuild() ? 0 : 3 * 10,
+          cost: this.costWrapper((numUnits: number) => {
+            const tiers = [600_000, 700_000, 900_000, 1_100_000];
+            return tiers[Math.min(numUnits, tiers.length - 1)];
+          }, UnitType.CopperMine),
+          constructionDuration: this.instantBuild() ? 0 : 15 * 10,
           upgradable: true,
         };
         break;
       case UnitType.CruiseLauncher:
         info = {
-          cost: this.costWrapper(
-            (numUnits: number) =>
-              Math.min(1_500_000, (numUnits + 1) * 750_000),
-            UnitType.CruiseLauncher,
-          ),
+          cost: this.costWrapper((numUnits: number) => {
+            const tiers = [1_000_000, 1_500_000];
+            return tiers[Math.min(numUnits, tiers.length - 1)];
+          }, UnitType.CruiseLauncher),
           constructionDuration: this.instantBuild() ? 0 : 8 * 10,
           upgradable: true,
         };
         break;
       case UnitType.CruiseMissile:
         info = {
-          cost: this.costWrapper(() => 375_000, UnitType.CruiseMissile),
+          cost: this.costWrapper(() => 500_000, UnitType.CruiseMissile),
         };
         break;
       case UnitType.Train:
@@ -964,6 +969,10 @@ export class DefaultConfig implements Config {
       }
     }
 
+    if (this.superTroops()) {
+      toAdd *= 2;
+    }
+
     return Math.min(player.troops() + toAdd, max) - player.troops();
   }
 
@@ -979,17 +988,28 @@ export class DefaultConfig implements Config {
   }
 
   nukeMagnitudes(unitType: UnitType): NukeMagnitude {
+    const scale = this.bigBombs() ? 1.5 : 1;
+    let mag: NukeMagnitude;
     switch (unitType) {
       case UnitType.MIRVWarhead:
-        return { inner: 12, outer: 18 };
+        mag = { inner: 12, outer: 18 };
+        break;
       case UnitType.AtomBomb:
-        return { inner: 12, outer: 30 };
+        mag = { inner: 12, outer: 30 };
+        break;
       case UnitType.HydrogenBomb:
-        return { inner: 80, outer: 100 };
+        mag = { inner: 80, outer: 100 };
+        break;
       case UnitType.CruiseMissile:
-        return { inner: 6, outer: 15 };
+        mag = { inner: 6, outer: 15 };
+        break;
+      default:
+        throw new Error(`Unknown nuke type: ${unitType}`);
     }
-    throw new Error(`Unknown nuke type: ${unitType}`);
+    return {
+      inner: Math.round(mag.inner * scale),
+      outer: Math.round(mag.outer * scale),
+    };
   }
 
   nukeAllianceBreakThreshold(): number {

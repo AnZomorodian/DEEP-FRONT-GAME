@@ -64,6 +64,9 @@ const DEFAULT_OPTIONS = {
   fastConstruction: false,
   disableNukes: false,
   disableNaval: false,
+  bigBombs: false,
+  superTroops: false,
+  noLauncherCooldown: false,
 } as const;
 
 @customElement("single-player-modal")
@@ -105,6 +108,10 @@ export class SinglePlayerModal extends BaseModal {
   @state() private fastConstruction: boolean = DEFAULT_OPTIONS.fastConstruction;
   @state() private disableNukes: boolean = DEFAULT_OPTIONS.disableNukes;
   @state() private disableNaval: boolean = DEFAULT_OPTIONS.disableNaval;
+  @state() private bigBombs: boolean = DEFAULT_OPTIONS.bigBombs;
+  @state() private superTroops: boolean = DEFAULT_OPTIONS.superTroops;
+  @state() private noLauncherCooldown: boolean =
+    DEFAULT_OPTIONS.noLauncherCooldown;
 
   private mapLoader = terrainMapFileLoader;
 
@@ -349,6 +356,18 @@ export class SinglePlayerModal extends BaseModal {
                     labelKey: "single_modal.disable_naval",
                     checked: this.disableNaval,
                   },
+                  {
+                    labelKey: "single_modal.big_bombs",
+                    checked: this.bigBombs,
+                  },
+                  {
+                    labelKey: "single_modal.super_troops",
+                    checked: this.superTroops,
+                  },
+                  {
+                    labelKey: "single_modal.no_launcher_cooldown",
+                    checked: this.noLauncherCooldown,
+                  },
                 ],
                 inputCards,
               },
@@ -427,6 +446,9 @@ export class SinglePlayerModal extends BaseModal {
       this.fastConstruction !== DEFAULT_OPTIONS.fastConstruction ||
       this.disableNukes !== DEFAULT_OPTIONS.disableNukes ||
       this.disableNaval !== DEFAULT_OPTIONS.disableNaval ||
+      this.bigBombs !== DEFAULT_OPTIONS.bigBombs ||
+      this.superTroops !== DEFAULT_OPTIONS.superTroops ||
+      this.noLauncherCooldown !== DEFAULT_OPTIONS.noLauncherCooldown ||
       this.disabledUnits.length > 0
     );
   }
@@ -460,6 +482,9 @@ export class SinglePlayerModal extends BaseModal {
     this.fastConstruction = DEFAULT_OPTIONS.fastConstruction;
     this.disableNukes = DEFAULT_OPTIONS.disableNukes;
     this.disableNaval = DEFAULT_OPTIONS.disableNaval;
+    this.bigBombs = DEFAULT_OPTIONS.bigBombs;
+    this.superTroops = DEFAULT_OPTIONS.superTroops;
+    this.noLauncherCooldown = DEFAULT_OPTIONS.noLauncherCooldown;
   }
 
   protected onOpen(): void {
@@ -559,6 +584,15 @@ export class SinglePlayerModal extends BaseModal {
         break;
       case "single_modal.disable_naval":
         this.disableNaval = checked;
+        break;
+      case "single_modal.big_bombs":
+        this.bigBombs = checked;
+        break;
+      case "single_modal.super_troops":
+        this.superTroops = checked;
+        break;
+      case "single_modal.no_launcher_cooldown":
+        this.noLauncherCooldown = checked;
         break;
       default:
         break;
@@ -773,6 +807,11 @@ export class SinglePlayerModal extends BaseModal {
               ...(this.fastConstruction ? { fastConstruction: true } : {}),
               ...(this.disableNukes ? { disableNukes: true } : {}),
               ...(this.disableNaval ? { disableNaval: true } : {}),
+              ...(this.bigBombs ? { bigBombs: true } : {}),
+              ...(this.superTroops ? { superTroops: true } : {}),
+              ...(this.noLauncherCooldown
+                ? { noLauncherCooldown: true }
+                : {}),
             },
             lobbyCreatedAt: Date.now(), // ms; server should be authoritative in MP
           },
