@@ -165,7 +165,7 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
-      tsconfigPaths(),
+      tsconfigPaths({ ignoreConfigErrors: true }),
       ...(!isProduction
         ? [serveProprietaryDir(proprietaryDir, resourcesDir)]
         : []),
