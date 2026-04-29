@@ -381,6 +381,21 @@ export class UserSettingModal extends BaseModal {
     window.removeEventListener("keydown", this.handleEasterEggKey);
   }
 
+  private sectionHeader(label: string, icon: string, extraTopClass = "mt-8") {
+    return html`
+      <div
+        class="flex items-center gap-3 ${extraTopClass} mb-3 px-4 py-2 rounded-lg bg-gradient-to-r from-malibu-blue/15 to-transparent border-l-4 border-malibu-blue"
+      >
+        <span class="text-2xl leading-none select-none">${icon}</span>
+        <h2
+          class="text-aquarius text-lg font-bold uppercase tracking-widest m-0"
+        >
+          ${label}
+        </h2>
+      </div>
+    `;
+  }
+
   private renderKeybindSettings() {
     return html`
       <div
@@ -403,11 +418,11 @@ export class UserSettingModal extends BaseModal {
         ${translateText("user_setting.keybinds_hint")}
       </div>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-4 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.view_options")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.view_options"),
+        "👁️",
+        "mt-4",
+      )}
 
       <setting-keybind
         action="toggleView"
@@ -429,11 +444,10 @@ export class UserSettingModal extends BaseModal {
         @change=${this.handleKeybindChange}
       ></setting-keybind>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-8 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.build_controls")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.build_controls"),
+        "🏗️",
+      )}
 
       <setting-keybind
         action="buildCity"
@@ -535,11 +549,10 @@ export class UserSettingModal extends BaseModal {
         @change=${this.handleKeybindChange}
       ></setting-keybind>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-8 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.menu_shortcuts")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.menu_shortcuts"),
+        "⌨️",
+      )}
 
       <setting-keybind
         action="modifierKey"
@@ -591,11 +604,10 @@ export class UserSettingModal extends BaseModal {
         @change=${this.handleKeybindChange}
       ></setting-keybind>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-8 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.attack_ratio_controls")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.attack_ratio_controls"),
+        "⚖️",
+      )}
 
       <setting-keybind
         action="attackRatioDown"
@@ -621,11 +633,10 @@ export class UserSettingModal extends BaseModal {
         @change=${this.handleKeybindChange}
       ></setting-keybind>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-8 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.attack_keybinds")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.attack_keybinds"),
+        "⚔️",
+      )}
 
       <setting-keybind
         action="boatAttack"
@@ -657,11 +668,10 @@ export class UserSettingModal extends BaseModal {
         @change=${this.handleKeybindChange}
       ></setting-keybind>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-8 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.ally_keybinds")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.ally_keybinds"),
+        "🤝",
+      )}
 
       <setting-keybind
         action="requestAlliance"
@@ -683,11 +693,10 @@ export class UserSettingModal extends BaseModal {
         @change=${this.handleKeybindChange}
       ></setting-keybind>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-8 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.zoom_controls")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.zoom_controls"),
+        "🔍",
+      )}
 
       <setting-keybind
         action="zoomOut"
@@ -709,11 +718,10 @@ export class UserSettingModal extends BaseModal {
         @change=${this.handleKeybindChange}
       ></setting-keybind>
 
-      <h2
-        class="text-blue-200 text-xl font-bold mt-8 mb-3 border-b border-white/10 pb-2"
-      >
-        ${translateText("user_setting.camera_movement")}
-      </h2>
+      ${this.sectionHeader(
+        translateText("user_setting.camera_movement"),
+        "🎥",
+      )}
 
       <setting-keybind
         action="centerCamera"

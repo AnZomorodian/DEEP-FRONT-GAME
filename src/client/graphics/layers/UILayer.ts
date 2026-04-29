@@ -527,6 +527,7 @@ export class UILayer implements Layer {
     switch (unit.type()) {
       case UnitType.MissileSilo:
       case UnitType.SAMLauncher:
+      case UnitType.CruiseLauncher:
         return !unit.markedForDeletion()
           ? unit.missileReadinesss()
           : this.deletionProgress(this.game, unit);

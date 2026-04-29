@@ -45,9 +45,13 @@ import {
 } from "./StructureDrawingUtils";
 const bitmapFont = assetUrl("fonts/round_6x6_modified.xml");
 
-/** True for nuke types (AtomBomb, HydrogenBomb): ghost is preserved after placement so user can place multiple or keep selection (Enter/key confirm). */
+/** True for nuke types (AtomBomb, HydrogenBomb, CruiseMissile): ghost is preserved after placement so user can place multiple or keep selection (Enter/key confirm). */
 export function shouldPreserveGhostAfterBuild(unitType: UnitType): boolean {
-  return unitType === UnitType.AtomBomb || unitType === UnitType.HydrogenBomb;
+  return (
+    unitType === UnitType.AtomBomb ||
+    unitType === UnitType.HydrogenBomb ||
+    unitType === UnitType.CruiseMissile
+  );
 }
 
 extend([a11yPlugin]);
@@ -283,7 +287,9 @@ export class StructureIconsLayer implements Layer {
     if (
       tileRef &&
       myPlayer &&
-      (nukeType === UnitType.AtomBomb || nukeType === UnitType.HydrogenBomb)
+      (nukeType === UnitType.AtomBomb ||
+        nukeType === UnitType.HydrogenBomb ||
+        nukeType === UnitType.CruiseMissile)
     ) {
       // Only check connected allies - nuking disconnected allies doesn't cause a traitor debuff
       this.connectedAllySmallIds.clear();
@@ -467,7 +473,9 @@ export class StructureIconsLayer implements Layer {
     } else if (this.ghostUnit.buildableUnit.canBuild) {
       const unitType = this.ghostUnit.buildableUnit.type;
       const rocketDirectionUp =
-        unitType === UnitType.AtomBomb || unitType === UnitType.HydrogenBomb
+        unitType === UnitType.AtomBomb ||
+        unitType === UnitType.HydrogenBomb ||
+        unitType === UnitType.CruiseMissile
           ? this.uiState.rocketDirectionUp
           : undefined;
       this.eventBus.emit(

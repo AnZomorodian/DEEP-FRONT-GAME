@@ -208,17 +208,30 @@ export class DefaultConfig implements Config {
   }
   SiloCooldown(type?: UnitType): number {
     if (this.noLauncherCooldown()) return 0;
+    let base: number;
     switch (type) {
       case UnitType.HydrogenBomb:
-        return 125;
+        base = 125;
+        break;
       case UnitType.MIRV:
       case UnitType.MIRVWarhead:
-        return 300;
+        base = 300;
+        break;
       case UnitType.AtomBomb:
-        return 80;
+        base = 80;
+        break;
+      case UnitType.CruiseMissile:
+        // Must mirror CruiseLauncherExecution.CRUISE_RELOAD_TICKS
+        base = 55;
+        break;
       default:
-        return 80;
+        base = 80;
     }
+    // Doomsday reloads faster — nuke warfare ramps up
+    if (this._gameConfig.gameMode === GameMode.Doomsday) {
+      base = Math.round(base * 0.6);
+    }
+    return base;
   }
 
   defensePostRange(): number {
@@ -941,24 +954,38 @@ export class DefaultConfig implements Config {
   }
 
   startManpower(playerInfo: PlayerInfo): number {
+    let base: number;
     if (playerInfo.playerType === PlayerType.Bot) {
-      return 10_000;
-    }
-    if (playerInfo.playerType === PlayerType.Nation) {
+      base = 10_000;
+    } else if (playerInfo.playerType === PlayerType.Nation) {
       switch (this._gameConfig.difficulty) {
         case Difficulty.Easy:
-          return 12_500;
+          base = 12_500;
+          break;
         case Difficulty.Medium:
-          return 18_750;
+          base = 18_750;
+          break;
         case Difficulty.Hard:
-          return 25_000; // Like humans
+          base = 25_000;
+          break;
         case Difficulty.Impossible:
-          return 31_250;
+          base = 31_250;
+          break;
         default:
           assertNever(this._gameConfig.difficulty);
       }
+    } else {
+      base = this.hasInfiniteTroopsForInfo(playerInfo) ? 1_000_000 : 25_000;
     }
-    return this.hasInfiniteTroopsForInfo(playerInfo) ? 1_000_000 : 25_000;
+    // Battle Royale: bigger starting armies, all-in fights
+    if (this._gameConfig.gameMode === GameMode.BattleRoyale) {
+      base = Math.round(base * 1.5);
+    }
+    // Doomsday: more starting troops to support nuke economy
+    if (this._gameConfig.gameMode === GameMode.Doomsday) {
+      base = Math.round(base * 1.25);
+    }
+    return base;
   }
 
   maxTroops(player: Player | PlayerView): number {
@@ -1045,20 +1072,24 @@ export class DefaultConfig implements Config {
   }
 
   nukeMagnitudes(unitType: UnitType): NukeMagnitude {
-    const scale = this.bigBombs() ? 1.5 : 1;
+    let scale = this.bigBombs() ? 1.5 : 1;
+    // Doomsday cranks nukes up; Battle Royale uses default radii
+    if (this._gameConfig.gameMode === GameMode.Doomsday) {
+      scale *= 1.25;
+    }
     let mag: NukeMagnitude;
     switch (unitType) {
       case UnitType.MIRVWarhead:
-        mag = { inner: 28, outer: 70 };
+        mag = { inner: 14, outer: 35 };
         break;
       case UnitType.AtomBomb:
-        mag = { inner: 28, outer: 70 };
+        mag = { inner: 14, outer: 35 };
         break;
       case UnitType.HydrogenBomb:
-        mag = { inner: 64, outer: 160 };
+        mag = { inner: 32, outer: 75 };
         break;
       case UnitType.CruiseMissile:
-        mag = { inner: 14, outer: 35 };
+        mag = { inner: 6, outer: 15 };
         break;
       default:
         throw new Error(`Unknown nuke type: ${unitType}`);

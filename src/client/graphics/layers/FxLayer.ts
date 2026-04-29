@@ -67,19 +67,16 @@ export class FxLayer implements Layer {
     }
 
     switch (unit.type()) {
-      case UnitType.AtomBomb: {
-        this.onNukeEvent(unit, 70);
-        break;
-      }
+      case UnitType.AtomBomb:
       case UnitType.MIRVWarhead:
-        this.onNukeEvent(unit, 70);
-        break;
-      case UnitType.HydrogenBomb: {
-        this.onNukeEvent(unit, 160);
-        break;
-      }
+      case UnitType.HydrogenBomb:
       case UnitType.CruiseMissile: {
-        this.onNukeEvent(unit, 35);
+        // Use the configured outer radius so visuals match destruction zone
+        // and scale with mode (Doomsday +25%, Big Bombs ×1.5).
+        const mag = this.game.config().nukeMagnitudes(unit.type());
+        // Slightly larger than destruction radius for splash/halo effect.
+        const outer = Math.max(18, Math.round(mag.outer * 2.5));
+        this.onNukeEvent(unit, outer);
         break;
       }
       case UnitType.Warship:
