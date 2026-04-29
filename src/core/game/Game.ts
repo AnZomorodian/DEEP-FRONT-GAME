@@ -652,10 +652,11 @@ export interface Unit {
   // --- UNIT SPECIFIC ---
 
   // SAMs & Missile Silos
-  launch(): void;
+  launch(type?: UnitType): void;
   reloadMissile(): void;
   isInCooldown(): boolean;
   missileTimerQueue(): number[];
+  frontMissileType(): UnitType | undefined;
 
   // Trade Ships
   setSafeFromPirates(): void; // Only for trade ships

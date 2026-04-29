@@ -204,10 +204,21 @@ export class DefaultConfig implements Config {
     return 5 - falloutRatio * 2;
   }
   SAMCooldown(): number {
-    return 120;
+    return 50;
   }
-  SiloCooldown(): number {
-    return this.noLauncherCooldown() ? 0 : 75;
+  SiloCooldown(type?: UnitType): number {
+    if (this.noLauncherCooldown()) return 0;
+    switch (type) {
+      case UnitType.HydrogenBomb:
+        return 125;
+      case UnitType.MIRV:
+      case UnitType.MIRVWarhead:
+        return 300;
+      case UnitType.AtomBomb:
+        return 80;
+      default:
+        return 80;
+    }
   }
 
   defensePostRange(): number {
@@ -1038,16 +1049,16 @@ export class DefaultConfig implements Config {
     let mag: NukeMagnitude;
     switch (unitType) {
       case UnitType.MIRVWarhead:
-        mag = { inner: 12, outer: 18 };
+        mag = { inner: 28, outer: 70 };
         break;
       case UnitType.AtomBomb:
-        mag = { inner: 12, outer: 30 };
+        mag = { inner: 28, outer: 70 };
         break;
       case UnitType.HydrogenBomb:
-        mag = { inner: 80, outer: 100 };
+        mag = { inner: 64, outer: 160 };
         break;
       case UnitType.CruiseMissile:
-        mag = { inner: 6, outer: 15 };
+        mag = { inner: 14, outer: 35 };
         break;
       default:
         throw new Error(`Unknown nuke type: ${unitType}`);

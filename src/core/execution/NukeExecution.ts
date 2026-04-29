@@ -237,7 +237,7 @@ export class NukeExecution implements Execution {
         .units(launcherType)
         .find((silo) => silo.tile() === spawn);
       if (silo) {
-        silo.launch();
+        silo.launch(this.nukeType);
       }
       return;
     }

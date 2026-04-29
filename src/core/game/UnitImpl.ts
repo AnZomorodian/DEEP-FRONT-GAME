@@ -32,6 +32,9 @@ export class UnitImpl implements Unit {
   private _troops: number;
   // Number of missiles in cooldown, if empty all missiles are ready.
   private _missileTimerQueue: number[] = [];
+  // Type of each missile in the cooldown queue (parallel to _missileTimerQueue).
+  // undefined entries are treated as the default (atom).
+  private _missileTypeQueue: (UnitType | undefined)[] = [];
   private _hasTrainStation: boolean = false;
   private _patrolTile: TileRef | undefined;
   private _level: number = 1;
@@ -141,6 +144,7 @@ export class UnitImpl implements Unit {
       targetUnitId: this._targetUnit?.id() ?? undefined,
       targetTile: this.targetTile() ?? undefined,
       missileTimerQueue: this._missileTimerQueue,
+      missileTypeQueue: this._missileTypeQueue,
       level: this.level(),
       hasTrainStation: this._hasTrainStation,
       trainType: this._trainType,
@@ -381,9 +385,14 @@ export class UnitImpl implements Unit {
     return `Unit:${this._type},owner:${this.owner().name()}`;
   }
 
-  launch(): void {
+  launch(type?: UnitType): void {
     this._missileTimerQueue.push(this.mg.ticks());
+    this._missileTypeQueue.push(type);
     this.mg.addUpdate(this.toUpdate());
+  }
+
+  frontMissileType(): UnitType | undefined {
+    return this._missileTypeQueue[0];
   }
 
   ticksLeftInCooldown(): Tick | undefined {
@@ -400,6 +409,7 @@ export class UnitImpl implements Unit {
 
   reloadMissile(): void {
     this._missileTimerQueue.shift();
+    this._missileTypeQueue.shift();
     this.mg.addUpdate(this.toUpdate());
   }
 
@@ -482,6 +492,7 @@ export class UnitImpl implements Unit {
       ].includes(this.type())
     ) {
       this._missileTimerQueue.push(this.mg.ticks());
+      this._missileTypeQueue.push(undefined);
     }
     this.mg.addUpdate(this.toUpdate());
   }
@@ -496,6 +507,7 @@ export class UnitImpl implements Unit {
       ].includes(this.type())
     ) {
       this._missileTimerQueue.pop();
+      this._missileTypeQueue.pop();
     }
     if (this._level <= 0) {
       this.delete(true, destroyer);

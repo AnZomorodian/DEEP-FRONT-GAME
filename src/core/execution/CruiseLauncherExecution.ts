@@ -1,6 +1,6 @@
 import { Execution, Game, Unit } from "../game/Game";
 
-const CRUISE_RELOAD_TICKS = 75;
+const CRUISE_RELOAD_TICKS = 55;
 
 export class CruiseLauncherExecution implements Execution {
   private active = true;

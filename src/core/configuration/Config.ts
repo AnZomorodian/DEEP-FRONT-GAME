@@ -160,7 +160,7 @@ export interface Config {
   safeFromPiratesCooldownMax(): number;
   defensePostRange(): number;
   SAMCooldown(): number;
-  SiloCooldown(): number;
+  SiloCooldown(type?: UnitType): number;
   minDistanceBetweenPlayers(): number;
   defensePostDefenseBonus(): number;
   defensePostSpeedBonus(): number;

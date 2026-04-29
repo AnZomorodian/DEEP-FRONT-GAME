@@ -50,7 +50,8 @@ export class NukeTrajectoryPreviewLayer implements Layer {
       // Clear trajectory if ghost structure changed
       if (
         e.ghostStructure !== UnitType.AtomBomb &&
-        e.ghostStructure !== UnitType.HydrogenBomb
+        e.ghostStructure !== UnitType.HydrogenBomb &&
+        e.ghostStructure !== UnitType.CruiseMissile
       ) {
         this.trajectoryPoints = [];
         this.lastTargetTile = null;
@@ -82,7 +83,8 @@ export class NukeTrajectoryPreviewLayer implements Layer {
     const ghostStructure = this.currentGhostStructure;
     const isNukeType =
       ghostStructure === UnitType.AtomBomb ||
-      ghostStructure === UnitType.HydrogenBomb;
+      ghostStructure === UnitType.HydrogenBomb ||
+      ghostStructure === UnitType.CruiseMissile;
 
     // Clear trajectory if not a nuke type
     if (!isNukeType) {
@@ -168,7 +170,8 @@ export class NukeTrajectoryPreviewLayer implements Layer {
     const ghostStructure = this.currentGhostStructure;
     const isNukeType =
       ghostStructure === UnitType.AtomBomb ||
-      ghostStructure === UnitType.HydrogenBomb;
+      ghostStructure === UnitType.HydrogenBomb ||
+      ghostStructure === UnitType.CruiseMissile;
 
     // Clear trajectory if not a nuke type or no cached spawn tile
     if (!isNukeType || !this.cachedSpawnTile) {

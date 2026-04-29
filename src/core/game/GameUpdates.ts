@@ -145,6 +145,7 @@ export interface UnitUpdate {
   health?: number;
   underConstruction?: boolean;
   missileTimerQueue: number[];
+  missileTypeQueue?: (UnitType | undefined)[];
   level: number;
   hasTrainStation: boolean;
   trainType?: TrainType; // Only for trains
