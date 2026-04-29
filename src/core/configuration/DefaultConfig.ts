@@ -605,6 +605,13 @@ export class DefaultConfig implements Config {
           cost: this.costWrapper(() => 500_000, UnitType.CruiseMissile),
         };
         break;
+      case UnitType.FishingDock:
+        info = {
+          cost: this.costWrapper(() => 200_000, UnitType.FishingDock),
+          constructionDuration: this.instantBuild() ? 0 : 10 * 10,
+          upgradable: false,
+        };
+        break;
       case UnitType.Train:
         info = {
           cost: () => 0n,

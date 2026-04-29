@@ -1200,6 +1200,8 @@ export class PlayerImpl implements Player {
       case UnitType.CopperMine:
       case UnitType.CruiseLauncher:
         return this.landBasedStructureSpawn(targetTile, validTiles);
+      case UnitType.FishingDock:
+        return this.fishingSpawn(targetTile, validTiles);
       default:
         assertNever(unitType);
     }
@@ -1351,6 +1353,17 @@ export class PlayerImpl implements Player {
         this.mg.euclideanDistSquared(b, tile),
     );
     return valid;
+  }
+
+  fishingSpawn(
+    tile: TileRef,
+    validTiles: TileRef[] | null = null,
+  ): TileRef | false {
+    const tiles = (validTiles ?? this.validStructureSpawnTiles(tile)).filter(
+      (t) => this.mg.isShore(t),
+    );
+    if (tiles.length === 0) return false;
+    return tiles[0];
   }
 
   tradeShipSpawn(targetTile: TileRef): TileRef | false {

@@ -3,6 +3,7 @@ import { TileRef } from "../game/GameMap";
 import { CityExecution } from "./CityExecution";
 import { CopperMineExecution } from "./CopperMineExecution";
 import { CruiseLauncherExecution } from "./CruiseLauncherExecution";
+import { FishingDockExecution } from "./FishingDockExecution";
 import { DefensePostExecution } from "./DefensePostExecution";
 import { FactoryExecution } from "./FactoryExecution";
 import { MirvExecution } from "./MIRVExecution";
@@ -157,6 +158,9 @@ export class ConstructionExecution implements Execution {
       case UnitType.CruiseLauncher:
         this.mg.addExecution(new CruiseLauncherExecution(this.structure!));
         break;
+      case UnitType.FishingDock:
+        this.mg.addExecution(new FishingDockExecution(this.structure!));
+        break;
       default:
         console.warn(
           `unit type ${this.constructionType} cannot be constructed`,
@@ -176,6 +180,7 @@ export class ConstructionExecution implements Execution {
       case UnitType.OilFactory:
       case UnitType.CopperMine:
       case UnitType.CruiseLauncher:
+      case UnitType.FishingDock:
         return true;
       default:
         return false;

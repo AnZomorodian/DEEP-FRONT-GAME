@@ -53,7 +53,8 @@ export type OtherUnitType =
   | UnitType.Factory
   | UnitType.OilFactory
   | UnitType.CopperMine
-  | UnitType.CruiseLauncher;
+  | UnitType.CruiseLauncher
+  | UnitType.FishingDock;
 
 export const unitTypeToOtherUnit = {
   [UnitType.City]: "city",
@@ -66,6 +67,7 @@ export const unitTypeToOtherUnit = {
   [UnitType.OilFactory]: "oilf",
   [UnitType.CopperMine]: "cupm",
   [UnitType.CruiseLauncher]: "crsl",
+  [UnitType.FishingDock]: "fish",
 } as const satisfies Record<OtherUnitType, OtherUnit>;
 
 // Attacks

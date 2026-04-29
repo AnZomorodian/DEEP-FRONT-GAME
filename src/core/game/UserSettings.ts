@@ -19,6 +19,7 @@ export function getDefaultKeybinds(isMac: boolean): Record<string, string> {
     buildCopperMine: "Equal",
     buildCruiseLauncher: "BracketLeft",
     buildCruiseMissile: "Backquote",
+    buildFishingDock: "BracketRight",
     attackRatioDown: "KeyT",
     attackRatioUp: "KeyY",
     boatAttack: "KeyB",

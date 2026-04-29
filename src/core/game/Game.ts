@@ -328,6 +328,7 @@ export enum UnitType {
   CopperMine = "Copper Mine",
   CruiseLauncher = "Cruise Launcher",
   CruiseMissile = "Cruise Missile",
+  FishingDock = "Fishing Dock",
 }
 
 export enum TrainType {
@@ -362,6 +363,7 @@ export const Structures = unitTypeGroup([
   UnitType.OilFactory,
   UnitType.CopperMine,
   UnitType.CruiseLauncher,
+  UnitType.FishingDock,
 ] as const);
 
 export const BuildMenus = unitTypeGroup([
@@ -449,6 +451,8 @@ export interface UnitParamsMap {
     targetTile?: number;
     trajectory: TrajectoryTile[];
   };
+
+  [UnitType.FishingDock]: Record<string, never>;
 }
 
 // Type helper to get params type for a specific unit type

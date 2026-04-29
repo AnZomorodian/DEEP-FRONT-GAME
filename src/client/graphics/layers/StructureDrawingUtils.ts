@@ -17,6 +17,7 @@ const shieldIcon = assetUrl("images/ShieldIcon.png");
 const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
 const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
 const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
+const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
 
 export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.City]: "circle",
@@ -28,6 +29,7 @@ export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.OilFactory]: "circle",
   [UnitType.CopperMine]: "pentagon",
   [UnitType.CruiseLauncher]: "triangle",
+  [UnitType.FishingDock]: "octagon",
   [UnitType.Warship]: "cross",
   [UnitType.AtomBomb]: "cross",
   [UnitType.HydrogenBomb]: "cross",
@@ -77,6 +79,7 @@ export class SpriteFactory {
     [UnitType.OilFactory, { iconPath: oilFactoryIcon, image: null }],
     [UnitType.CopperMine, { iconPath: copperMineIcon, image: null }],
     [UnitType.CruiseLauncher, { iconPath: cruiseLauncherIcon, image: null }],
+    [UnitType.FishingDock, { iconPath: fishingDockIcon, image: null }],
   ]);
   constructor(
     theme: Theme,

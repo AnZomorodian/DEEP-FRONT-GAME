@@ -18,6 +18,7 @@ const SAMMissileIcon = assetUrl("images/buildings/silo4.png");
 const oilFactoryIcon = assetUrl("images/buildings/oilFactory.svg");
 const copperMineIcon = assetUrl("images/buildings/copperMine.svg");
 const cruiseLauncherIcon = assetUrl("images/buildings/cruiseLauncher.svg");
+const fishingDockIcon = assetUrl("images/buildings/fishingDock.svg");
 
 const underConstructionColor = colord("rgb(150,150,150)");
 
@@ -85,6 +86,11 @@ export class StructureLayer implements Layer {
     },
     [UnitType.CruiseLauncher]: {
       icon: cruiseLauncherIcon,
+      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
+      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
+    },
+    [UnitType.FishingDock]: {
+      icon: fishingDockIcon,
       borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
       territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
     },

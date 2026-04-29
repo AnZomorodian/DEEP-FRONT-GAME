@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 64 64" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-  <ellipse cx="28" cy="32" rx="18" ry="10" fill="white" stroke="none" />
-  <polygon points="10,32 0,22 0,42" fill="white" stroke="none" />
-  <circle cx="40" cy="30" r="2" fill="black" stroke="none" />
-  <line x1="46" y1="42" x2="58" y2="54" stroke="white" stroke-width="3" />
-  <line x1="48" y1="54" x2="58" y2="44" stroke="white" stroke-width="3" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <path d="M13 8 C13 5.5 11.5 3.5 9 3 L9 4.5 C9 4.5 11 5 11 8 C11 11 9 11.5 9 11.5 L9 13 C11.5 12.5 13 10.5 13 8Z" fill="black"/>
+  <ellipse cx="7" cy="8" rx="4.5" ry="3" fill="black"/>
+  <path d="M3 5 L1 8 L3 11 Z" fill="black"/>
 </svg>

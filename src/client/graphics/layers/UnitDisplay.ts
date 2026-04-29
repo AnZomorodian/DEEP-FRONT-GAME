@@ -33,6 +33,7 @@ const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
 const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
 const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
 const cruiseMissileIcon = assetUrl("images/CruiseMissileIcon.svg");
+const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
 
 @customElement("unit-display")
 export class UnitDisplay extends LitElement implements Layer {
@@ -51,6 +52,7 @@ export class UnitDisplay extends LitElement implements Layer {
   private _oilFactories = 0;
   private _copperMines = 0;
   private _cruiseLaunchers = 0;
+  private _fishingDocks = 0;
   private allDisabled = false;
   private _hoveredUnit: PlayerBuildableUnitType | null = null;
 
@@ -119,6 +121,7 @@ export class UnitDisplay extends LitElement implements Layer {
     this._oilFactories = player.totalUnitLevels(UnitType.OilFactory);
     this._copperMines = player.totalUnitLevels(UnitType.CopperMine);
     this._cruiseLaunchers = player.totalUnitLevels(UnitType.CruiseLauncher);
+    this._fishingDocks = player.totalUnitLevels(UnitType.FishingDock);
     this.requestUpdate();
   }
 
@@ -238,6 +241,13 @@ export class UnitDisplay extends LitElement implements Layer {
             UnitType.CruiseMissile,
             "cruise_missile",
             this.keybinds["buildCruiseMissile"]?.key ?? "`",
+          )}
+          ${this.renderUnitItem(
+            fishingDockIcon,
+            this._fishingDocks,
+            UnitType.FishingDock,
+            "fishing_dock",
+            this.keybinds["buildFishingDock"]?.key ?? "]",
           )}
         </div>
       </div>

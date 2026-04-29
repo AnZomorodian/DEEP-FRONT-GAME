@@ -586,7 +586,8 @@
     "oil_factory": "Oil Factory",
     "copper_mine": "Copper Mine",
     "cruise_launcher": "Cruise Launcher",
-    "cruise_missile": "Cruise Missile"
+    "cruise_missile": "Cruise Missile",
+    "fishing_dock": "Fishing Dock"
   },
   "user_setting": {
     "title": "Settings",
@@ -813,7 +814,8 @@
       "oil_factory": "Generates oil income passively over time",
       "copper_mine": "Mines copper to boost production and income",
       "cruise_launcher": "Launches cruise missiles at enemy targets",
-      "cruise_missile": "Precision strike, half the power of an atom bomb"
+      "cruise_missile": "Precision strike, half the power of an atom bomb",
+      "fishing_dock": "Coastal fishing income (shore tiles only)"
     },
     "warship_shift_hint": "Hold Shift and drag to select multiple warships at once",
     "not_enough_money": "Not enough money"
