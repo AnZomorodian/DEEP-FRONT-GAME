@@ -1076,6 +1076,10 @@ export class PlayerImpl implements Player {
     if (!this.canUpgradeUnitType(unit.type())) {
       return false;
     }
+    const maxLevel = this.mg.unitInfo(unit.type()).maxLevel;
+    if (maxLevel !== undefined && unit.level() >= maxLevel) {
+      return false;
+    }
     // Upgrades operate on existing units, so they bypass per-player max caps.
     if (!this.canBuildUnitType(unit.type(), null, true)) {
       return false;

@@ -494,11 +494,16 @@ export class SpriteFactory {
       case UnitType.HydrogenBomb:
         radius = this.game.config().nukeMagnitudes(UnitType.HydrogenBomb).outer;
         break;
+      case UnitType.CruiseMissile:
+        radius = this.game.config().nukeMagnitudes(UnitType.CruiseMissile).outer;
+        break;
       default:
         return null;
     }
-    // Add warning colors (red/orange) when targeting an ally to indicate alliance will break
-    const isNuke = type === UnitType.AtomBomb || type === UnitType.HydrogenBomb;
+    const isNuke =
+      type === UnitType.AtomBomb ||
+      type === UnitType.HydrogenBomb ||
+      type === UnitType.CruiseMissile;
     const fillColor = targetingAlly && isNuke ? 0xff6b35 : 0xffffff;
     const fillAlpha = targetingAlly && isNuke ? 0.35 : 0.2;
     const strokeColor = targetingAlly && isNuke ? 0xff4444 : 0xffffff;

@@ -290,7 +290,8 @@ export class NukeTrajectoryPreviewLayer implements Layer {
     const ghostStructure = this.currentGhostStructure;
     const isNukeType =
       ghostStructure === UnitType.AtomBomb ||
-      ghostStructure === UnitType.HydrogenBomb;
+      ghostStructure === UnitType.HydrogenBomb ||
+      ghostStructure === UnitType.CruiseMissile;
 
     if (!isNukeType || this.trajectoryPoints.length === 0) {
       return;

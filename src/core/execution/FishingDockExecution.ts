@@ -4,18 +4,11 @@ import { TrainStationExecution } from "./TrainStationExecution";
 const FISHING_INCOME_INTERVAL = 100;
 
 function fishingIncomeForLevel(level: number): number {
-  switch (level) {
-    case 1:
-      return 4_000;
-    case 2:
-      return 6_000;
-    case 3:
-      return 7_500;
-    case 4:
-      return 9_000;
-    default:
-      return 10_000;
-  }
+  const incomes = [
+    4_000, 6_000, 7_500, 9_000, 10_000,
+    11_000, 12_000, 13_000, 14_000, 15_000,
+  ];
+  return incomes[Math.min(level - 1, incomes.length - 1)];
 }
 
 export class FishingDockExecution implements Execution {

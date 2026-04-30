@@ -607,12 +607,21 @@ export class DefaultConfig implements Config {
         break;
       case UnitType.FishingDock:
         info = {
-          cost: this.costWrapper((numUnits: number) => {
+          cost: (_game: Game, player: Player) => {
+            if (
+              player.type() === PlayerType.Human &&
+              this.hasInfiniteGoldFor(player)
+            ) {
+              return 0n;
+            }
+            const n = player.unitsConstructed(UnitType.FishingDock);
             const tiers = [200_000, 250_000, 300_000, 500_000];
-            return tiers[Math.min(numUnits, tiers.length - 1)];
-          }, UnitType.FishingDock),
+            const base = tiers[Math.min(n, tiers.length - 1)];
+            return BigInt(this.cheapBuildings() ? Math.floor(base / 2) : base);
+          },
           constructionDuration: this.instantBuild() ? 0 : 10 * 10,
           upgradable: true,
+          maxLevel: 10,
         };
         break;
       case UnitType.Train:
