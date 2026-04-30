@@ -40,6 +40,7 @@ export const otherUnits = [
   "oilf",
   "cupm",
   "crsl",
+  "fish",
 ] as const;
 export const OtherUnitSchema = z.enum(otherUnits);
 export type OtherUnit = z.infer<typeof OtherUnitSchema>;

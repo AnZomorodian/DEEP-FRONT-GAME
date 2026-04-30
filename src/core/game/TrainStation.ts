@@ -52,6 +52,9 @@ export function createTrainStopHandlers(
     [UnitType.City]: new TradeStationStopHandler(),
     [UnitType.Port]: new TradeStationStopHandler(),
     [UnitType.Factory]: new FactoryStopHandler(),
+    [UnitType.OilFactory]: new TradeStationStopHandler(),
+    [UnitType.CopperMine]: new TradeStationStopHandler(),
+    [UnitType.FishingDock]: new TradeStationStopHandler(),
   };
 }
 
@@ -164,7 +167,13 @@ export class Cluster {
 
   private isTradeStation(station: TrainStation): boolean {
     const type = station.unit.type();
-    return type === UnitType.City || type === UnitType.Port;
+    return (
+      type === UnitType.City ||
+      type === UnitType.Port ||
+      type === UnitType.OilFactory ||
+      type === UnitType.CopperMine ||
+      type === UnitType.FishingDock
+    );
   }
 
   has(station: TrainStation) {

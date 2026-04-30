@@ -1359,11 +1359,26 @@ export class PlayerImpl implements Player {
     tile: TileRef,
     validTiles: TileRef[] | null = null,
   ): TileRef | false {
-    const tiles = (validTiles ?? this.validStructureSpawnTiles(tile)).filter(
-      (t) => this.mg.isShore(t),
+    const spawns = Array.from(
+      this.mg.bfs(
+        tile,
+        manhattanDistFN(tile, this.mg.config().radiusPortSpawn()),
+      ),
+    )
+      .filter((t) => this.mg.owner(t) === this && this.mg.isShore(t))
+      .sort(
+        (a, b) =>
+          this.mg.manhattanDist(a, tile) - this.mg.manhattanDist(b, tile),
+      );
+    const validTileSet = new Set(
+      validTiles ?? this.validStructureSpawnTiles(tile),
     );
-    if (tiles.length === 0) return false;
-    return tiles[0];
+    for (const t of spawns) {
+      if (validTileSet.has(t)) {
+        return t;
+      }
+    }
+    return false;
   }
 
   tradeShipSpawn(targetTile: TileRef): TileRef | false {

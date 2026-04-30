@@ -607,9 +607,12 @@ export class DefaultConfig implements Config {
         break;
       case UnitType.FishingDock:
         info = {
-          cost: this.costWrapper(() => 200_000, UnitType.FishingDock),
+          cost: this.costWrapper((numUnits: number) => {
+            const tiers = [200_000, 250_000, 300_000, 500_000];
+            return tiers[Math.min(numUnits, tiers.length - 1)];
+          }, UnitType.FishingDock),
           constructionDuration: this.instantBuild() ? 0 : 10 * 10,
-          upgradable: false,
+          upgradable: true,
         };
         break;
       case UnitType.Train:
