@@ -1,0 +1,39 @@
+import { Execution, Game, Unit, UnitType } from "../game/Game";
+
+export class CruiseLauncherExecution implements Execution {
+  private active = true;
+  private mg: Game;
+
+  constructor(private launcher: Unit) {}
+
+  init(mg: Game, _ticks: number): void {
+    this.mg = mg;
+  }
+
+  tick(_ticks: number): void {
+    if (!this.launcher.isActive()) {
+      this.active = false;
+      return;
+    }
+    if (this.launcher.isUnderConstruction()) {
+      return;
+    }
+    const frontTime = this.launcher.missileTimerQueue()[0];
+    if (frontTime === undefined) {
+      return;
+    }
+    const reloadTicks = this.mg.config().SiloCooldown(UnitType.CruiseMissile);
+    const cooldown = reloadTicks - (this.mg.ticks() - frontTime);
+    if (cooldown <= 0) {
+      this.launcher.reloadMissile();
+    }
+  }
+
+  isActive(): boolean {
+    return this.active;
+  }
+
+  activeDuringSpawnPhase(): boolean {
+    return false;
+  }
+}

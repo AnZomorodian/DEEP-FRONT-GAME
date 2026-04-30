@@ -1,0 +1,56 @@
+modules = ["nodejs-20", "web", "go-1.21", "python-3.11"]
+[agent]
+expertMode = true
+stack = "BEST_EFFORT_FALLBACK"
+
+[nix]
+channel = "stable-25_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "fuser -k 3000/tcp 5000/tcp 2>/dev/null; cross-env GAME_ENV=dev SKIP_BROWSER_OPEN=true concurrently \"vite\" \"tsx src/server/Server.ts\""
+waitForPort = 5000
+
+[[ports]]
+localPort = 3000
+externalPort = 3000
+
+[[ports]]
+localPort = 3001
+externalPort = 3001
+
+[[ports]]
+localPort = 3002
+externalPort = 3002
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 5001
+externalPort = 3003
+
+[deployment]
+deploymentTarget = "vm"
+run = ["bash", "-c", "cross-env GAME_ENV=prod node_modules/.bin/tsx src/server/Server.ts"]
+build = ["npm", "run", "build-prod"]

@@ -1,0 +1,884 @@
+[0m[0][0m 
+[0m[0][0m   [32m[1mVITE[22m v7.3.2[39m  [2mready in [0m[1m688[22m[2m[0m ms[22m
+[0m[0][0m 
+[0m[0][0m   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+[0m[0][0m   [32m➜[39m  [1mNetwork[22m: [36mhttp://172.31.105.130:[1m5000[22m/[39m
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m No OTLP endpoint and credentials provided, remote logging disabled
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m Starting master process...
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Primary 3482 is running","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:21.597Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Setting up 2 workers...","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:21.599Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Instance ID: DEV_ID","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:21.600Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Started worker 0 (PID: 3504)","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:21.610Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Started worker 1 (PID: 3505)","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:21.613Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Master HTTP server listening on port 3000","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:21.616Z"}
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m No OTLP endpoint and credentials provided, remote logging disabled
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m No OTLP endpoint and credentials provided, remote logging disabled
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m Starting worker process...
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Worker starting...","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.065Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"info","message":"Starting privilege refresher with interval 180000","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.068Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"info","message":"Loading privilege checker","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.069Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"running on http://localhost:3001","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.119Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Handling requests with path prefix /w0/","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.119Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"signaled ready state to master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.119Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/cosmetics.json: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:13:23.130Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/profane_words_game_server: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:13:23.133Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"error","message":"Failed to load privilege checker: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:13:23.135Z"}
+[0m[1][0m {"comp":"polling","environment":"dev","level":"error","message":"Error in polling loop: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:13:23.136Z"}
+[0m[1][0m using dev server config
+[0m[1][0m Starting worker process...
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Worker starting...","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.143Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"info","message":"Starting privilege refresher with interval 180000","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.148Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"info","message":"Loading privilege checker","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.148Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Worker 0 is ready. (1/2 ready)","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.151Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"running on http://localhost:3002","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.226Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Handling requests with path prefix /w1/","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.227Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"signaled ready state to master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.227Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Worker 1 is ready. (2/2 ready)","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.228Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"All workers ready, starting game scheduling","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.229Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/cosmetics.json: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:13:23.230Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/profane_words_game_server: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:13:23.231Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"error","message":"Failed to load privilege checker: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:13:23.232Z"}
+[0m[1][0m {"comp":"polling","environment":"dev","level":"error","message":"Error in polling loop: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:13:23.232Z"}
+[0m[1][0m {"environment":"dev","level":"info","message":"Generated map playlist in 0 attempts","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.233Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game DcuvmpHf from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.297Z"}
+[0m[1][0m {"environment":"dev","level":"info","message":"Generated map playlist in 2 attempts","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.300Z"}
+[0m[1][0m {"environment":"dev","level":"info","message":"Generated map playlist in 0 attempts","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.325Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game ai6t8fQY from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.328Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game LkdTmsL3 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:23.333Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game yU1r2Zwo from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:24.338Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game DwUGuycW from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:24.342Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game FieBZ1mg from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:24.345Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:25.673Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:25.840Z"}
+[0m[0][0m [2m11:13:26 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/client/graphics/layers/FxLayer.ts[22m
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game Gg2Le5SA from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:30.352Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game hbMezP81 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:30.355Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game GdaNTetw from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:30.359Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:30.928Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:31.570Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/QuickChat.json[33m instead of [36m/resources/QuickChat.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/QuickChat.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/news.json[33m instead of [36m/resources/news.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/news.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/countries.json[33m instead of [36m/resources/countries.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/countries.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:36.181Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game wRbWXtYP from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:36.364Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game QPqPx5b5 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:36.368Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game NUFyYNhq from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:36.373Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/metadata.json[33m instead of [36m/resources/lang/metadata.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/metadata.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/en.json[33m instead of [36m/resources/lang/en.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/en.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:37.301Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:41.436Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game ywWqKAy9 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:42.377Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game TRkrF1qv from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:42.379Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game nvoUb8bu from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:42.381Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:43.031Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:46.691Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game pBi6TSzQ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:48.385Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game du45H4jX from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:48.387Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game a2XHn76a from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:48.389Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:48.762Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/bigsmoke.png[33m instead of [36m/resources/sprites/bigsmoke.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/bigsmoke.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/buildingExplosion.png[33m instead of [36m/resources/sprites/buildingExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/buildingExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/conquestSword.png[33m instead of [36m/resources/sprites/conquestSword.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/conquestSword.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/dust.png[33m instead of [36m/resources/sprites/dust.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/dust.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/miniExplosion.png[33m instead of [36m/resources/sprites/miniExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/miniExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/minifire.png[33m instead of [36m/resources/sprites/minifire.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/minifire.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/nukeExplosion.png[33m instead of [36m/resources/sprites/nukeExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/nukeExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/samExplosion.png[33m instead of [36m/resources/sprites/samExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/samExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/sinkingShip.png[33m instead of [36m/resources/sprites/sinkingShip.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/sinkingShip.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/smoke.png[33m instead of [36m/resources/sprites/smoke.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/smoke.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/smokeAndFire.png[33m instead of [36m/resources/sprites/smokeAndFire.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/smokeAndFire.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/unitExplosion.png[33m instead of [36m/resources/sprites/unitExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/unitExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:51.945Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game mErQeHLX from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:54.392Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game udkwGRmM from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:54.396Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game s6zXgpGD from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:13:54.399Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:54.492Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:13:57.199Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ai6t8fQY","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.076Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ai6t8fQY","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.076Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"LkdTmsL3","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.076Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"LkdTmsL3","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.076Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"DcuvmpHf","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.157Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"DcuvmpHf","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.157Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:00.221Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game PRpmPBqs from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.402Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game k5me74Ya from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.405Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game x18ouWgd from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:00.408Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:02.454Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:05.952Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"yU1r2Zwo","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.157Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"yU1r2Zwo","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.157Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"DwUGuycW","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.158Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"DwUGuycW","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.158Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"FieBZ1mg","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.158Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"FieBZ1mg","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.158Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game UHbgBRdz from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.411Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game Lfotvd3T from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.413Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game AarpoG4L from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:06.415Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:07.708Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:11.682Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"Gg2Le5SA","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.077Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"Gg2Le5SA","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.078Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"GdaNTetw","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.078Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"GdaNTetw","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.078Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"hbMezP81","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.159Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"hbMezP81","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.159Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game SFjPi8ZD from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.418Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game QX4SaMXQ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.423Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game wgG2MjZP from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:12.425Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/QuickChat.json[33m instead of [36m/resources/QuickChat.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/QuickChat.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:12.963Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/news.json[33m instead of [36m/resources/news.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/news.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/countries.json[33m instead of [36m/resources/countries.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/countries.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:17.412Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"QPqPx5b5","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.077Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"QPqPx5b5","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.078Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"NUFyYNhq","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.078Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"NUFyYNhq","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.078Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"wRbWXtYP","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.161Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"wRbWXtYP","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.161Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:18.217Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 8kfbqTKa from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.428Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game EevvTTMD from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.431Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game 6GTBa5Ka from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:18.434Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/en.json[33m instead of [36m/resources/lang/en.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/en.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/metadata.json[33m instead of [36m/resources/lang/metadata.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/metadata.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:23.141Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:23.472Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ywWqKAy9","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.079Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ywWqKAy9","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.079Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"TRkrF1qv","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.162Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"TRkrF1qv","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.162Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"nvoUb8bu","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.162Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"nvoUb8bu","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.162Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 1sJAAeMN from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.436Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game AnRDHnnK from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.438Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game aDzs1moT from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:24.440Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:28.727Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:28.872Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"du45H4jX","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.080Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"du45H4jX","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.081Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"pBi6TSzQ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.164Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"pBi6TSzQ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.164Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"a2XHn76a","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.164Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"a2XHn76a","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.164Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game phFKgrhu from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.444Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game ivQwZy1Y from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.447Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game Kax7aHqR from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:30.449Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:33.981Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:34.602Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/bigsmoke.png[33m instead of [36m/resources/sprites/bigsmoke.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/bigsmoke.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/buildingExplosion.png[33m instead of [36m/resources/sprites/buildingExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/buildingExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/conquestSword.png[33m instead of [36m/resources/sprites/conquestSword.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/conquestSword.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/dust.png[33m instead of [36m/resources/sprites/dust.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/dust.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/miniExplosion.png[33m instead of [36m/resources/sprites/miniExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/miniExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/minifire.png[33m instead of [36m/resources/sprites/minifire.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/minifire.png?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"mErQeHLX","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.082Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"mErQeHLX","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.082Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"udkwGRmM","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.082Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"udkwGRmM","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.083Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"s6zXgpGD","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.165Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"s6zXgpGD","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.165Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/nukeExplosion.png[33m instead of [36m/resources/sprites/nukeExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/nukeExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/samExplosion.png[33m instead of [36m/resources/sprites/samExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/samExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game 7b8zwyF2 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.455Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game tedgr65F from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.457Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 4VJZ6zDZ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:36.460Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/sinkingShip.png[33m instead of [36m/resources/sprites/sinkingShip.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/sinkingShip.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/smoke.png[33m instead of [36m/resources/sprites/smoke.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/smoke.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/smokeAndFire.png[33m instead of [36m/resources/sprites/smokeAndFire.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/smokeAndFire.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/unitExplosion.png[33m instead of [36m/resources/sprites/unitExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/unitExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:39.235Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:40.332Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"PRpmPBqs","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.165Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"PRpmPBqs","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.165Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"k5me74Ya","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.165Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"k5me74Ya","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.165Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"x18ouWgd","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.166Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"x18ouWgd","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.166Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game 5HmXrYSo from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.465Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game xQUwySzb from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.467Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game 2zjZq2S9 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:42.470Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:44.490Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/QuickChat.json[33m instead of [36m/resources/QuickChat.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/QuickChat.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:46.063Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"UHbgBRdz","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"UHbgBRdz","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"Lfotvd3T","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"Lfotvd3T","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"AarpoG4L","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"AarpoG4L","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.084Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 8XpEqzXJ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.474Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game yZpeDNWo from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.478Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game tTzSTqqX from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:48.480Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/news.json[33m instead of [36m/resources/news.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/news.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:49.744Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/countries.json[33m instead of [36m/resources/countries.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/countries.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:51.794Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/en.json[33m instead of [36m/resources/lang/en.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/en.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/metadata.json[33m instead of [36m/resources/lang/metadata.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/metadata.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m [2m11:14:53 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[0][0m [2m11:14:53 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest[22m
+[0m[0][0m [2m11:14:53 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest.json[22m
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"SFjPi8ZD","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.085Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"SFjPi8ZD","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.086Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"wgG2MjZP","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.087Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"wgG2MjZP","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.087Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"QX4SaMXQ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.166Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"QX4SaMXQ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.166Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game Df5DJFBc from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.486Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game SDr5Jq6t from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.489Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game GmrMrU2s from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:14:54.491Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:54.998Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:14:57.526Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"8kfbqTKa","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"8kfbqTKa","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.083Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"EevvTTMD","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.168Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"EevvTTMD","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.168Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"6GTBa5Ka","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.168Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"6GTBa5Ka","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.168Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:00.253Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 5WVZiKbz from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.500Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game VaFVhkni from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.504Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game kTTGNmDx from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:00.507Z"}
+[0m[0][0m [2m11:15:00 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[0][0m [2m11:15:00 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest[22m
+[0m[0][0m [2m11:15:00 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest.json[22m
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:03.259Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:05.506Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"1sJAAeMN","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"1sJAAeMN","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.084Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"AnRDHnnK","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.084Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"AnRDHnnK","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.084Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"aDzs1moT","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.169Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"aDzs1moT","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.169Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game xXCwWckv from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.512Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game gthacAaW from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.516Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game RhGC2Crg from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:06.517Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:08.989Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:10.764Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/QuickChat.json[33m instead of [36m/resources/QuickChat.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/QuickChat.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ivQwZy1Y","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.083Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ivQwZy1Y","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.084Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"phFKgrhu","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.169Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"phFKgrhu","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.169Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"Kax7aHqR","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.170Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"Kax7aHqR","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.170Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game mixd4bA6 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.524Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game 7ShSPjQG from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.528Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game oSNQCe24 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:12.530Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:14.720Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/news.json[33m instead of [36m/resources/news.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/news.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:16.017Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/countries.json[33m instead of [36m/resources/countries.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/countries.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"4VJZ6zDZ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.084Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"4VJZ6zDZ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.084Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"7b8zwyF2","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.168Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"7b8zwyF2","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.169Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"tedgr65F","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.169Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"tedgr65F","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.169Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game b4XyCNMC from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.534Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 6poVUR8D from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.536Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game GzBKk8nv from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:18.538Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/en.json[33m instead of [36m/resources/lang/en.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/en.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/metadata.json[33m instead of [36m/resources/lang/metadata.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/metadata.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:20.451Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:21.271Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"5HmXrYSo","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.170Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"5HmXrYSo","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.170Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"xQUwySzb","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.170Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"xQUwySzb","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.170Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"2zjZq2S9","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.170Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"2zjZq2S9","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.170Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game sFM57g8M from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.545Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game zwejbK9z from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.553Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game WxZvtv3L from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:24.556Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:26.180Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:26.524Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"8XpEqzXJ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.086Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"8XpEqzXJ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.086Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"yZpeDNWo","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.086Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"yZpeDNWo","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.086Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"tTzSTqqX","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.171Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"tTzSTqqX","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.172Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game pTDNwWG8 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.559Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game R8Sh6CnP from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.561Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game UddmGRvL from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:30.565Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:31.779Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:31.910Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/bigsmoke.png[33m instead of [36m/resources/sprites/bigsmoke.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/bigsmoke.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/buildingExplosion.png[33m instead of [36m/resources/sprites/buildingExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/buildingExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/conquestSword.png[33m instead of [36m/resources/sprites/conquestSword.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/conquestSword.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/dust.png[33m instead of [36m/resources/sprites/dust.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/dust.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/miniExplosion.png[33m instead of [36m/resources/sprites/miniExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/miniExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/minifire.png[33m instead of [36m/resources/sprites/minifire.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/minifire.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m [2m11:15:35 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[0][0m [2m11:15:35 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest[22m
+[0m[0][0m [2m11:15:35 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest.json[22m
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/nukeExplosion.png[33m instead of [36m/resources/sprites/nukeExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/nukeExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/samExplosion.png[33m instead of [36m/resources/sprites/samExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/samExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"Df5DJFBc","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.086Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"Df5DJFBc","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.087Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"SDr5Jq6t","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.171Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"SDr5Jq6t","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.172Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"GmrMrU2s","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.172Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"GmrMrU2s","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.172Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game eL5pqyes from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.569Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 95RQDvoh from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.572Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game rnKCmnqF from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:36.573Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:37.034Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:37.641Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"5WVZiKbz","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.089Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"5WVZiKbz","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.089Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"VaFVhkni","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.172Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"VaFVhkni","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.172Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"kTTGNmDx","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.172Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"kTTGNmDx","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.172Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:42.287Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game TDdsghVz from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.576Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game QmyPsByT from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.580Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game yonjzvzm from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:42.581Z"}
+[0m[0][0m [2m11:15:42 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[0][0m [2m11:15:42 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest[22m
+[0m[0][0m [2m11:15:42 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest.json[22m
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:43.372Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:47.541Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"gthacAaW","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.091Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"gthacAaW","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.091Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"RhGC2Crg","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.091Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"RhGC2Crg","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.091Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"xXCwWckv","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.172Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"xXCwWckv","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.172Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game tXWbHZ5t from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.588Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game bZPu1j3X from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.590Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game P8skAiuR from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:48.593Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:49.102Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:52.796Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/QuickChat.json[33m instead of [36m/resources/QuickChat.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/QuickChat.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"mixd4bA6","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.173Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"mixd4bA6","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.173Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"7ShSPjQG","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.173Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"7ShSPjQG","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.173Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"oSNQCe24","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.174Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"oSNQCe24","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.174Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game rRsDKzjZ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.595Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game jvyurxYj from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.597Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game JZ94hZdx from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:15:54.599Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:54.831Z"}
+[0m[0][0m [2m11:15:55 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[0][0m [2m11:15:55 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest[22m
+[0m[0][0m [2m11:15:55 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest.json[22m
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/news.json[33m instead of [36m/resources/news.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/news.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:15:58.051Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"b4XyCNMC","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"b4XyCNMC","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"6poVUR8D","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"6poVUR8D","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.092Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"GzBKk8nv","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.177Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"GzBKk8nv","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.177Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:00.562Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 8N1NrYfj from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.605Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game PNP5C1m2 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.612Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game ySsu2a8X from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:00.616Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:03.304Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/QuickChat.json[33m instead of [36m/resources/QuickChat.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/QuickChat.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"sFM57g8M","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"sFM57g8M","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"zwejbK9z","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.093Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"zwejbK9z","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.093Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"WxZvtv3L","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.093Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"WxZvtv3L","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.093Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:06.293Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game ZtjWA6GU from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.623Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game MEWXUcP7 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.624Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 3d7x82qa from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:06.627Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/news.json[33m instead of [36m/resources/news.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/news.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:08.558Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/countries.json[33m instead of [36m/resources/countries.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/countries.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/en.json[33m instead of [36m/resources/lang/en.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/en.json?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/lang/metadata.json[33m instead of [36m/resources/lang/metadata.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/lang/metadata.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:12.024Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"R8Sh6CnP","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"R8Sh6CnP","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.092Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"pTDNwWG8","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.179Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"pTDNwWG8","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.179Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"UddmGRvL","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.179Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"UddmGRvL","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.179Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game o5DqbjSQ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.631Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game R4whvPVU from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.634Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game sQfnRveQ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:12.637Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:13.813Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:17.753Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"eL5pqyes","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"eL5pqyes","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"95RQDvoh","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"95RQDvoh","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"rnKCmnqF","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"rnKCmnqF","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.092Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game aFxjUwgJ from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.641Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game xNucoym8 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.644Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 35yMGfDk from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:18.645Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:19.067Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"info","message":"Loading privilege checker","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:23.136Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/cosmetics.json: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:16:23.138Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/profane_words_game_server: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:16:23.139Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"error","message":"Failed to load privilege checker: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:16:23.139Z"}
+[0m[1][0m {"comp":"polling","environment":"dev","level":"error","message":"Error in polling loop: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:16:23.139Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"info","message":"Loading privilege checker","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:23.233Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/cosmetics.json: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:16:23.235Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"warn","message":"Failed to fetch http://localhost:8787/profane_words_game_server: TypeError: fetch failed","service":"openfront","severity":"warn","timestamp":"2026-04-29T23:16:23.236Z"}
+[0m[1][0m {"comp":"privilege-refresher","environment":"dev","level":"error","message":"Failed to load privilege checker: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:16:23.236Z"}
+[0m[1][0m {"comp":"polling","environment":"dev","level":"error","message":"Error in polling loop: Cosmetics HTTP error! status: network error","service":"openfront","severity":"error","stack":"Error: Cosmetics HTTP error! status: network error\n    at PrivilegeRefresher.loadPrivilegeChecker (/home/runner/workspace/src/server/PrivilegeRefresher.ts:67:15)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2026-04-29T23:16:23.236Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:23.484Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"TDdsghVz","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.093Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"TDdsghVz","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.093Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"QmyPsByT","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.181Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"QmyPsByT","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.181Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"yonjzvzm","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.181Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"yonjzvzm","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.181Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:24.320Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 5LJSfx7M from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.650Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game GVWgqcMr from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.652Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game uj2DYuEi from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:24.655Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/bigsmoke.png[33m instead of [36m/resources/sprites/bigsmoke.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/bigsmoke.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/buildingExplosion.png[33m instead of [36m/resources/sprites/buildingExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/buildingExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/conquestSword.png[33m instead of [36m/resources/sprites/conquestSword.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/conquestSword.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/dust.png[33m instead of [36m/resources/sprites/dust.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/dust.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/miniExplosion.png[33m instead of [36m/resources/sprites/miniExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/miniExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/minifire.png[33m instead of [36m/resources/sprites/minifire.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/minifire.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/nukeExplosion.png[33m instead of [36m/resources/sprites/nukeExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/nukeExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:29.214Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:29.574Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"tXWbHZ5t","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.094Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"tXWbHZ5t","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.094Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"bZPu1j3X","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.182Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"bZPu1j3X","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.183Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"P8skAiuR","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.183Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"P8skAiuR","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.183Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game NWQHswFR from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.659Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game dczXeVkM from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.661Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game 3bdNMdDq from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:30.663Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:34.828Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:34.943Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"rRsDKzjZ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.094Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"rRsDKzjZ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.095Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"jvyurxYj","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.184Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"jvyurxYj","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.184Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"JZ94hZdx","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.185Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"JZ94hZdx","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.185Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game s6WTdNyD from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.667Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game RRoJ68to from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.670Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game tenbRi7D from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:36.674Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/samExplosion.png[33m instead of [36m/resources/sprites/samExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/samExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/sinkingShip.png[33m instead of [36m/resources/sprites/sinkingShip.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/sinkingShip.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/smoke.png[33m instead of [36m/resources/sprites/smoke.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/smoke.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/smokeAndFire.png[33m instead of [36m/resources/sprites/smokeAndFire.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/smokeAndFire.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/sprites/unitExplosion.png[33m instead of [36m/resources/sprites/unitExplosion.png[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/sprites/unitExplosion.png?url[33m.[39m
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:40.081Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:40.672Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"8N1NrYfj","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.097Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"8N1NrYfj","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.098Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"PNP5C1m2","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.098Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"PNP5C1m2","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.098Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"ySsu2a8X","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.185Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"ySsu2a8X","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.185Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game pMDudw2f from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.677Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game xLvxUd8y from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.679Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game tVztooxz from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:42.682Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:45.335Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:46.402Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ZtjWA6GU","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.100Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"ZtjWA6GU","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.100Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"MEWXUcP7","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.100Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"MEWXUcP7","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.100Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"3d7x82qa","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.100Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"3d7x82qa","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.100Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game iGBrZQKo from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.688Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game YP9XFAue from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.690Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game 95JJF2pu from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:48.692Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/QuickChat.json[33m instead of [36m/resources/QuickChat.json[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/QuickChat.json?url[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:50.590Z"}
+[0m[0][0m [2m11:16:51 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/core/configuration/DefaultConfig.ts[22m
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:52.132Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"R4whvPVU","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.104Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"R4whvPVU","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.104Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"sQfnRveQ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.104Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"sQfnRveQ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.104Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"o5DqbjSQ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.185Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"o5DqbjSQ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.185Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game u9Zha8iD from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.695Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game gnfkmDB2 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.698Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","level":"info","message":"Creating public game Tkeno9t3 from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:16:54.700Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:55.849Z"}
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_0","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:16:57.861Z"}
+[0m[0][0m [2m11:16:58 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/core/execution/CruiseLauncherExecution.ts[22m
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"aFxjUwgJ","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.106Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"aFxjUwgJ","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.106Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"35yMGfDk","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.106Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","gameID":"35yMGfDk","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.106Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"xNucoym8","level":"info","message":"ending game with 279 turns","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.187Z"}
+[0m[1][0m {"comp":"w_1","environment":"dev","gameID":"xNucoym8","level":"info","message":"no clients joined, not archiving game","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.187Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game X97ks6vN from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.703Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game ReG33CDg from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.705Z"}
+[0m[1][0m {"comp":"w_0","environment":"dev","level":"info","message":"Creating public game 3zjbucNu from master","service":"openfront","severity":"info","timestamp":"2026-04-29T23:17:00.707Z"}
+[0m[0][0m 
+[0m[0][0m [43m[30m WARN [39m[49m [33mAssets in public directory cannot be imported from JavaScript.
+[0m[0][0m If you intend to import that asset, put the file in the src directory, and use [36m/src/version.txt?raw[33m instead of [36m/resources/version.txt?raw[33m.
+[0m[0][0m If you intend to use the URL of that asset, use [36m/version.txt?url&raw[33m.[39m
+[0m[0][0m 
+[0m[1][0m {"cause":{"address":"127.0.0.1","code":"ECONNREFUSED","errno":-111,"port":8787,"syscall":"connect"},"comp":"w_1","environment":"dev","level":"error","message":"Error polling lobby: fetch failed","service":"openfront","severity":"error","stack":"TypeError: fetch failed\n    at node:internal/deps/undici/undici:14902:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async <anonymous> (/home/runner/workspace/src/server/Worker.ts:571:26)","timestamp":"2026-04-29T23:17:01.103Z"}
+[0m[0][0m [2m11:17:01 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/core/execution/CruiseLauncherExecution.ts[22m
+[0m[1][0m [0mtsx src/server/Server.ts exited with code SIGTERM[0m
+[0m[0][0m [0mvite exited with code SIGTERM[0m

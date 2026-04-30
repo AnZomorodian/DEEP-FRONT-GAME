@@ -1,0 +1,77 @@
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/automation/files/tsconfig.json". See below for details. To disable this message, set the [36mignoreConfigErrors[39m option to true.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/expo/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/react-vite/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/slides/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/video-js/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m Port 5000 is in use, trying another one...
+[0m[0][0m 
+[0m[0][0m   [32m[1mVITE[22m v7.3.2[39m  [2mready in [0m[1m652[22m[2m[0m ms[22m
+[0m[0][0m 
+[0m[0][0m   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5001[22m/[39m
+[0m[0][0m   [32m➜[39m  [1mNetwork[22m: [36mhttp://172.31.91.98:[1m5001[22m/[39m
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m No OTLP endpoint and credentials provided, remote logging disabled
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m using dev server config
+[0m[1][0m Starting master process...
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Primary 4513 is running","service":"openfront","severity":"info","timestamp":"2026-04-28T13:53:13.188Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Setting up 2 workers...","service":"openfront","severity":"info","timestamp":"2026-04-28T13:53:13.189Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Instance ID: DEV_ID","service":"openfront","severity":"info","timestamp":"2026-04-28T13:53:13.190Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Started worker 0 (PID: 4535)","service":"openfront","severity":"info","timestamp":"2026-04-28T13:53:13.195Z"}
+[0m[1][0m {"comp":"m","environment":"dev","level":"info","message":"Started worker 1 (PID: 4536)","service":"openfront","severity":"info","timestamp":"2026-04-28T13:53:13.198Z"}
+[0m[1][0m node:events:502
+[0m[1][0m       throw er; // Unhandled 'error' event
+[0m[1][0m       ^
+[0m[1][0m 
+[0m[1][0m Error: listen EADDRINUSE: address already in use :::3000
+[0m[1][0m [90m    at Server.setupListenHandle [as _listen2] (node:net:1908:16)[39m
+[0m[1][0m [90m    at listenInCluster (node:net:1965:12)[39m
+[0m[1][0m [90m    at Server.listen (node:net:2067:7)[39m
+[0m[1][0m     at startMaster [90m(/home/runner/workspace/[39msrc/server/Master.ts:140:10[90m)[39m
+[0m[1][0m     at main [90m(/home/runner/workspace/[39msrc/server/Server.ts:14:11[90m)[39m
+[0m[1][0m     at <anonymous> [90m(/home/runner/workspace/[39msrc/server/Server.ts:23:1[90m)[39m
+[0m[1][0m [90m    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)[39m
+[0m[1][0m [90m    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)[39m
+[0m[1][0m [90m    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)[39m
+[0m[1][0m Emitted 'error' event on Server instance at:
+[0m[1][0m [90m    at emitErrorNT (node:net:1944:8)[39m
+[0m[1][0m [90m    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)[39m {
+[0m[1][0m   code: [32m'EADDRINUSE'[39m,
+[0m[1][0m   errno: [33m-98[39m,
+[0m[1][0m   syscall: [32m'listen'[39m,
+[0m[1][0m   address: [32m'::'[39m,
+[0m[1][0m   port: [33m3000[39m
+[0m[1][0m }
+[0m[1][0m 
+[0m[1][0m Node.js v20.20.0
+[0m[1][0m [0mtsx src/server/Server.ts exited with code 1[0m
+[0m[0][0m [2m2:20:36 PM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/expo/files/tsconfig.json". See below for details. To disable this message, set the [36mignoreConfigErrors[39m option to true.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/automation/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/react-vite/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/video-js/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m 
+[0m[0][0m [41m[30m ERROR [39m[49m [tsconfig-paths] An error occurred while parsing "/home/runner/workspace/.local/skills/artifacts/artifacts/slides/files/tsconfig.json". See below for details.
+[0m[0][0m 
+[0m[0][0m [2m2:20:36 PM[22m [36m[1m[vite][22m[39m server restarted.
+[0m[0][0m [0mvite exited with code SIGTERM[0m
