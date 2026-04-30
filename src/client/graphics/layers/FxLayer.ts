@@ -104,6 +104,9 @@ export class FxLayer implements Layer {
       case UnitType.AtomBomb:
         this.eventBus.emit(new PlaySoundEffectEvent("atom-launch"));
         break;
+      case UnitType.CruiseMissile:
+        this.eventBus.emit(new PlaySoundEffectEvent("atom-launch"));
+        break;
       case UnitType.HydrogenBomb:
         this.eventBus.emit(new PlaySoundEffectEvent("hydrogen-launch"));
         break;
@@ -279,6 +282,7 @@ export class FxLayer implements Layer {
   }
 
   handleSAMInterception(unit: UnitView) {
+    this.eventBus.emit(new PlaySoundEffectEvent("sam-hit"));
     if (this.fxEnabled()) {
       const x = this.game.x(unit.lastTile());
       const y = this.game.y(unit.lastTile());

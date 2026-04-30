@@ -29,11 +29,11 @@ const atomBombIcon = assetUrl("images/NukeIconWhite.svg");
 const portIcon = assetUrl("images/PortIcon.svg");
 const samLauncherIcon = assetUrl("images/SamLauncherIconWhite.svg");
 const defensePostIcon = assetUrl("images/ShieldIconWhite.svg");
-const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
-const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
-const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
+const oilFactoryIcon = assetUrl("images/OilFactoryIcon.png");
+const copperMineIcon = assetUrl("images/CopperMineIcon.png");
+const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.png");
 const cruiseMissileIcon = assetUrl("images/CruiseMissileIcon.svg");
-const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
+const fishingDockIcon = assetUrl("images/FishingDockIcon.png");
 
 @customElement("unit-display")
 export class UnitDisplay extends LitElement implements Layer {

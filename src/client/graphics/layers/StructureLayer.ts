@@ -15,10 +15,10 @@ const shieldIcon = assetUrl("images/buildings/fortAlt3.png");
 const anchorIcon = assetUrl("images/buildings/port1.png");
 const missileSiloIcon = assetUrl("images/buildings/silo1.png");
 const SAMMissileIcon = assetUrl("images/buildings/silo4.png");
-const oilFactoryIcon = assetUrl("images/buildings/oilFactory.svg");
-const copperMineIcon = assetUrl("images/buildings/copperMine.svg");
-const cruiseLauncherIcon = assetUrl("images/buildings/cruiseLauncher.svg");
-const fishingDockIcon = assetUrl("images/buildings/fishingDock.svg");
+const oilFactoryIcon = assetUrl("images/buildings/oilFactory.png");
+const copperMineIcon = assetUrl("images/buildings/copperMine.png");
+const cruiseLauncherIcon = assetUrl("images/buildings/cruiseLauncher.png");
+const fishingDockIcon = assetUrl("images/buildings/fishingDock.png");
 
 const underConstructionColor = colord("rgb(150,150,150)");
 
