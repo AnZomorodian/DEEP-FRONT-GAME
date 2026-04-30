@@ -593,10 +593,38 @@ export class UnitLayer implements Layer {
       unit.owner().territoryColor(),
       rel,
     );
-    this.drawSprite(unit);
+    if (unit.type() === UnitType.CruiseMissile) {
+      this.drawCruiseHeadlight(unit);
+    } else {
+      this.drawSprite(unit);
+    }
     if (!unit.isActive()) {
       this.clearTrail(unit);
     }
+  }
+
+  private drawCruiseHeadlight(unit: UnitView) {
+    const lastX = this.game.x(unit.lastTile());
+    const lastY = this.game.y(unit.lastTile());
+    const RADIUS = 8;
+    this.context.clearRect(
+      lastX - RADIUS,
+      lastY - RADIUS,
+      RADIUS * 2,
+      RADIUS * 2,
+    );
+    if (!unit.isActive()) return;
+    const x = this.game.x(unit.tile());
+    const y = this.game.y(unit.tile());
+    const glow = this.context.createRadialGradient(x, y, 0, x, y, RADIUS);
+    glow.addColorStop(0, "rgba(255, 220, 80, 1.0)");
+    glow.addColorStop(0.25, "rgba(255, 160, 40, 0.9)");
+    glow.addColorStop(0.55, "rgba(255, 80, 10, 0.55)");
+    glow.addColorStop(1, "rgba(255, 30, 0, 0)");
+    this.context.save();
+    this.context.fillStyle = glow;
+    this.context.fillRect(x - RADIUS, y - RADIUS, RADIUS * 2, RADIUS * 2);
+    this.context.restore();
   }
 
   private handleMIRVWarhead(unit: UnitView) {

@@ -107,6 +107,9 @@ export class FxLayer implements Layer {
       case UnitType.CruiseMissile:
         this.eventBus.emit(new PlaySoundEffectEvent("atom-launch"));
         break;
+      case UnitType.SAMMissile:
+        this.eventBus.emit(new PlaySoundEffectEvent("sam-shoot"));
+        break;
       case UnitType.HydrogenBomb:
         this.eventBus.emit(new PlaySoundEffectEvent("hydrogen-launch"));
         break;

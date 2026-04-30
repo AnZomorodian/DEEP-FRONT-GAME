@@ -14,10 +14,10 @@ const factoryIcon = assetUrl("images/FactoryUnit.png");
 const missileSiloIcon = assetUrl("images/MissileSiloUnit.png");
 const SAMMissileIcon = assetUrl("images/SamLauncherUnit.png");
 const shieldIcon = assetUrl("images/ShieldIcon.png");
-const oilFactoryIcon = assetUrl("images/OilFactoryIcon.png");
-const copperMineIcon = assetUrl("images/CopperMineIcon.png");
-const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.png");
-const fishingDockIcon = assetUrl("images/FishingDockIcon.png");
+const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
+const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
+const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
+const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
 
 export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.City]: "circle",
@@ -68,7 +68,7 @@ export class SpriteFactory {
 
   private readonly structuresInfos: Map<
     UnitType,
-    { iconPath: string; image: HTMLImageElement | null; rawDraw?: boolean }
+    { iconPath: string; image: HTMLImageElement | null }
   > = new Map([
     [UnitType.City, { iconPath: cityIcon, image: null }],
     [UnitType.Factory, { iconPath: factoryIcon, image: null }],
@@ -76,10 +76,10 @@ export class SpriteFactory {
     [UnitType.Port, { iconPath: anchorIcon, image: null }],
     [UnitType.MissileSilo, { iconPath: missileSiloIcon, image: null }],
     [UnitType.SAMLauncher, { iconPath: SAMMissileIcon, image: null }],
-    [UnitType.OilFactory, { iconPath: oilFactoryIcon, image: null, rawDraw: true }],
-    [UnitType.CopperMine, { iconPath: copperMineIcon, image: null, rawDraw: true }],
-    [UnitType.CruiseLauncher, { iconPath: cruiseLauncherIcon, image: null, rawDraw: true }],
-    [UnitType.FishingDock, { iconPath: fishingDockIcon, image: null, rawDraw: true }],
+    [UnitType.OilFactory, { iconPath: oilFactoryIcon, image: null }],
+    [UnitType.CopperMine, { iconPath: copperMineIcon, image: null }],
+    [UnitType.CruiseLauncher, { iconPath: cruiseLauncherIcon, image: null }],
+    [UnitType.FishingDock, { iconPath: fishingDockIcon, image: null }],
   ]);
   constructor(
     theme: Theme,
@@ -439,18 +439,14 @@ export class SpriteFactory {
         cross: [0, 0],
       };
       const [offsetX, offsetY] = SHAPE_OFFSETS[shape] || [0, 0];
-      if (structureInfo.rawDraw) {
-        context.drawImage(structureInfo.image, offsetX, offsetY);
-      } else {
-        context.drawImage(
-          this.getImageColored(
-            structureInfo.image,
-            owner.structureColors().dark.toRgbString(),
-          ),
-          offsetX,
-          offsetY,
-        );
-      }
+      context.drawImage(
+        this.getImageColored(
+          structureInfo.image,
+          owner.structureColors().dark.toRgbString(),
+        ),
+        offsetX,
+        offsetY,
+      );
     }
 
     if (isMarkedForDeletion) {

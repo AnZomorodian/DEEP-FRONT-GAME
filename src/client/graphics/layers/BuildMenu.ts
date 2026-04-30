@@ -37,11 +37,11 @@ const atomBombIcon = assetUrl("images/NukeIconWhite.svg");
 const portIcon = assetUrl("images/PortIcon.svg");
 const samlauncherIcon = assetUrl("images/SamLauncherIconWhite.svg");
 const shieldIcon = assetUrl("images/ShieldIconWhite.svg");
-const oilFactoryIcon = assetUrl("images/OilFactoryIcon.png");
-const copperMineIcon = assetUrl("images/CopperMineIcon.png");
-const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.png");
+const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
+const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
+const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
 const cruiseMissileIcon = assetUrl("images/CruiseMissileIcon.svg");
-const fishingDockIcon = assetUrl("images/FishingDockIcon.png");
+const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
 
 export interface BuildItemDisplay {
   unitType: PlayerBuildableUnitType;

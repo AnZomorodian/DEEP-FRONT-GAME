@@ -393,6 +393,7 @@ export class NukeExecution implements Execution {
         if (isCruise && !CRUISE_DESTROYABLE.has(type)) {
           continue;
         }
+        unit.touch();
         unit.delete(true, destroyer);
       }
     }
