@@ -23,7 +23,6 @@ const CRUISE_DESTROYABLE = new Set<UnitType>([
   UnitType.Factory,
   UnitType.OilFactory,
   UnitType.CopperMine,
-  UnitType.Port,
 ]);
 
 export class NukeExecution implements Execution {

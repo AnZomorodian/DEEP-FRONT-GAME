@@ -533,7 +533,9 @@
     "ffa": "Free for All",
     "teams": "Teams",
     "battle_royale": "Battle Royale",
-    "doomsday": "Doomsday"
+    "doomsday": "Doomsday",
+    "blitz": "Blitz",
+    "chaos": "Chaos"
   },
   "info_modal": {
     "title": "Game Info"

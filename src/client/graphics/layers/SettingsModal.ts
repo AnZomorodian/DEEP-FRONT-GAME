@@ -8,6 +8,7 @@ import { UserSettings } from "../../../core/game/UserSettings";
 import { AlternateViewEvent, RefreshGraphicsEvent } from "../../InputHandler";
 import { translateText } from "../../Utils";
 import {
+  PlaySoundEffectEvent,
   SetBackgroundMusicVolumeEvent,
   SetSoundEffectsVolumeEvent,
 } from "../../sound/Sounds";
@@ -44,6 +45,9 @@ export class SettingsModal extends LitElement implements Layer {
 
   @state()
   private alternateView: boolean = false;
+
+  @state()
+  private victorySongUsesLeft: number = 2;
 
   @query(".modal-overlay")
   private modalOverlay!: HTMLElement;
@@ -179,6 +183,13 @@ export class SettingsModal extends LitElement implements Layer {
     window.location.href = "/";
   }
 
+  private onVictorySongButtonClick() {
+    if (this.victorySongUsesLeft <= 0) return;
+    this.victorySongUsesLeft--;
+    this.eventBus.emit(new PlaySoundEffectEvent("victory-song"));
+    this.requestUpdate();
+  }
+
   private onVolumeChange(event: Event) {
     const volume = parseFloat((event.target as HTMLInputElement).value) / 100;
     this.userSettings.setBackgroundMusicVolume(volume);
@@ -278,6 +289,23 @@ export class SettingsModal extends LitElement implements Layer {
                 ${Math.round(this.userSettings.soundEffectsVolume() * 100)}%
               </div>
             </div>
+
+            <button
+              class="flex gap-3 items-center w-full text-left p-3 rounded-sm text-white transition-colors ${this.victorySongUsesLeft > 0 ? "hover:bg-slate-700 cursor-pointer" : "opacity-40 cursor-not-allowed"}"
+              @click="${this.onVictorySongButtonClick}"
+              ?disabled=${this.victorySongUsesLeft <= 0}
+            >
+              <img src=${musicIcon} alt="victory-song" width="20" height="20" />
+              <div class="flex-1">
+                <div class="font-medium">🎵 Play Victory Song</div>
+                <div class="text-sm text-slate-400">
+                  Play a song for everyone — ${this.victorySongUsesLeft} use${this.victorySongUsesLeft !== 1 ? "s" : ""} left this game
+                </div>
+              </div>
+              <div class="text-sm ${this.victorySongUsesLeft > 0 ? "text-yellow-400" : "text-slate-500"}">
+                ${this.victorySongUsesLeft > 0 ? "▶ Play" : "Used up"}
+              </div>
+            </button>
 
             <button
               class="flex gap-3 items-center w-full text-left p-3 hover:bg-slate-700 rounded-sm text-white transition-colors"

@@ -344,14 +344,12 @@ export class InputHandler {
 
       if (
         this.activeKeys.has(this.keybinds.zoomOut) ||
-        this.activeKeys.has("Minus") ||
         this.activeKeys.has("NumpadSubtract")
       ) {
         this.eventBus.emit(new ZoomEvent(cx, cy, this.ZOOM_SPEED));
       }
       if (
         this.activeKeys.has(this.keybinds.zoomIn) ||
-        this.activeKeys.has("Equal") ||
         this.activeKeys.has("NumpadAdd")
       ) {
         this.eventBus.emit(new ZoomEvent(cx, cy, -this.ZOOM_SPEED));
@@ -496,13 +494,19 @@ export class InputHandler {
         this.eventBus.emit(new DoGroundAttackEvent());
       }
 
-      if (this.keybindMatchesEvent(e, this.keybinds.attackRatioDown)) {
+      if (
+        this.keybindMatchesEvent(e, this.keybinds.attackRatioDown) ||
+        (e.code === "Minus" && !e.metaKey && !e.ctrlKey)
+      ) {
         e.preventDefault();
         const increment = this.userSettings.attackRatioIncrement();
         this.eventBus.emit(new AttackRatioEvent(-increment));
       }
 
-      if (this.keybindMatchesEvent(e, this.keybinds.attackRatioUp)) {
+      if (
+        this.keybindMatchesEvent(e, this.keybinds.attackRatioUp) ||
+        (e.code === "Equal" && !e.metaKey && !e.ctrlKey)
+      ) {
         e.preventDefault();
         const increment = this.userSettings.attackRatioIncrement();
         this.eventBus.emit(new AttackRatioEvent(increment));

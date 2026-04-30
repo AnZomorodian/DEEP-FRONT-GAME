@@ -261,6 +261,8 @@ export enum GameMode {
   Team = "Team",
   BattleRoyale = "Battle Royale",
   Doomsday = "Doomsday",
+  Blitz = "Blitz",
+  Chaos = "Chaos",
 }
 
 export enum RankedType {

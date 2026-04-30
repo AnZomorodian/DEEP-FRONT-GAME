@@ -382,31 +382,29 @@ export class GameConfigSettings extends LitElement {
           "host_modal.mode",
           html`
             <div class="grid grid-cols-2 gap-4">
-              ${[
-                GameMode.FFA,
-                GameMode.Team,
-                GameMode.BattleRoyale,
-                GameMode.Doomsday,
-              ].map((mode) => {
+              ${(
+                [
+                  [GameMode.FFA, "game_mode.ffa", "🌍", "Standard brawl"],
+                  [GameMode.Team, "game_mode.teams", "🤝", "Alliance warfare"],
+                  [GameMode.BattleRoyale, "game_mode.battle_royale", "💀", "Bigger armies"],
+                  [GameMode.Doomsday, "game_mode.doomsday", "☢️", "Nuke warfare"],
+                  [GameMode.Blitz, "game_mode.blitz", "⚡", "2× speed & gold"],
+                  [GameMode.Chaos, "game_mode.chaos", "🔥", "Giant nukes & cheap builds"],
+                ] as [GameMode, string, string, string][]
+              ).map(([mode, labelKey, icon, desc]) => {
                 const isSelected = settings.gameMode.selected === mode;
-                const labelKey =
-                  mode === GameMode.FFA
-                    ? "game_mode.ffa"
-                    : mode === GameMode.Team
-                      ? "game_mode.teams"
-                      : mode === GameMode.BattleRoyale
-                        ? "game_mode.battle_royale"
-                        : "game_mode.doomsday";
                 return html`
                   <button
-                    class="${cardClass(isSelected, "py-6 text-center")}"
+                    class="${cardClass(isSelected, "py-4 text-center")}"
                     @click=${() => this.handleGameModeSelect(mode)}
                   >
+                    <div class="text-xl mb-1">${icon}</div>
                     <span
                       class="text-sm font-bold text-white uppercase tracking-widest"
                     >
                       ${translateText(labelKey)}
                     </span>
+                    <div class="text-xs text-white/50 mt-1">${desc}</div>
                   </button>
                 `;
               })}

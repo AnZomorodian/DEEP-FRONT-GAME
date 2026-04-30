@@ -9,10 +9,12 @@
 
 | Mode | Vibe | Key tweaks |
 | --- | --- | --- |
-| **Free For All** | Classic openfield brawl | Default values across the board |
-| **Team** | Pre-assigned alliances share gold/troops | Win at 95% map control |
-| **Battle Royale** | Big armies, fast eliminations | **+50% starting troops** for everyone |
-| **Doomsday** | All-out missile warfare | **+25% starting troops · +25% nuke radius · 40% faster silo reloads** |
+| 🌍 **Free For All** | Classic openfield brawl | Default values across the board |
+| 🤝 **Team** | Pre-assigned alliances share gold/troops | Win at 95% map control |
+| 💀 **Battle Royale** | Big armies, fast eliminations | **+50% starting troops** for everyone |
+| ☢️ **Doomsday** | All-out missile warfare | **+25% starting troops · +25% nuke radius · 40% faster silo reloads** |
+| ⚡ **Blitz** | Speed run — everything goes twice as fast | **+50% starting troops · 2× troop growth · 2× gold income · 50% faster construction** |
+| 🔥 **Chaos** | Maximum destruction | **2× starting troops · 2× nuke radius · 50% faster reloads · 50% cheaper buildings** |
 
 ---
 
@@ -50,7 +52,7 @@ MIRV Bomb       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓�
 
 | Weapon | Inner | Outer | Notes |
 | --- | --- | --- | --- |
-| Cruise Missile | **6** | **15** | Surgical strike — **2 hits** to take a building |
+| Cruise Missile | **6** | **15** | Surgical strike — destroys Factory / Oil Factory / Copper Mine only |
 | Atom Bomb | **14** | **35** | One-shot kill on structures |
 | Hydrogen Bomb | **32** | **75** | City-leveler with fallout |
 | MIRV Warhead | 14 | 35 | Multiple warheads per launch |
@@ -63,12 +65,12 @@ MIRV Bomb       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓�
 
 | Weapon | Buildings | Soft targets (ships, transports, troops) |
 | --- | --- | --- |
-| Cruise Missile | 2 hits to destroy | 1 hit |
+| Cruise Missile | Destroys **Factory / Oil Factory / Copper Mine** only — all other buildings ignored | 1 hit |
 | Atom Bomb | Destroyed | Destroyed |
 | Hydrogen Bomb | Destroyed | Destroyed |
 | MIRV | Destroyed | Destroyed |
 
-**Cruise tactic:** Cruise missiles make great chip damage. Two cruises on the same building = down. Three cruises in one volley overwhelms a single SAM (which can only intercept one missile per 5s reload).
+**Cruise tactic:** Use cruise missiles to precision-strike economic buildings (Factory, Oil Factory, Copper Mine). They deal no damage to Cities, Ports, or Silos — making them surgical economic weapons. Fire 3 cruises at once to overwhelm a single SAM (which can only intercept one missile per 5s reload).
 
 ---
 
@@ -152,11 +154,15 @@ Tick 800 ──── MIRV doctrine (heavy gold investment)
 
 ## Tactical Tips
 
+- **Cruise missiles are economic weapons.** They only destroy Factory / Oil Factory / Copper Mine. Use them to cripple enemy economies, not to clear cities.
 - **Cruise volleys beat lone SAMs.** A single SAM intercepts 1 missile per 5s reload — fire 3 cruises and 2 will hit.
-- **Build SAM clusters around your cities.** Two overlapping SAMs at a city defeat most cruise volleys.
+- **Build SAM clusters around your industrial buildings.** Two overlapping SAMs over a key mine or factory defeat most cruise volleys.
+- **Blitz mode snowballs early.** With 2× gold and 2× troops, whoever expands fastest wins — build income buildings in the first 100 ticks.
+- **Chaos mode = nuke war from turn one.** Missiles are cheap and radii are doubled — get your silos up before your neighbors do.
 - **Doomsday rewards pre-built silos.** Stockpile launchers in your safe zone before the missile war erupts.
 - **MIRVs break stalemates.** Slow reload (180t in Doomsday, 300t default), but devastating in volleys.
 - **Industrial railroads compound.** Linking 4+ industrial buildings to a port can quadruple your train income.
+- **Use = / - to adjust your attack ratio.** These keys now control how many troops you commit to each attack instead of zooming.
 
 ---
 

@@ -4,9 +4,37 @@ Welcome to **Deep Front V1.22.12**, the polished evolution of OpenFront with a d
 
 ---
 
+## 🆕 V1.22.12 Latest Updates
+
+### ⚡ Blitz & 🔥 Chaos — Two New Game Modes
+
+- **⚡ Blitz** — A speed-focused variant where everything doubles: troop growth, gold income, and construction speed. +50% starting troops. First player to build an economic advantage wins before others can catch up.
+- **🔥 Chaos** — Maximum destruction mode. 2× nuke explosion radius, 50% faster reload on all launchers, 2× starting troops, 50% cheaper buildings. Expect nukes flying in the first 100 ticks.
+- Both modes are available in Solo and Create Lobby (use the mode selector tiles).
+
+### 🎯 Cruise Missile Rework
+
+- **Surgical strikes only.** Cruise missiles now destroy **Factory, Oil Factory, and Copper Mine** — and nothing else. Cities, Ports, Silos, and Defense Posts survive a cruise hit.
+- This makes cruise missiles a precision economic weapon. Use them to cripple enemy income, not to clear cities.
+- **Glowing headlight.** Cruise missiles now show a gold → orange → red radial glow at the nose while in flight.
+- **SAM sounds.** SAM launchers now play a launch sound when they fire and a hit sound on interception.
+
+### 🎵 Victory Song
+
+- A **Play Victory Song** button is now in the in-game Settings panel. You can use it **twice per game** to blast the victory theme. Uses left are shown on the button.
+
+### ⌨️ Keybind Fixes
+
+- **`-` and `=` keys** now control your **attack ratio** (troop commitment) instead of zooming. Zoom keys remain `Q` / `E` (or scroll wheel). This makes unit-focused hotkeys feel more natural.
+
+### 🏗️ Visual Improvements
+
+- **Pixel-art buildings appear earlier** when zooming out (threshold lowered from 4.3× to 2.5× zoom). Copper Mine, Oil Factory, Cruise Launcher, and Fishing Dock pixel-art icons are now visible at a wider zoom range.
+
+---
+
 ## 🆕 V1.22.12 Polish Pass
 
-- **Cruise missiles now require 2 hits to destroy a building.** Soft units still die in one hit; structures take a hit, then go down on the second strike — making cruise volleys feel more strategic.
 - **All Single Player options are now in the multiplayer Create Lobby modal too** — host with the exact same toggles as solo (mega income, big bombs, limit cities, etc.).
 - **Oil Factories and Copper Mines now connect via railroad** like Factories — they automatically build a train station and link to nearby industrial buildings.
 - **New "Info" tab in the header** — a one-stop reference for build limits, cooldowns, income rates, and lobby option effects.

@@ -231,6 +231,10 @@ export class DefaultConfig implements Config {
     if (this._gameConfig.gameMode === GameMode.Doomsday) {
       base = Math.round(base * 0.6);
     }
+    // Chaos: everything fires faster
+    if (this._gameConfig.gameMode === GameMode.Chaos) {
+      base = Math.round(base * 0.5);
+    }
     return base;
   }
 
@@ -659,6 +663,25 @@ export class DefaultConfig implements Config {
         Math.floor(info.constructionDuration / 2),
       );
     }
+    // Blitz: buildings go up fast
+    if (
+      this._gameConfig.gameMode === GameMode.Blitz &&
+      info.constructionDuration !== undefined &&
+      info.constructionDuration > 0
+    ) {
+      info.constructionDuration = Math.max(
+        1,
+        Math.floor(info.constructionDuration / 2),
+      );
+    }
+    // Chaos: all buildings cost 50% less
+    if (this._gameConfig.gameMode === GameMode.Chaos && info.cost) {
+      const originalCostChaos = info.cost;
+      info.cost = (game: Game, player: Player) => {
+        const c = originalCostChaos(game, player);
+        return c / 2n;
+      };
+    }
 
     this.unitInfoCache.set(type, info);
     return info;
@@ -1004,6 +1027,14 @@ export class DefaultConfig implements Config {
     if (this._gameConfig.gameMode === GameMode.Doomsday) {
       base = Math.round(base * 1.25);
     }
+    // Blitz: fast-paced, start with extra troops to sprint
+    if (this._gameConfig.gameMode === GameMode.Blitz) {
+      base = Math.round(base * 1.5);
+    }
+    // Chaos: massive starting armies for explosive early game
+    if (this._gameConfig.gameMode === GameMode.Chaos) {
+      base = Math.round(base * 2.0);
+    }
     return base;
   }
 
@@ -1075,6 +1106,9 @@ export class DefaultConfig implements Config {
     if (this.superTroops()) {
       toAdd *= 2;
     }
+    if (this._gameConfig.gameMode === GameMode.Blitz) {
+      toAdd *= 2;
+    }
 
     return Math.min(player.troops() + toAdd, max) - player.troops();
   }
@@ -1087,7 +1121,11 @@ export class DefaultConfig implements Config {
     } else {
       baseRate = 100n;
     }
-    return BigInt(Math.floor(Number(baseRate) * multiplier));
+    let rate = BigInt(Math.floor(Number(baseRate) * multiplier));
+    if (this._gameConfig.gameMode === GameMode.Blitz) {
+      rate *= 2n;
+    }
+    return rate;
   }
 
   nukeMagnitudes(unitType: UnitType): NukeMagnitude {
@@ -1095,6 +1133,10 @@ export class DefaultConfig implements Config {
     // Doomsday cranks nukes up; Battle Royale uses default radii
     if (this._gameConfig.gameMode === GameMode.Doomsday) {
       scale *= 1.25;
+    }
+    // Chaos: huge explosions
+    if (this._gameConfig.gameMode === GameMode.Chaos) {
+      scale *= 2;
     }
     let mag: NukeMagnitude;
     switch (unitType) {
