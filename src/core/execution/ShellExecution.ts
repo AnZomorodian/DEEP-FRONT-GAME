@@ -17,6 +17,7 @@ export class ShellExecution implements Execution {
     private _owner: Player,
     private ownerUnit: Unit,
     private target: Unit,
+    private overrideDamage: number | null = null,
   ) {}
 
   init(mg: Game, ticks: number): void {
@@ -63,6 +64,9 @@ export class ShellExecution implements Execution {
   }
 
   private effectOnTarget(): number {
+    if (this.overrideDamage !== null) {
+      return this.overrideDamage;
+    }
     const { damage } = this.mg.config().unitInfo(UnitType.Shell);
     const baseDamage = damage ?? 250;
 

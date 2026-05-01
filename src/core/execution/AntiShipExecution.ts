@@ -44,15 +44,18 @@ export class AntiShipExecution implements Execution {
     }
 
     if (this.target !== null) {
-      const cooldown = this.mg.config().antiShipCooldown();
+      const level = this.battery.level();
+      const cooldown = this.mg.config().antiShipCooldown(level);
       if (this.mg.ticks() - this.lastFired >= cooldown) {
         this.lastFired = this.mg.ticks();
+        // 334 damage per shot → exactly 3 hits destroy a 1000-HP warship
         this.mg.addExecution(
           new ShellExecution(
             this.battery.tile(),
             this.battery.owner(),
             this.battery,
             this.target,
+            334,
           ),
         );
         this.target = null;

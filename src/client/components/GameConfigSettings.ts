@@ -105,6 +105,7 @@ const unitOptions: { type: UnitType; translationKey: string }[] = [
   { type: UnitType.CruiseLauncher, translationKey: "unit_type.cruise_launcher" },
   { type: UnitType.CruiseMissile, translationKey: "unit_type.cruise_missile" },
   { type: UnitType.FishingDock, translationKey: "unit_type.fishing_dock" },
+  { type: UnitType.AntiShip, translationKey: "unit_type.anti_ship" },
 ];
 
 const MAP_ICON = svg`<path

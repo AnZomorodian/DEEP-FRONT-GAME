@@ -18,6 +18,7 @@ const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
 const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
 const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
 const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
+const antiShipSmallIcon = assetUrl("images/antiShip.png");
 
 export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.City]: "circle",
@@ -30,6 +31,7 @@ export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.CopperMine]: "pentagon",
   [UnitType.CruiseLauncher]: "triangle",
   [UnitType.FishingDock]: "octagon",
+  [UnitType.AntiShip]: "square",
   [UnitType.Warship]: "cross",
   [UnitType.AtomBomb]: "cross",
   [UnitType.HydrogenBomb]: "cross",
@@ -80,6 +82,7 @@ export class SpriteFactory {
     [UnitType.CopperMine, { iconPath: copperMineIcon, image: null }],
     [UnitType.CruiseLauncher, { iconPath: cruiseLauncherIcon, image: null }],
     [UnitType.FishingDock, { iconPath: fishingDockIcon, image: null }],
+    [UnitType.AntiShip, { iconPath: antiShipSmallIcon, image: null }],
   ]);
   constructor(
     theme: Theme,
@@ -487,6 +490,9 @@ export class SpriteFactory {
         break;
       case UnitType.DefensePost:
         radius = this.game.config().defensePostRange();
+        break;
+      case UnitType.AntiShip:
+        radius = this.game.config().antiShipRange();
         break;
       case UnitType.AtomBomb:
         radius = this.game.config().nukeMagnitudes(UnitType.AtomBomb).outer;
