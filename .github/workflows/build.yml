@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: bn0.ir/deepfront
+          images: hanibikdeli/deepfront
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=schedule,pattern={{date 'YYYYMMDD'}}
@@ -37,5 +37,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=bn0.ir/deepfront:buildcache
-          cache-to: type=registry,ref=bn0.ir/deepfront:buildcache,mode=max
+          cache-from: type=registry,ref=hanibikdeli/deepfront:buildcache
+          cache-to: type=registry,ref=hanibikdeli/deepfront:buildcache,mode=max
