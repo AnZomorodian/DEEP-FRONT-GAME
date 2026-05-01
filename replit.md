@@ -33,10 +33,20 @@ cross-env GAME_ENV=dev concurrently "vite" "tsx src/server/Server.ts"
 
 ## Environment Variables
 
-- `GAME_ENV` — `dev`, `staging`, or `prod` (required)
-- `API_KEY` — API key for external integrations
+- `GAME_ENV` — `dev`, `staging`, `prod`, or `selfhosted` (required)
+- `API_KEY` — API key for external integrations (not needed in selfhosted mode)
+- `NUM_WORKERS` — Number of game workers in selfhosted mode (default: 4)
 - `CDN_BASE` — Optional CDN URL for assets
 - `STRIPE_PUBLISHABLE_KEY` — Optional Stripe integration
+
+### Self-Hosted VPS Mode (`GAME_ENV=selfhosted`)
+Use this when running Deep Front on your own VPS without access to api.openfront.io:
+- Accepts player-generated persistent IDs (no OpenFront.io account needed)
+- Disables matchmaking polling to api.openfront.io (no more timeout errors)
+- Skips Turnstile CAPTCHA enforcement
+- Configurable worker count via `NUM_WORKERS` env var (default 4)
+- Build: `GAME_ENV=selfhosted npm run build-prod` (uses production Vite build)
+- Start: `GAME_ENV=selfhosted NUM_WORKERS=4 node dist/server/Server.js`
 
 ## Deployment
 

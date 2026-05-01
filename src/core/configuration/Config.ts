@@ -21,6 +21,7 @@ export enum GameEnv {
   Dev,
   Preprod,
   Prod,
+  SelfHosted,
 }
 
 export interface ServerConfig {
