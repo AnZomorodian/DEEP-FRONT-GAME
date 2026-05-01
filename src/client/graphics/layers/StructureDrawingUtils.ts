@@ -18,7 +18,7 @@ const oilFactoryIcon = assetUrl("images/OilFactoryIcon.svg");
 const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
 const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
 const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
-const antiShipSmallIcon = assetUrl("images/antiShip.png");
+const antiShipSmallIcon = assetUrl("images/AntiShipIcon.svg");
 
 export const STRUCTURE_SHAPES: Partial<Record<UnitType, ShapeType>> = {
   [UnitType.City]: "circle",

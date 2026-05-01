@@ -42,7 +42,7 @@ const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
 const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
 const cruiseMissileIcon = assetUrl("images/CruiseMissileIcon.svg");
 const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
-const antiShipIcon = assetUrl("images/antiShip.png");
+const antiShipIcon = assetUrl("images/AntiShipIcon.svg");
 
 export interface BuildItemDisplay {
   unitType: PlayerBuildableUnitType;
