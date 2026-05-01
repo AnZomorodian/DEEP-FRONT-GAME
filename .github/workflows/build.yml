@@ -37,5 +37,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gist
-          cache-to: type=gist,mode=max
+          cache-from: type=registry,ref=bn0.ir/deepfront:buildcache
+          cache-to: type=registry,ref=bn0.ir/deepfront:buildcache,mode=max
