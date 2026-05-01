@@ -332,6 +332,8 @@ export enum UnitType {
   CruiseLauncher = "Cruise Launcher",
   CruiseMissile = "Cruise Missile",
   FishingDock = "Fishing Dock",
+  AntiShip = "Anti-Ship Battery",
+  AntiShipMissile = "Anti-Ship Missile",
 }
 
 export enum TrainType {
@@ -367,6 +369,7 @@ export const Structures = unitTypeGroup([
   UnitType.CopperMine,
   UnitType.CruiseLauncher,
   UnitType.FishingDock,
+  UnitType.AntiShip,
 ] as const);
 
 export const BuildMenus = unitTypeGroup([
@@ -456,6 +459,10 @@ export interface UnitParamsMap {
   };
 
   [UnitType.FishingDock]: Record<string, never>;
+
+  [UnitType.AntiShip]: Record<string, never>;
+
+  [UnitType.AntiShipMissile]: Record<string, never>;
 }
 
 // Type helper to get params type for a specific unit type

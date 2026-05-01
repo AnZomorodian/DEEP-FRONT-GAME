@@ -1,5 +1,6 @@
 import { Execution, Game, Player, Tick, Unit, UnitType } from "../game/Game";
 import { TileRef } from "../game/GameMap";
+import { AntiShipExecution } from "./AntiShipExecution";
 import { CityExecution } from "./CityExecution";
 import { CopperMineExecution } from "./CopperMineExecution";
 import { CruiseLauncherExecution } from "./CruiseLauncherExecution";
@@ -161,6 +162,9 @@ export class ConstructionExecution implements Execution {
       case UnitType.FishingDock:
         this.mg.addExecution(new FishingDockExecution(this.structure!));
         break;
+      case UnitType.AntiShip:
+        this.mg.addExecution(new AntiShipExecution(this.structure!));
+        break;
       default:
         console.warn(
           `unit type ${this.constructionType} cannot be constructed`,
@@ -181,6 +185,7 @@ export class ConstructionExecution implements Execution {
       case UnitType.CopperMine:
       case UnitType.CruiseLauncher:
       case UnitType.FishingDock:
+      case UnitType.AntiShip:
         return true;
       default:
         return false;

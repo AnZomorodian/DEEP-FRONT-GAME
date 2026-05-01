@@ -176,6 +176,8 @@ export interface Config {
   warshipPortSwitchThreshold(): number;
   defensePostShellAttackRate(): number;
   defensePostTargettingRange(): number;
+  antiShipRange(): number;
+  antiShipCooldown(): number;
   // 0-1
   traitorDefenseDebuff(): number;
   traitorDuration(): number;

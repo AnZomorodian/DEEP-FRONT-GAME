@@ -19,6 +19,7 @@ const oilFactoryIcon = assetUrl("images/buildings/oilFactory.png");
 const copperMineIcon = assetUrl("images/buildings/copperMine.png");
 const cruiseLauncherIcon = assetUrl("images/buildings/cruiseLauncher.png");
 const fishingDockIcon = assetUrl("images/buildings/fishingDock.png");
+const antiShipIcon = assetUrl("images/buildings/antiShip.png");
 
 const underConstructionColor = colord("rgb(150,150,150)");
 
@@ -91,6 +92,11 @@ export class StructureLayer implements Layer {
     },
     [UnitType.FishingDock]: {
       icon: fishingDockIcon,
+      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
+      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
+    },
+    [UnitType.AntiShip]: {
+      icon: antiShipIcon,
       borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
       territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
     },

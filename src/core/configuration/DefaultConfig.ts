@@ -633,6 +633,24 @@ export class DefaultConfig implements Config {
           cost: () => 0n,
         };
         break;
+      case UnitType.AntiShip:
+        info = {
+          cost: this.costWrapper(
+            (numUnits: number) => {
+              const tiers = [400_000, 600_000, 900_000, 1_400_000];
+              const base = tiers[Math.min(numUnits, tiers.length - 1)];
+              return this.cheapBuildings() ? Math.floor(base / 2) : base;
+            },
+            UnitType.AntiShip,
+          ),
+          constructionDuration: this.instantBuild() ? 0 : 15 * 10,
+        };
+        break;
+      case UnitType.AntiShipMissile:
+        info = {
+          cost: () => 0n,
+        };
+        break;
       default:
         assertNever(type);
     }
@@ -1274,5 +1292,13 @@ export class DefaultConfig implements Config {
 
   allianceExtensionPromptOffset(): number {
     return 300; // 30 seconds before expiration
+  }
+
+  antiShipRange(): number {
+    return 80;
+  }
+
+  antiShipCooldown(): number {
+    return 60;
   }
 }
