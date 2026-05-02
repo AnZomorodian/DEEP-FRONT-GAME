@@ -19,6 +19,7 @@ const oilFactoryIcon = assetUrl("images/buildings/oilFactory.png");
 const copperMineIcon = assetUrl("images/buildings/copperMine.png");
 const cruiseLauncherIcon = assetUrl("images/buildings/cruiseLauncher.png");
 const fishingDockIcon = assetUrl("images/buildings/fishingDock.png");
+const antiShipIcon = assetUrl("images/buildings/antiShip.png");
 
 const underConstructionColor = colord("rgb(150,150,150)");
 
@@ -32,6 +33,8 @@ interface UnitRenderConfig {
   icon: string;
   borderRadius: number;
   territoryRadius: number;
+  /** If set, caps the rendered icon to this many tiles in width/height */
+  maxIconSize?: number;
 }
 
 export class StructureLayer implements Layer {
@@ -93,6 +96,12 @@ export class StructureLayer implements Layer {
       icon: fishingDockIcon,
       borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
       territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
+    },
+    [UnitType.AntiShip]: {
+      icon: antiShipIcon,
+      borderRadius: BASE_BORDER_RADIUS * RADIUS_SCALE_FACTOR,
+      territoryRadius: BASE_TERRITORY_RADIUS * RADIUS_SCALE_FACTOR,
+      maxIconSize: 32,
     },
   };
 
@@ -269,9 +278,14 @@ export class StructureLayer implements Layer {
 
     this.drawBorder(unit, borderColor, config);
 
-    // Render icon at 1/2 scale for better quality
-    const scaledWidth = icon.width >> 1;
-    const scaledHeight = icon.height >> 1;
+    // Render icon at 1/2 scale for better quality (capped by maxIconSize if set)
+    let scaledWidth = icon.width >> 1;
+    let scaledHeight = icon.height >> 1;
+    if (config.maxIconSize !== undefined) {
+      const scale = Math.min(1, config.maxIconSize / Math.max(scaledWidth, scaledHeight));
+      scaledWidth = Math.round(scaledWidth * scale);
+      scaledHeight = Math.round(scaledHeight * scale);
+    }
     const startX = this.game.x(unit.tile()) - (scaledWidth >> 1);
     const startY = this.game.y(unit.tile()) - (scaledHeight >> 1);
 

@@ -1121,8 +1121,13 @@ export class PlayerImpl implements Player {
       let canUpgrade: number | false = false;
       let canBuild: TileRef | false = false;
 
-      if (tile !== null && this.canBuildUnitType(u, cost) && !inSpawnPhase) {
-        if (this.canUpgradeUnitType(u)) {
+      if (tile !== null && !inSpawnPhase) {
+        // Upgrades bypass the per-player max-count cap (skipMaxCheck=true),
+        // so check them independently from the new-build check.
+        if (
+          this.canBuildUnitType(u, cost, true) &&
+          this.canUpgradeUnitType(u)
+        ) {
           const existingUnit = this.findExistingUnitToUpgrade(u, tile);
           if (
             existingUnit !== false &&
@@ -1131,7 +1136,9 @@ export class PlayerImpl implements Player {
             canUpgrade = existingUnit.id();
           }
         }
-        canBuild = this.canSpawnUnitType(u, tile, validTiles);
+        if (this.canBuildUnitType(u, cost)) {
+          canBuild = this.canSpawnUnitType(u, tile, validTiles);
+        }
       }
 
       const buildNew = canBuild !== false && canUpgrade === false;
@@ -1205,7 +1212,10 @@ export class PlayerImpl implements Player {
       case UnitType.CruiseLauncher:
         return this.landBasedStructureSpawn(targetTile, validTiles);
       case UnitType.FishingDock:
+      case UnitType.AntiShip:
         return this.fishingSpawn(targetTile, validTiles);
+      case UnitType.AntiShipMissile:
+        return targetTile;
       default:
         assertNever(unitType);
     }

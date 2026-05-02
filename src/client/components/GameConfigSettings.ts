@@ -105,6 +105,7 @@ const unitOptions: { type: UnitType; translationKey: string }[] = [
   { type: UnitType.CruiseLauncher, translationKey: "unit_type.cruise_launcher" },
   { type: UnitType.CruiseMissile, translationKey: "unit_type.cruise_missile" },
   { type: UnitType.FishingDock, translationKey: "unit_type.fishing_dock" },
+  { type: UnitType.AntiShip, translationKey: "unit_type.anti_ship" },
 ];
 
 const MAP_ICON = svg`<path
@@ -384,27 +385,25 @@ export class GameConfigSettings extends LitElement {
             <div class="grid grid-cols-2 gap-4">
               ${(
                 [
-                  [GameMode.FFA, "game_mode.ffa", "🌍", "Standard brawl"],
-                  [GameMode.Team, "game_mode.teams", "🤝", "Alliance warfare"],
-                  [GameMode.BattleRoyale, "game_mode.battle_royale", "💀", "Bigger armies"],
-                  [GameMode.Doomsday, "game_mode.doomsday", "☢️", "Nuke warfare"],
-                  [GameMode.Blitz, "game_mode.blitz", "⚡", "2× speed & gold"],
-                  [GameMode.Chaos, "game_mode.chaos", "🔥", "Giant nukes & cheap builds"],
-                ] as [GameMode, string, string, string][]
-              ).map(([mode, labelKey, icon, desc]) => {
+                  [GameMode.FFA, "game_mode.ffa"],
+                  [GameMode.Team, "game_mode.teams"],
+                  [GameMode.BattleRoyale, "game_mode.battle_royale"],
+                  [GameMode.Doomsday, "game_mode.doomsday"],
+                  [GameMode.Blitz, "game_mode.blitz"],
+                  [GameMode.Chaos, "game_mode.chaos"],
+                ] as [GameMode, string][]
+              ).map(([mode, labelKey]) => {
                 const isSelected = settings.gameMode.selected === mode;
                 return html`
                   <button
                     class="${cardClass(isSelected, "py-4 text-center")}"
                     @click=${() => this.handleGameModeSelect(mode)}
                   >
-                    <div class="text-xl mb-1">${icon}</div>
                     <span
                       class="text-sm font-bold text-white uppercase tracking-widest"
                     >
                       ${translateText(labelKey)}
                     </span>
-                    <div class="text-xs text-white/50 mt-1">${desc}</div>
                   </button>
                 `;
               })}

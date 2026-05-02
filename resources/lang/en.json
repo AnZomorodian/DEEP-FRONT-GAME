@@ -589,7 +589,8 @@
     "copper_mine": "Copper Mine",
     "cruise_launcher": "Cruise Launcher",
     "cruise_missile": "Cruise Missile",
-    "fishing_dock": "Fishing Dock"
+    "fishing_dock": "Fishing Dock",
+    "anti_ship": "Anti-Ship Battery"
   },
   "user_setting": {
     "title": "Settings",
@@ -817,7 +818,8 @@
       "copper_mine": "Mines copper to boost production and income",
       "cruise_launcher": "Launches cruise missiles at enemy targets",
       "cruise_missile": "Precision strike, half the power of an atom bomb",
-      "fishing_dock": "Coastal fishing income (shore tiles only)"
+      "fishing_dock": "Coastal fishing income (shore tiles only)",
+      "anti_ship": "Coastal defense — destroys enemy warships in range (build near water)"
     },
     "warship_shift_hint": "Hold Shift and drag to select multiple warships at once",
     "not_enough_money": "Not enough money"

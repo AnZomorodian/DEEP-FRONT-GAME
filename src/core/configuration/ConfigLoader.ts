@@ -6,6 +6,7 @@ import { DevConfig, DevServerConfig } from "./DevConfig";
 import { Env } from "./Env";
 import { preprodConfig } from "./PreprodConfig";
 import { prodConfig } from "./ProdConfig";
+import { selfHostedConfig } from "./SelfHostedConfig";
 
 export enum GameLogicEnv {
   Dev = "dev",
@@ -53,6 +54,7 @@ export function getBuildTimeGameLogicEnv(): GameLogicEnv {
       return GameLogicEnv.Dev;
     case "staging":
     case "prod":
+    case "selfhosted":
       return GameLogicEnv.Default;
     case undefined:
       throw new Error("Missing bundled game logic env");
@@ -109,6 +111,9 @@ export function getServerConfig(gameEnv: string) {
     case "prod":
       console.log("using prod server config");
       return prodConfig;
+    case "selfhosted":
+      console.log("using self-hosted server config");
+      return selfHostedConfig;
     default:
       throw Error(`unsupported server configuration: ${gameEnv}`);
   }

@@ -21,6 +21,7 @@ export enum GameEnv {
   Dev,
   Preprod,
   Prod,
+  SelfHosted,
 }
 
 export interface ServerConfig {
@@ -176,6 +177,8 @@ export interface Config {
   warshipPortSwitchThreshold(): number;
   defensePostShellAttackRate(): number;
   defensePostTargettingRange(): number;
+  antiShipRange(): number;
+  antiShipCooldown(level: number): number;
   // 0-1
   traitorDefenseDebuff(): number;
   traitorDuration(): number;

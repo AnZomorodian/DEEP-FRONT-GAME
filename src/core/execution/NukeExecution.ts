@@ -312,27 +312,32 @@ export class NukeExecution implements Execution {
 
     const mg = this.mg;
     const config = mg.config();
+    const isCruise = this.nukeType === UnitType.CruiseMissile;
 
     const magnitude = config.nukeMagnitudes(this.nuke.type());
-    const toDestroy = this.tilesToDestroy();
 
-    // Retrieve all impacted players and the number of tiles
-    const tilesPerPlayers = new Map<Player, number>();
-    for (const tile of toDestroy) {
-      const owner = mg.owner(tile);
-      if (owner.isPlayer()) {
-        owner.relinquish(tile);
-        tilesPerPlayers.set(owner, (tilesPerPlayers.get(owner) ?? 0) + 1);
+    // Cruise missiles are surgical strikes: they skip ALL territory destruction
+    // and troop casualties. Only economic buildings are deleted (see below).
+    if (!isCruise) {
+      const toDestroy = this.tilesToDestroy();
+
+      // Retrieve all impacted players and the number of tiles
+      const tilesPerPlayers = new Map<Player, number>();
+      for (const tile of toDestroy) {
+        const owner = mg.owner(tile);
+        if (owner.isPlayer()) {
+          owner.relinquish(tile);
+          tilesPerPlayers.set(owner, (tilesPerPlayers.get(owner) ?? 0) + 1);
+        }
+
+        // Queue land tiles for batched water conversion
+        if (mg.isLand(tile)) {
+          mg.queueWaterConversion(tile);
+        }
       }
 
-      // Queue land tiles for batched water conversion
-      if (mg.isLand(tile)) {
-        mg.queueWaterConversion(tile);
-      }
-    }
-
-    // Then compute the explosion effect on each player
-    for (const [player, numImpactedTiles] of tilesPerPlayers) {
+      // Then compute the explosion effect on each player
+      for (const [player, numImpactedTiles] of tilesPerPlayers) {
       const tilesBeforeNuke = player.numTilesOwned() + numImpactedTiles;
       const transportShips = player.units(UnitType.TransportShip);
       const outgoingAttacks = player.outgoingAttacks();
@@ -371,11 +376,11 @@ export class NukeExecution implements Execution {
         }
       }
     }
+    } // end if (!isCruise)
 
     const outer2 = magnitude.outer * magnitude.outer;
     const dst = this.dst;
     const destroyer = this.player;
-    const isCruise = this.nukeType === UnitType.CruiseMissile;
     for (const unit of mg.units()) {
       const type = unit.type();
       if (

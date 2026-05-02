@@ -42,6 +42,7 @@ const copperMineIcon = assetUrl("images/CopperMineIcon.svg");
 const cruiseLauncherIcon = assetUrl("images/CruiseLauncherUnit.svg");
 const cruiseMissileIcon = assetUrl("images/CruiseMissileIcon.svg");
 const fishingDockIcon = assetUrl("images/FishingDockIcon.svg");
+const antiShipIcon = assetUrl("images/AntiShipIcon.svg");
 
 export interface BuildItemDisplay {
   unitType: PlayerBuildableUnitType;
@@ -156,6 +157,13 @@ export const buildTable: BuildItemDisplay[][] = [
       icon: fishingDockIcon,
       description: "build_menu.desc.fishing_dock",
       key: "unit_type.fishing_dock",
+      countable: true,
+    },
+    {
+      unitType: UnitType.AntiShip,
+      icon: antiShipIcon,
+      description: "build_menu.desc.anti_ship",
+      key: "unit_type.anti_ship",
       countable: true,
     },
   ],
